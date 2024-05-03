@@ -1,0 +1,70 @@
+$prim-color-blue: #2454ff;
+$prim-color-green: #d8ff69;
+$prim-color-black: #262525;
+$prim-color-grey: #6D6D6D;
+
+$primary-bg-color: #edebe1;
+$tag-bg-color: #F16458;
+$white: #ffffff;
+$placeholder-color: #92929D;
+
+$text-gigantic: 64px;
+$text-huge: 34px;
+$text-big: 24px;
+$text-medium: 18px;
+$text-normal: 16px;
+$text-mob-normal: 14px;
+$text-small: 12px;
+
+$distance-big: 62px;
+$distance-normal: 32px;
+$distance-small: 15px;
+$distance-very-small: 10px;
+
+$prim-border: 1px solid $prim-color-blue;
+$secondary-border: 1px solid $prim-color-black;
+
+$border-radius-big: 62px;
+$border-radius: 30px;
+$border-radius-small: 20px;
+
+$lh-gigantic: 1.85;
+$lh-very-huge: 1.416;
+$lh-very-big: 1.33;
+$lh-big: 1.286;
+$lh-very-normal: 1.25;
+$lh-normal: 1.25;
+$lh-small: 1.2;
+$lh-very-small: 1.166;
+
+$transition: all .25s ease-in-out;
+
+// LINE HEIGHT
+// gigantic
+// 37\20 = 1.85
+// 22.16\12 ~ 1.85
+
+// very huge
+// 34\24 = 1,416
+
+// huge
+// 22\16 = 1.375 huge
+
+// very big
+// 45.56\34=1.34 ~ 1/.33
+// 24\18 = 1.33
+// 24.17\18 ~ 1.33
+
+// big
+// 18\14 = 1.286
+
+// normal
+// 20\16 = 1.25
+// 19.2\16 = [1] == 1.25
+
+// small
+// 16.8\14 = 1.2
+
+// very small
+// 14\12 = 1.166
+// 16.09\14 = 1.149

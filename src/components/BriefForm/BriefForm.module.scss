@@ -1,0 +1,81 @@
+@import "src/styles/variables.scss";
+
+.section {
+  padding-bottom: 62px;
+}
+
+form {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.inputContainer {
+  position: relative;
+
+  @for $i from 1 through 4 {
+    &.columns_#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+
+  &.floatingLabel {
+    label {
+      position: absolute;
+      top: 12px;
+      left: 10px;
+      transition: $transition;
+      margin-bottom: 0;
+    }
+
+    input:focus+label,
+    input:not(:placeholder-shown)+label {
+      top: -15px;
+      left: 15px;
+      pointer-events: none;
+      background: $primary-bg-color;
+      font-size: $text-small;
+      padding: 0 5px;
+    }
+  }
+
+  label {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: $placeholder-color;
+  }
+
+  input,
+  select {
+    border-radius: $border-radius-small;
+    border: $prim-border;
+    padding: 14px 10px;
+    font-size: $text-normal;
+    font-weight: 600;
+    outline: none;
+    width: 100%;
+    // height: 100%;
+  }
+
+  select {
+    background: url('./img/arrow.svg') no-repeat calc(100% - 10px);
+  }
+}
+
+.image {
+  margin-top: 25px;
+  grid-column: 5/-1;
+  grid-row: 2/5;
+  object-fit: contain;
+}
+
+.sendBtn {
+  width: 100% !important;
+  max-width: 230px;
+  margin: 0 auto;
+  grid-column: 2/4;
+}
+
+.error {
+  color: red;
+}

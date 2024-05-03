@@ -1,0 +1,80 @@
+@import "src/styles/variables.scss";
+
+.eventsWrapper {
+  background-color: $prim-color-green;
+
+  .events {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+
+    .imageBlock {
+      div {
+        text-transform: uppercase;
+        color: #2454ff;
+        display: flex;
+        flex-direction: column;
+        gap: $distance-small;
+      }
+
+      img {
+        margin-bottom: 3.125rem;
+        margin-left: 100px;
+
+        @media (max-width: 1440px) {
+          width: 16.125rem;
+          height: 33.625rem;
+        }
+
+        @media (max-width: 834px) {
+          width: 7.625rem;
+          height: 16.5rem;
+        }
+      }
+    }
+
+    .eventsBlock {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'soonest soonest';
+      gap: $distance-normal;
+    }
+
+    @media (max-width: 1440px) {
+      gap: 1rem;
+
+      .imageBlock {
+        img {
+          margin-left: 0;
+          width: 254px;
+        }
+      }
+
+      .eventsBlock {
+        gap: $distance-small;
+      }
+    }
+
+    @media (max-width: 834px) {
+      flex-direction: column-reverse;
+
+      .imageBlock {
+        img {
+          height: 264px;
+          width: 122px;
+          margin: 0 auto $distance-small;
+        }
+
+        div {
+          width: 200px;
+        }
+      }
+
+      .eventsBlock {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'soonest';
+      }
+    }
+  }
+}

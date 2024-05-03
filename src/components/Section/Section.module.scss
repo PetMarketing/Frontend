@@ -1,0 +1,39 @@
+@import "src/styles/variables.scss";
+
+.section {
+	padding-bottom: $distance-big;
+
+	h1 {
+		font-size: $text-big;
+		width: 10rem;
+		margin-bottom: $distance-very-small;
+		line-height: 1;
+		text-transform: uppercase;
+
+		@media (min-width: 834px) {
+			font-size: $text-gigantic;
+			width: 26.875rem;
+			margin-bottom: $distance-normal;
+		}
+
+		@media (min-width: 1440px) {
+			font-size: $text-gigantic;
+		}
+	}
+
+	h2 {
+		font-size: $text-mob-normal;
+		text-transform: uppercase;
+		margin-bottom: $distance-very-small;
+		line-height: 1;
+
+		@media (width >=834px) {
+			font-size: $text-big;
+			margin-bottom: $distance-small;
+		}
+
+		@media (width >=1440px) {
+			font-size: $text-huge;
+		}
+	}
+}

@@ -1,0 +1,96 @@
+@import "src/styles/variables.scss";
+
+.contentWrapper {
+	margin-bottom: 51px;
+	padding-bottom: 7px;
+
+	p {
+		font-weight: 600;
+		font-size: $text-small;
+		line-height: $lh-very-small;
+		height: 19px;
+
+		@media (min-width: 834px) {
+			font-size: $text-normal;
+		}
+	}
+}
+
+.text {
+	height: 38px;
+
+	@media (max-width: 1439px) {
+		margin-bottom: $distance-small;
+	}
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: $distance-very-small;
+	margin: $distance-small 0;
+
+	@media (min-width: 834px) {
+		margin: $distance-normal 0;
+		gap: $distance-small;
+	}
+
+	li {
+		position: relative;
+	}
+
+	li::before {
+		position: absolute;
+		left: 0rem;
+		top: 0.1563rem;
+		content: "";
+		display: block;
+		background-image: url("../../assets/images/hero-list-icon.svg");
+		width: 0.5625rem;
+		height: 0.5625rem;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		@media (min-width: 834px) {
+			width: 1.25rem;
+			height: 1.25rem;
+		}
+	}
+
+	p {
+		font-size: $text-small;
+		font-weight: 400;
+		line-height: $lh-very-small;
+
+		padding-left: $distance-small;
+		height: 21px;
+
+		@media (min-width: 834px) {
+			font-size: $text-normal;
+			padding-left: $distance-normal;
+			line-height: $lh-very-normal;
+		}
+	}
+}
+
+.heroImg {
+	width: auto;
+	height: auto;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	overflow: hidden;
+
+	@media (min-width: 834px) {
+		width: 694px;
+		height: 500px;
+	}
+
+	@media (min-width: 1440px) {
+		position: absolute;
+		right: 70px;
+		top: 0;
+
+		width: 46.5625rem;
+		min-height: 632px;
+	}
+}

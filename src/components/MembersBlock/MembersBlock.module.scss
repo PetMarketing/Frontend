@@ -1,0 +1,20 @@
+@import "src/styles/variables.scss";
+
+.team {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: $distance-normal;
+}
+
+@media (max-width: 1440px) {
+  .team {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 834px) {
+  .team {
+    grid-template-columns: auto;
+    gap: $distance-very-small;
+  }
+}

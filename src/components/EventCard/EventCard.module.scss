@@ -1,0 +1,121 @@
+@import "src/styles/variables.scss";
+
+.event {
+  border-radius: $border-radius;
+  padding: $distance-normal;
+
+  .header {
+    display: flex;
+    gap: $distance-normal;
+    margin-bottom: $distance-small;
+    flex-wrap: wrap;
+  }
+}
+
+.newEvent {
+  @extend .event;
+  color: $white;
+  background-color: $prim-color-blue;
+  width: 100%;
+
+  .speakers {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: $distance-small;
+
+    div {
+      width: fit-content;
+      text-align: center;
+    }
+  }
+
+  h2 {
+    color: $prim-color-green;
+    font-size: $text-huge !important;
+    margin-bottom: 0 !important;
+  }
+
+  .greenBtn {
+    background-color: $prim-color-green;
+    color: $prim-color-blue;
+    margin-left: auto;
+    margin-top: auto;
+  }
+}
+
+.laterEvent {
+  @extend .event;
+  color: $prim-color-black;
+  background-color: $white;
+  width: 360px;
+  display: grid;
+
+  h2 {
+    color: $prim-color-blue;
+    font-size: $text-huge !important;
+    margin-bottom: $distance-normal !important;
+  }
+
+  .button {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 1440px) {
+  .event {
+    padding: 5px;
+
+    h5 {
+      font-size: $text-mob-normal;
+    }
+  }
+
+  .newEvent {
+    width: 425px;
+    padding: $distance-small;
+
+    h2 {
+      font-size: 22px !important;
+    }
+
+    .speakers {
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        'speaker speker'
+        'button button';
+      font-size: 10px;
+
+      svg {
+        width: 79px;
+        height: 79px;
+      }
+    }
+
+    .greenBtn {
+      grid-area: button;
+    }
+  }
+
+  .laterEvent {
+    width: 205px;
+
+    h2 {
+      font-size: 20px !important;
+    }
+  }
+}
+
+@media (max-width: 834px) {
+  .event {
+    width: 300px;
+    padding: $distance-small;
+  }
+
+  .newEvent {
+    margin-top: $distance-small;
+
+    h2 {
+      margin-top: -20px;
+    }
+  }
+}

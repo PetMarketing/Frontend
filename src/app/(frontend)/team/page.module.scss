@@ -1,0 +1,71 @@
+@import "src/styles/variables.scss";
+
+.section {
+  position: relative;
+
+  @media (max-width: 834px) {
+    padding-bottom: $distance-very-small;
+  }
+
+  h1 {
+    margin-bottom: $distance-small;
+  }
+
+  h4 {
+    max-width: 36.8125rem;
+
+    @media (max-width: 834px) {
+      font-weight: normal;
+    }
+  }
+
+  .smiles {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @media (max-width: 1440px) {
+      width: 25rem;
+      height: 10.25rem;
+      bottom: 3.75rem;
+    }
+
+    @media (max-width: 834px) {
+      position: static;
+      width: 11.25rem;
+      height: 4.375rem;
+      margin-left: auto;
+    }
+  }
+}
+
+.teamForm {
+  display: flex;
+  gap: $distance-normal;
+
+  .img {
+    flex-basis: 50%;
+
+    img {
+      object-fit: contain;
+      object-position: top;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .teamForm {
+    gap: $distance-small;
+    justify-content: normal;
+  }
+}
+
+@media (max-width: 834px) {
+  .teamForm {
+    flex-direction: column-reverse;
+
+    img {
+      height: min-content;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "src/styles/variables.scss";
+
+.logoLarge {
+	display: block;
+	height: 2.6875rem;
+	width: 9.125rem;
+	padding-top: $distance-small;
+	margin-bottom: $distance-small;
+
+	@media (min-width: 1440px) {
+		height: 8.625rem;
+		width: 25.625rem;
+
+		padding-top: $distance-big;
+		margin-bottom: $distance-big;
+	}
+
+	img {
+		@media (min-width: 1440px) {
+			width: 25.625rem;
+			height: 4.75rem;
+		}
+	}
+}
+
+.logoSmall {
+	height: 1.75rem;
+	width: 9.125rem;
+}
