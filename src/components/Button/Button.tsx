@@ -8,7 +8,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	children: React.ReactNode
 	onClick?: () => void
 	className?: string
-	variant?: 'primary' | 'menu' | 'category'
+	variant?: 'primary' | 'menu' | 'category' | 'primarySquare'
 	active?: boolean
 }
 
@@ -26,6 +26,9 @@ const Button: React.FC<ButtonProps> = ({
 	switch (variant) {
 		case 'primary':
 			baseClassName = styles.primaryBtn
+			break
+		case 'primarySquare':
+			baseClassName = styles.primarySquareBtn
 			break
 		case 'menu':
 			baseClassName = styles.menuBtn

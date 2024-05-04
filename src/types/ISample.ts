@@ -1,4 +1,4 @@
-import { ICategory } from '@/app/types/ICategory'
+import { ICategory } from '@/types/ICategory'
 
 export interface ISample {
 	id: number
