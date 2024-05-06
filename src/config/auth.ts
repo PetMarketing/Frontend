@@ -5,6 +5,7 @@ export const authConfig: AuthOptions = {
     providers: [
         Credentials({
             credentials: {},
+
             async authorize(credentials) {
 
                 const credentialDetails = {
