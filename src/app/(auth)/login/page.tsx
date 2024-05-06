@@ -1,5 +1,6 @@
 'use client'
 
+import { signIn } from 'next-auth/react';
 import { Formik, Form, Field, ErrorMessage as Error, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 
@@ -15,13 +16,18 @@ const initialValues = {
 	password: '',
 }
 
+// ToDo: the password must contain one capital letter, one digit and one special character
 const validationSchema = Yup.object().shape({
 	email: Yup.string().email('Invalid email').required('Required'),
-	password: Yup.string().min(8, 'Пароль повинен містити щонайменше 8 символів').required('Required'),
+	password: Yup.string().min(4, 'Пароль повинен містити щонайменше 4 символів').required('Required'),
 });
 
-const submitHandler = (values: ILogin, actions: FormikHelpers<ILogin>) => {
-	console.log('values: ', values);
+const submitHandler = async (values: ILogin, actions: FormikHelpers<ILogin>) => {
+	await signIn('credentials', {
+		email: values.email,
+		password: values.password,
+		redirect: false,
+	})
 
 	actions.resetForm();
 }
