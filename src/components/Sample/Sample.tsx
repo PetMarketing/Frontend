@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Image from 'next/image'
+
+import { ISample } from '@/types/ISample'
+
 import styles from './Sample.module.scss'
-import { ISample } from '@/app/types/ISample'
 
 type SampleProps = {
 	sample: ISample
