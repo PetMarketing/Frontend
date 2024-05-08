@@ -1,64 +1,62 @@
 @import "src/styles/variables.scss";
 
 .sample {
-  display: flex;
-  gap: 2rem;
+	display: flex;
+	gap: 2rem;
 
-  .img {
-    border-radius: $border-radius;
-    flex: 1 0 45%;
+	.img {
+		border-radius: $border-radius;
+		flex: 1 0 45%;
 
-    @media (max-width: 1440px) {
-      flex: 0 0 16.125rem;
-    }
+		@media (max-width: 1440px) {
+			flex: 0 0 16.125rem;
+		}
 
-    @media (max-width: 834px) {
-      flex: 0 0 fit-content;
-    }
+		@media (max-width: 834px) {
+			flex: 0 0 fit-content;
+		}
 
-    img {
-      object-fit: cover;
-      border-radius: $border-radius;
+		img {
+			object-fit: cover;
+			border-radius: $border-radius;
 
-      @media (max-width: 1440px) {
-        object-fit: contain;
-        height: min-content;
-      }
-    }
-  }
+			@media (max-width: 1440px) {
+				object-fit: contain;
+				height: min-content;
+			}
+		}
+	}
 
-  .info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9375rem;
-    flex: 1 0 45%;
+	.info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.9375rem;
+		flex: 1 0 45%;
 
-    @media (max-width: 834px) {
-      gap: 0.9375rem;
-    }
+		@media (max-width: 833px) {
+			gap: 0.9375rem;
+		}
 
-    .bold {
-      font-size: $text-normal;
-      font-weight: 600;
-    }
+		.bold {
+			font-size: $text-normal;
+			font-weight: 600;
+		}
 
-    @media (max-width: 834px) {
+		@media (max-width: 833px) {
+			.bold,
+			p {
+				font-size: $text-small;
+				line-height: 0.875rem;
+			}
 
-      .bold,
-      p {
-        font-size: $text-small;
-        line-height: 0.875rem;
-      }
+			.bold:nth-of-type(2) {
+				font-weight: 400;
+			}
+		}
+	}
 
-      .bold:nth-of-type(2) {
-        font-weight: 400;
-      }
-    }
-  }
-
-
-  @media (max-width: 834px) {
-    flex-direction: column;
-    gap: 0.625rem;
-  }
+	@media (max-width: 833px) {
+		flex-direction: column;
+		gap: 0.625rem;
+	}
 }

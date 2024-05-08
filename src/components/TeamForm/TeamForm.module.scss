@@ -1,125 +1,125 @@
 @import "src/styles/variables.scss";
 
 .teamForm {
-  flex-grow: 1;
+	flex-grow: 1;
 }
 
 .welcomeBlock {
-  display: flex;
-  align-content: center;
-  gap: $distance-small;
+	display: flex;
+	align-content: center;
+	gap: $distance-small;
 
-  h5 {
-    vertical-align: center;
-    color: $prim-color-blue;
-    margin: auto;
-    height: 144px;
-  }
+	h5 {
+		vertical-align: center;
+		color: $prim-color-blue;
+		margin: auto;
+		height: 144px;
+	}
 }
 
 .form {
-  display: grid;
-  grid-template-areas:
-    "name position"
-    "email email"
-    "description description"
-    ".. cv"
-    "sendBtn sendBtn";
-  gap: $distance-normal;
+	display: grid;
+	grid-template-areas:
+		"name position"
+		"email email"
+		"description description"
+		".. cv"
+		"sendBtn sendBtn";
+	gap: $distance-normal;
 
-  .inputContainer {
-    position: relative;
+	.inputContainer {
+		position: relative;
 
-    label {
-      color: $placeholder-color;
-      position: absolute;
-      top: 12px;
-      left: 10px;
-    }
+		label {
+			color: $placeholder-color;
+			position: absolute;
+			top: 12px;
+			left: 10px;
+		}
 
-    input {
-      border-radius: $border-radius-small;
-      border: $prim-border;
-      padding: 14px 10px;
-      font-size: $text-normal;
-      font-weight: 600;
-      outline: none;
-      width: 100%;
-      height: 100%;
-    }
+		input {
+			border-radius: $border-radius-small;
+			border: $prim-border;
+			padding: 14px 10px;
+			font-size: $text-normal;
+			font-weight: 600;
+			outline: none;
+			width: 100%;
+			height: 100%;
+		}
 
-    input:focus+label,
-    input:not(:placeholder-shown)+label {
-      top: -15px;
-      left: 15px;
-      pointer-events: none;
-      background: $primary-bg-color;
-      font-size: $text-small;
-      padding: 0 5px;
-    }
-  }
+		input:focus + label,
+		input:not(:placeholder-shown) + label {
+			top: -15px;
+			left: 15px;
+			pointer-events: none;
+			background: $primary-bg-color;
+			font-size: $text-small;
+			padding: 0 5px;
+		}
+	}
 
-  .fileUpload {
-    grid-area: cv;
-    padding: 12px 40px;
-    cursor: pointer;
-    background-color: $white;
-    color: $prim-color-blue;
-    border-radius: $border-radius-small;
-    font-weight: 600;
-    width: max-content;
-    justify-self: end;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	.fileUpload {
+		grid-area: cv;
+		padding: 12px 40px;
+		cursor: pointer;
+		background-color: $white;
+		color: $prim-color-blue;
+		border-radius: $border-radius-small;
+		font-weight: 600;
+		width: max-content;
+		justify-self: end;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-  .sendBtn {
-    grid-area: sendBtn;
-    justify-self: center;
-  }
+	.sendBtn {
+		grid-area: sendBtn;
+		justify-self: center;
+	}
 }
 
-@media (max-width: 1440px) {
-  .teamForm {
-    flex-basis: 50%;
-  }
+@media (max-width: 1439px) {
+	.teamForm {
+		flex-basis: 50%;
+	}
 
-  .form {
-    grid-template-areas:
-      "name"
-      "position"
-      "email"
-      "description"
-      "cv"
-      "sendBtn";
-    gap: $distance-small;
+	.form {
+		grid-template-areas:
+			"name"
+			"position"
+			"email"
+			"description"
+			"cv"
+			"sendBtn";
+		gap: $distance-small;
 
-    .inputContainer {
-      font-size: $text-small;
+		.inputContainer {
+			font-size: $text-small;
 
-      input {
-        height: 30px;
-      }
+			input {
+				height: 30px;
+			}
 
-      label {
-        top: 2px;
-      }
-    }
+			label {
+				top: 2px;
+			}
+		}
 
-    .fileUpload {
-      height: 30px;
-    }
-  }
+		.fileUpload {
+			height: 30px;
+		}
+	}
 }
 
 .loaderWrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
+	width: 100%;
+	height: 100%;
+	display: flex;
 
-  .loader {
-    height: fit-content;
-    margin: auto;
-  }
+	.loader {
+		height: fit-content;
+		margin: auto;
+	}
 }

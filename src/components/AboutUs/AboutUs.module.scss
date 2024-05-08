@@ -30,13 +30,14 @@
 	display: flex;
 	flex-direction: column;
 	gap: $distance-very-small;
+	align-items: center;
 
-	@media (min-width: 834px) {
+	@media (min-width: 833px) {
 		align-items: center;
 		gap: $distance-normal;
 	}
 
-	@media (min-width: 1440px) {
+	@media (min-width: 1439px) {
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
@@ -45,11 +46,11 @@
 .itemTextWrapper {
 	padding: 15px;
 
-	@media (min-width: 834px) {
+	@media (min-width: 833px) {
 		padding: 32px;
 	}
 
-	@media (min-width: 1440px) {
+	@media (min-width: 1439px) {
 		padding: 32px 32px 0;
 	}
 }
@@ -60,12 +61,12 @@
 	border: 1px solid $prim-color-blue;
 	width: 300px;
 
-	@media (min-width: 834px) {
+	@media (min-width: 833px) {
 		border-radius: 30px;
 		width: 634px;
 	}
 
-	@media (min-width: 1440px) {
+	@media (min-width: 1439px) {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -82,7 +83,7 @@
 	line-height: $lh-big;
 	margin-bottom: $distance-very-small;
 
-	@media (min-width: 834px) {
+	@media (min-width: 833px) {
 		font-size: $text-big;
 		line-height: $lh-very-huge;
 		margin-bottom: $distance-small;
@@ -94,7 +95,7 @@
 	font-size: $text-small;
 	line-height: $lh-very-small;
 
-	@media (min-width: 834px) {
+	@media (min-width: 833px) {
 		font-size: $text-normal;
 		line-height: $lh-normal;
 	}
@@ -105,13 +106,13 @@
 	width: auto;
 	border-radius: 20px;
 
-	@media (min-width: 834px) {
+	@media (min-width: 833px) {
 		height: 373px;
 		width: 100%;
 		border-radius: 30px;
 	}
 
-	@media (min-width: 1440px) {
+	@media (min-width: 1439px) {
 		height: 373px;
 	}
 }

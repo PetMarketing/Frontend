@@ -1,110 +1,110 @@
 @import "src/styles/variables.scss";
 
 .footerWrapper {
-  background-color: $prim-color-green;
+	background-color: $prim-color-green;
 
-  .footer {
-    max-width: 81.25rem;
-    margin: 0 auto;
-    background-color: $prim-color-black;
-    border-radius: $border-radius $border-radius 0 0;
-    color: $white;
-    padding: 4rem 5rem;
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: max-content max-content max-content;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "logo socials contacts"
-      ". .  withUs"
-      "legacy . .";
+	.footer {
+		max-width: 81.25rem;
+		margin: 0 auto;
+		background-color: $prim-color-black;
+		border-radius: $border-radius $border-radius 0 0;
+		color: $white;
+		padding: 4rem 5rem;
+		display: grid;
+		justify-content: space-between;
+		grid-template-columns: max-content max-content max-content;
+		grid-template-rows: auto auto auto;
+		grid-template-areas:
+			"logo socials contacts"
+			". .  withUs"
+			"legacy . .";
 
-    .logo {
-      grid-area: logo;
-    }
+		.logo {
+			grid-area: logo;
+		}
 
-    .socials {
-      grid-area: socials;
-      display: flex;
-      gap: 2rem;
-    }
+		.socials {
+			grid-area: socials;
+			display: flex;
+			gap: 2rem;
+		}
 
-    .contacts {
-      grid-area: contacts;
-    }
+		.contacts {
+			grid-area: contacts;
+		}
 
-    .withUs {
-      grid-area: withUs;
-    }
+		.withUs {
+			grid-area: withUs;
+		}
 
-    .legacy {
-      grid-area: legacy;
-    }
-  }
+		.legacy {
+			grid-area: legacy;
+		}
+	}
 
-  h2 {
-    margin-bottom: 0.9375rem;
-    color: $prim-color-green;
-  }
+	h2 {
+		margin-bottom: 0.9375rem;
+		color: $prim-color-green;
+	}
 
-  h5 {
-    color: $prim-color-green;
-    margin-bottom: 0.9375rem;
-  }
+	h5 {
+		color: $prim-color-green;
+		margin-bottom: 0.9375rem;
+	}
 
-  a:hover {
-    text-decoration: underline;
-  }
+	a:hover {
+		text-decoration: underline;
+	}
 
-  button {
-    margin-bottom: 0.9375rem;
-  }
+	button {
+		margin-bottom: 0.9375rem;
+	}
 
-  h6 {
-    margin-bottom: 1.25rem;
-  }
+	h6 {
+		margin-bottom: 1.25rem;
+	}
 
-  p {
-    font-size: $text-small;
-  }
+	p {
+		font-size: $text-small;
+	}
 
-  @media (max-width: 1440px) {
-    .footer {
-      max-width: 43.375rem;
-      gap: 2rem;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas:
-        "logo logo"
-        "socials socials"
-        "contacts withUs"
-        "legacy legacy";
-    }
+	@media (max-width: 1439px) {
+		.footer {
+			max-width: 43.375rem;
+			gap: 2rem;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas:
+				"logo logo"
+				"socials socials"
+				"contacts withUs"
+				"legacy legacy";
+		}
 
-    .logo,
-    .socials {
-      justify-self: center;
-    }
+		.logo,
+		.socials {
+			justify-self: center;
+		}
 
-    .withUs {
-      justify-self: right;
-    }
-  }
+		.withUs {
+			justify-self: right;
+		}
+	}
 
-  @media (max-width: 834px) {
-    .footer {
-      max-width: 20rem;
-      padding: 4rem 3rem;
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "logo"
-        "socials"
-        "contacts"
-        "withUs"
-        "legacy";
+	@media (max-width: 833px) {
+		.footer {
+			max-width: 20rem;
+			padding: 4rem 3rem;
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"logo"
+				"socials"
+				"contacts"
+				"withUs"
+				"legacy";
 
-      .withUs {
-        justify-self: left;
-      }
-    }
-  }
+			.withUs {
+				justify-self: left;
+			}
+		}
+	}
 }
