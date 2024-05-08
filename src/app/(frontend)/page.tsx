@@ -1,5 +1,4 @@
 import SamplesBlock from '@/components/ServiceBlock/ServiceBlock'
-import ServiceBlock from '@/components/SamplesBlock/SamplesBlock'
 import Events from '@/components/Events/Events'
 import Menu from '@/components/Menu/Menu'
 import HeroSection from '@/components/HeroSection/HeroSection'
@@ -14,7 +13,6 @@ const Home: React.FC<HomeProps> = () => {
 			<Menu />
 			<HeroSection />
 			<SamplesBlock />
-			<ServiceBlock />
 			<AboutUs />
 			<Events />
 			<Footer />
