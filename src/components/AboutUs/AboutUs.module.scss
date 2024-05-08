@@ -6,7 +6,7 @@
 	line-height: $lh-very-small;
 	margin-bottom: $distance-small;
 
-	@media (width >=834px) {
+	@media (width >= 834px) {
 		width: 588px;
 		font-size: $text-normal;
 		line-height: $lh-very-normal;
@@ -20,7 +20,7 @@
 	margin-top: $distance-very-small;
 	width: 217px;
 
-	@media (width >=834px) {
+	@media (width >= 834px) {
 		font-size: $text-normal;
 		width: 665px;
 	}
@@ -32,12 +32,12 @@
 	gap: $distance-very-small;
 	align-items: center;
 
-	@media (min-width: 833px) {
+	@media (min-width: 834px) {
 		align-items: center;
 		gap: $distance-normal;
 	}
 
-	@media (min-width: 1439px) {
+	@media (min-width: 1440px) {
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
@@ -46,11 +46,11 @@
 .itemTextWrapper {
 	padding: 15px;
 
-	@media (min-width: 833px) {
+	@media (min-width: 834px) {
 		padding: 32px;
 	}
 
-	@media (min-width: 1439px) {
+	@media (min-width: 1440px) {
 		padding: 32px 32px 0;
 	}
 }
@@ -61,12 +61,12 @@
 	border: 1px solid $prim-color-blue;
 	width: 300px;
 
-	@media (min-width: 833px) {
+	@media (min-width: 834px) {
 		border-radius: 30px;
 		width: 634px;
 	}
 
-	@media (min-width: 1439px) {
+	@media (min-width: 1440px) {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -83,7 +83,7 @@
 	line-height: $lh-big;
 	margin-bottom: $distance-very-small;
 
-	@media (min-width: 833px) {
+	@media (min-width: 834px) {
 		font-size: $text-big;
 		line-height: $lh-very-huge;
 		margin-bottom: $distance-small;
@@ -95,7 +95,7 @@
 	font-size: $text-small;
 	line-height: $lh-very-small;
 
-	@media (min-width: 833px) {
+	@media (min-width: 834px) {
 		font-size: $text-normal;
 		line-height: $lh-normal;
 	}
@@ -106,13 +106,13 @@
 	width: auto;
 	border-radius: 20px;
 
-	@media (min-width: 833px) {
+	@media (min-width: 834px) {
 		height: 373px;
 		width: 100%;
 		border-radius: 30px;
 	}
 
-	@media (min-width: 1439px) {
+	@media (min-width: 1440px) {
 		height: 373px;
 	}
 }
