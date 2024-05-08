@@ -9,8 +9,8 @@ export const authConfig: AuthOptions = {
             async authorize(credentials) {
 
                 const credentialDetails = {
-                    email: credentials.email,
-                    password: credentials.password,
+                    email: credentials?.email,
+                    password: credentials?.password,
                 };
 
                 const baseURL = process.env.NEXT_PUBLIC_API_KEY
@@ -23,10 +23,11 @@ export const authConfig: AuthOptions = {
                     },
                     body: JSON.stringify(credentialDetails),
                 });
+
                 const user = await res.json();
 
                 if (user && user.token) {
-                    return user.admin as User;
+                    return user;
                 } else {
                     console.log('check your credentials');
                     return null;
@@ -34,6 +35,23 @@ export const authConfig: AuthOptions = {
             }
         })
     ],
+    session: { strategy: "jwt" },
+    callbacks: {
+        async jwt({ token, user }) {
+            if (user) return { ...token, ...user };
+
+            return token;
+        },
+        async session({ token, session }) {
+            session.user = token.user;
+            session.token = token.token;
+            session.tokenExpires = token.tokenExpires;
+            session.refreshToken = token.refreshToken;
+            console.log('session: ', session);
+
+            return session;
+        },
+    },
     pages: {
         signIn: '/login'
     }

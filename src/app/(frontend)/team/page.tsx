@@ -8,7 +8,6 @@ import TeamForm from '@/components/TeamForm/TeamForm'
 import Events from '@/components/Events/Events'
 import Footer from '@/components/Footer/Footer'
 
-
 import smiles from '@/assets/images/smiles.png'
 import bird from '@/assets/images/bird.png'
 
@@ -17,6 +16,7 @@ import styles from './page.module.scss'
 type Props = {}
 
 const Team: React.FC<Props> = () => {
+
 	return (
 		<main>
 			<Menu />
