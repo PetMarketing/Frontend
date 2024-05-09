@@ -1,47 +1,51 @@
 @import "src/styles/variables.scss";
 
 .service {
-  display: flex;
-  flex-direction: column;
-  background-color: $white;
-  border: $prim-border;
-  border-radius: $border-radius;
-  height: 16.75rem;
-  padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	background-color: $white;
+	border: $prim-border;
+	border-radius: $border-radius;
+	height: 16.75rem;
+	padding: 2rem;
+	@media (width >= 92px) and (width < 1040px) {
+		height: 14.75rem;
+		padding: 1.2rem;
+	}
 
-  ul {
-    list-style: disc inside;
+	ul {
+		list-style: disc inside;
 
-    li {
-      margin-top: 0.625rem;
-      font-weight: 600;
+		li {
+			margin-top: 0.625rem;
+			font-weight: 600;
 
-      @media (max-width: 834px) {
-        margin-top: 0;
-      }
-    }
+			@media (width < 834px) {
+				margin-top: 0;
+			}
+		}
 
-    h4 {
-      display: inline-block;
-    }
-  }
+		h4 {
+			display: inline-block;
+		}
+	}
 
-  .button {
-    margin-top: auto;
-    align-self: center;
+	.button {
+		margin-top: auto;
+		align-self: center;
 
-    @media (max-width: 1440px) {
-      margin-top: 0.9375rem;
-    }
-  }
+		@media (width < 992px) {
+			margin-top: 0.9375rem;
+		}
+	}
 
-  @media (max-width: 1440px) {
-    padding: 1.75rem;
-    width: 25.25rem;
-    height: fit-content;
-  }
+	@media (width < 992px) {
+		padding: 1.75rem;
+		width: 25.25rem;
+		height: fit-content;
+	}
 
-  @media (max-width: 834px) {
-    width: 18.75rem;
-  }
+	@media (width < 834px) {
+		width: 18.75rem;
+	}
 }

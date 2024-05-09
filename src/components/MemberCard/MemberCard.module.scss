@@ -1,77 +1,76 @@
 @import "src/styles/variables.scss";
 
 .card {
-  width: 25.625rem;
-  height: 7.625rem;
-  border-radius: 3.75rem;
-  border: $prim-border;
-  background-color: $white;
-  color: $prim-color-blue;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  font-size: $text-mob-normal;
-  line-height: $lh-small;
+	width: 25.625rem;
+	height: 7.625rem;
+	border-radius: 3.75rem;
+	border: $prim-border;
+	background-color: $white;
+	color: $prim-color-blue;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	font-size: $text-mob-normal;
+	line-height: $lh-small;
 
-  img {
-    margin: 0 0 0.0625rem 0.3125rem;
-  }
+	img {
+		margin: 0 0 0.0625rem 0.3125rem;
+	}
 
-  div {
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+	div {
+		padding: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 
-    span {
-      font-weight: 400;
-      text-transform: uppercase;
+		span {
+			font-weight: 400;
+			text-transform: uppercase;
 
-      span {
-        display: block;
-        font-weight: normal;
-      }
-    }
+			span {
+				display: block;
+				font-weight: normal;
+			}
+		}
 
-    p {
-      margin-top: auto;
-      line-height: $lh-small;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-  }
+		p {
+			margin-top: auto;
+			line-height: $lh-small;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+	}
 
-  .officialPosition {
-    margin: 0;
-    font-size: $text-small;
-    font-weight: 400;
+	.officialPosition {
+		margin: 0;
+		font-size: $text-small;
+		font-weight: 400;
 
-    @media (max-width: 1440px) {
-      font-size: $text-mob-normal;
-    }
-  }
+		@media (max-width: 1440px) {
+			font-size: $text-mob-normal;
+		}
+	}
 }
 
-@media (max-width: 1440px) {
-  .card {
-    width: 331px;
-    height: 98px;
-    font-size: $text-small;
+@media (max-width: 1439px) {
+	.card {
+		width: 331px;
+		height: 98px;
+		font-size: $text-small;
 
-    div {
-      padding: 0.75rem;
-
-    }
-  }
+		div {
+			padding: 0.75rem;
+		}
+	}
 }
 
-@media (max-width: 834px) {
-  .card {
-    width: 300px;
-    height: 86px;
+@media (max-width: 833px) {
+	.card {
+		width: 300px;
+		height: 86px;
 
-    div {
-      padding: 0.5rem;
-    }
-  }
+		div {
+			padding: 0.5rem;
+		}
+	}
 }

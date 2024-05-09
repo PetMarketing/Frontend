@@ -6,7 +6,7 @@
 	line-height: $lh-very-small;
 	margin-bottom: $distance-small;
 
-	@media (width >=834px) {
+	@media (width >= 834px) {
 		width: 588px;
 		font-size: $text-normal;
 		line-height: $lh-very-normal;
@@ -20,7 +20,7 @@
 	margin-top: $distance-very-small;
 	width: 217px;
 
-	@media (width >=834px) {
+	@media (width >= 834px) {
 		font-size: $text-normal;
 		width: 665px;
 	}
@@ -30,6 +30,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: $distance-very-small;
+	align-items: center;
 
 	@media (min-width: 834px) {
 		align-items: center;
