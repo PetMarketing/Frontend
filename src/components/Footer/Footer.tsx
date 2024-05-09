@@ -9,8 +9,6 @@ import logoFooter from '@/assets/logoFooter.svg'
 import Instagram from '@/assets/svg/instagram-icon'
 import TelegramIcon from '@/assets/svg/telegram-icon'
 
-
-
 import styles from './Footer.module.scss'
 
 const Footer = () => {

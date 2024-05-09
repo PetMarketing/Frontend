@@ -47,15 +47,15 @@ export default function LoginForm() {
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values, actions) => submitHandler(values, actions)}>
             <Form className={styles.form}>
                 <div className={styles.inputContainer}>
-                    <label htmlFor="email">Email address:</label>
-                    <Field name="email" id="email" placeholder="" />
-                    <Error name="email">{error => <span className={styles.error}>{error}</span>}</Error>
+                    <label htmlFor='email'>Email address:</label>
+                    <Field name='email' id='email' placeholder='' />
+                    <Error name='email'>{error => <span className={styles.error}>{error}</span>}</Error>
                 </div>
 
                 <div className={styles.inputContainer}>
-                    <label htmlFor="password">Password: <a href="#" className={styles.resetPasswordLink}>Forget Password?</a></label>
-                    <Field name="password" id="password" type="password" placeholder="" />
-                    <Error name="password">{error => <span className={styles.error}>{error}</span>}</Error>
+                    <label htmlFor='password'>Password: <a href='#' className={styles.resetPasswordLink}>Forget Password?</a></label>
+                    <Field name='password' id='password' type='password' placeholder='' />
+                    <Error name='password'>{error => <span className={styles.error}>{error}</span>}</Error>
                 </div>
 
                 <Button variant='primarySquare' type='submit' className={styles.sendBtn}>

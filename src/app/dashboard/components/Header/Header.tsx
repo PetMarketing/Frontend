@@ -1,8 +1,8 @@
 'use client'
 
-import Link from "next/link";
-import { useSession, signOut } from "next-auth/react";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { useSession, signOut } from 'next-auth/react';
+import { usePathname } from 'next/navigation';
 
 import styles from './Header.module.scss';
 
@@ -12,7 +12,7 @@ export default function Header() {
 	return (
 		<header className={styles.header}>
 			<div>HEADER</div>
-			{session?.data && <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>signOut</Link>}
+			{session?.data && <Link href='#' onClick={() => signOut({ callbackUrl: '/' })}>signOut</Link>}
 		</header>
 	)
 }

@@ -1,5 +1,5 @@
-import type { AuthOptions, User } from "next-auth";
-import Credentials from "next-auth/providers/credentials";
+import type { AuthOptions, User } from 'next-auth';
+import Credentials from 'next-auth/providers/credentials';
 
 export const authConfig: AuthOptions = {
     providers: [
@@ -15,11 +15,11 @@ export const authConfig: AuthOptions = {
 
                 const baseURL = process.env.NEXT_PUBLIC_API_KEY
 
-                const res = await fetch(baseURL + "/admin/login", {
-                    method: "POST",
+                const res = await fetch(baseURL + '/admin/login', {
+                    method: 'POST',
                     headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(credentialDetails),
                 });
@@ -35,7 +35,7 @@ export const authConfig: AuthOptions = {
             }
         })
     ],
-    session: { strategy: "jwt" },
+    session: { strategy: 'jwt' },
     callbacks: {
         async jwt({ token, user }) {
             if (user) return { ...token, ...user };
@@ -47,7 +47,6 @@ export const authConfig: AuthOptions = {
             session.token = token.token;
             session.tokenExpires = token.tokenExpires;
             session.refreshToken = token.refreshToken;
-            console.log('session: ', session);
 
             return session;
         },
