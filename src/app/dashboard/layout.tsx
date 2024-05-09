@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import { Nunito_Sans } from 'next/font/google'
 
-import { getClsNames } from '@/utils/helpers'
-
-import styles from './layout.module.scss'
+import Providers from './components/Providers/Providers'
 
 import '@/styles/reset.scss'
 import '@/styles/variables.scss'
@@ -22,8 +20,10 @@ export const metadata: Metadata = {
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en'>
-			<body className={getClsNames(styles.layout, [nunitoSans.className])}>
-				{children}
+			<body className={nunitoSans.className}>
+				<Providers>
+					{children}
+				</Providers>
 			</body>
 		</html>
 	)

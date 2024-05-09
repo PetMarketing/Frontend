@@ -1,0 +1,68 @@
+@import "src/styles/variables.scss";
+
+.form {
+    .inputContainer {
+        margin-bottom: 40px;
+
+        label {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: $text-medium;
+            font-weight: 600;
+            line-height: normal;
+            color: #202224;
+            opacity: .8;
+
+            @media only screen and (max-width: 576px) {
+                font-size: $text-normal;
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 16px;
+            font-size: $text-medium;
+            font-weight: 600;
+            line-height: normal;
+            color: #a6a6a6;
+            background: #F1F4F9;
+            border: 1px solid #d8d8d8;
+            border-radius: 8px;
+
+            @media only screen and (max-width: 576px) {
+                font-size: $text-normal;
+            }
+        }
+    }
+
+    .resetPasswordLink {
+        margin-left: auto;
+        opacity: .6;
+        transition: $transition;
+
+        &:hover {
+            opacity: 1;
+            color: $prim-color-blue;
+        }
+    }
+
+    .sendBtn {
+        display: block;
+        width: 100%;
+        max-width: 418px;
+        height: auto;
+        margin: 55px auto 0;
+        padding: 1rem 0;
+        font-size: $text-large;
+
+        @media only screen and (max-width: 576px) {
+            margin-top: 40px;
+        }
+    }
+
+    .error {
+        margin-top: 5px;
+        display: inline-block;
+        color: red;
+    }
+}
