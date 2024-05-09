@@ -11,8 +11,6 @@ import { ILogin } from '@/types/ILogin';
 
 import styles from './LoginForm.module.scss';
 
-
-
 export default function LoginForm() {
     const initialValues = {
         email: '',
