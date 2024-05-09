@@ -4,10 +4,11 @@ import Credentials from 'next-auth/providers/credentials';
 export const authConfig: AuthOptions = {
     providers: [
         Credentials({
-            credentials: {},
-
+            credentials: {
+                email: { label: 'email', type: 'email', required: true },
+                password: { label: 'password', type: 'password', required: true },
+            },
             async authorize(credentials) {
-
                 const credentialDetails = {
                     email: credentials?.email,
                     password: credentials?.password,
