@@ -1,20 +1,43 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { Section } from '../Section/Section'
 
-import { useWhoWeAreStore } from '@/store/store'
+// import { useWhoWeAreStore } from '@/store/store'
 
 import styles from './AboutUs.module.scss'
 
+import { IAboutUs } from '@/types/IAboutUs'
+
+const apiKey = process.env.NEXT_PUBLIC_API_KEY
+
 const AboutUsSection = () => {
-	const { aboutUs, fetchAboutUs } = useWhoWeAreStore(state => state)
+	const [aboutUs, setAboutUs] = useState<IAboutUs[]>([])
+	const [loading, setLoading] = useState(false)
+
+	const fetchAboutUs = async () => {
+		try {
+			setLoading(true)
+			const response = await fetch(`${apiKey}/who-we-are`, {
+				method: 'GET',
+				next: { revalidate: 5000 },
+			})
+
+			const data = await response.json()
+			setAboutUs(data)
+		} catch (error) {
+			setLoading(false)
+			console.log(error)
+		} finally {
+			setLoading(false)
+		}
+	}
 
 	useEffect(() => {
 		fetchAboutUs()
-	}, [fetchAboutUs])
+	}, [])
 
 	return (
 		<Section title='Хто ми'>
@@ -23,25 +46,31 @@ const AboutUsSection = () => {
 					Усі агенції схожі: працюють в стандартних рекламних кабінетах, роблять
 					подібні налаштування і точно не можуть вигадати велосипед.
 				</p>
-				<p className={styles.boldText}>То чому вам треба обрати нас серед усіх інших?</p>
+				<p className={styles.boldText}>
+					То чому вам треба обрати нас серед усіх інших?
+				</p>
 			</div>
-			<ul className={styles.list}>
-				{aboutUs.map(item => (
-					<li className={styles.item} key={item.id}>
-						<div className={styles.itemTextWrapper}>
-							<h5 className={styles.itemCaption}>{item.title}</h5>
-							<p className={styles.itemText}>{item.description}</p>
-						</div>
-						<Image
-							className={styles.aboutItemImg}
-							src={item.image.imagePath}
-							alt={item.image.description}
-							width={300}
-							height={176}
-						/>
-					</li>
-				))}
-			</ul>
+			{loading ? (
+				<div>Loading...</div>
+			) : (
+				<ul className={styles.list}>
+					{aboutUs.map((item: IAboutUs) => (
+						<li className={styles.item} key={item.id}>
+							<div className={styles.itemTextWrapper}>
+								<h5 className={styles.itemCaption}>{item.title}</h5>
+								<p className={styles.itemText}>{item.description}</p>
+							</div>
+							<Image
+								className={styles.aboutItemImg}
+								src={item.image.imagePath}
+								alt={item.image.description}
+								width={300}
+								height={176}
+							/>
+						</li>
+					))}
+				</ul>
+			)}
 		</Section>
 	)
 }

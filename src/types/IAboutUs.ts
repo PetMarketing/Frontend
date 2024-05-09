@@ -1,11 +1,8 @@
 import { IImage } from './IImage'
 
 export interface IAboutUs {
-	createDate: string
-	deletedAt: string | null
-	description: string
-	id: number
+	id: string
 	title: string
-	updatetAt: string
+	description: string
 	image: IImage
 }

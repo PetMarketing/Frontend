@@ -1,44 +1,50 @@
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
-import { EventsStore, MembersStore, SamplesStore, ServicesStore, WhoWeAreStore } from '@/store/storeTypes'
+import {
+	EventsStore,
+	MembersStore,
+	SamplesStore,
+	// ServicesStore,
+	// WhoWeAreStore,
+} from '@/store/storeTypes'
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY
 
-export const useWhoWeAreStore = create<WhoWeAreStore>()(
-	devtools(set => ({
-		aboutUs: [],
-		loading: false,
-		error: null,
-		fetchAboutUs: async () => {
-			try {
-				set({ loading: true })
-				const response = await fetch(`${apiKey}/who-we-are`)
-				const data = await response.json()
-				set({ aboutUs: data, loading: false })
-			} catch (error) {
-				set({ error: (error as Error).message, loading: false })
-			}
-		},
-	})),
-)
+// export const useWhoWeAreStore = create<WhoWeAreStore>()(
+// 	devtools(set => ({
+// 		aboutUs: [],
+// 		loading: false,
+// 		error: null,
+// 		fetchAboutUs: async () => {
+// 			try {
+// 				set({ loading: true })
+// 				const response = await fetch(`${apiKey}/who-we-are`)
+// 				const data = await response.json()
+// 				set({ aboutUs: data, loading: false })
+// 			} catch (error) {
+// 				set({ error: (error as Error).message, loading: false })
+// 			}
+// 		},
+// 	})),
+// )
 
-export const useServicesStore = create<ServicesStore>()(
-	devtools(set => ({
-		services: [],
-		loading: false,
-		error: null,
-		fetchServices: async () => {
-			try {
-				set({ loading: true })
-				const response = await fetch(`${apiKey}/services`)
-				const data = await response.json()
-				set({ services: data, loading: false })
-			} catch (error) {
-				set({ error: (error as Error).message, loading: false })
-			}
-		},
-	})),
-)
+// export const useServicesStore = create<ServicesStore>()(
+// 	devtools(set => ({
+// 		services: [],
+// 		loading: false,
+// 		error: null,
+// 		fetchServices: async () => {
+// 			try {
+// 				set({ loading: true })
+// 				const response = await fetch(`${apiKey}/services`)
+// 				const data = await response.json()
+// 				set({ services: data, loading: false })
+// 			} catch (error) {
+// 				set({ error: (error as Error).message, loading: false })
+// 			}
+// 		},
+// 	})),
+// )
 
 export const useSamplesStore = create<SamplesStore>()(
 	devtools(set => ({

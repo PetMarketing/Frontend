@@ -1,23 +1,22 @@
-
-import { IAboutUs } from '@/types/IAboutUs'
-import { IService } from '@/types/IService'
+// import { IAboutUs } from '@/types/IAboutUs'
+// import { IService } from '@/types/IService'
 import { ISample } from '@/types/ISample'
 import { IMember } from '@/types/IMember'
 import { IEvent } from '@/types/IEvent'
 
-export interface WhoWeAreStore {
-	aboutUs: IAboutUs[] | []
-	loading: boolean
-	error: string | null
-	fetchAboutUs: () => Promise<void>
-}
+// export interface WhoWeAreStore {
+// 	aboutUs: IAboutUs[] | []
+// 	loading: boolean
+// 	error: string | null
+// 	fetchAboutUs: () => Promise<void>
+// }
 
-export interface ServicesStore {
-	services: IService[] | []
-	loading: boolean
-	error: string | null
-	fetchServices: () => Promise<void>
-}
+// export interface ServicesStore {
+// 	services: IService[] | []
+// 	loading: boolean
+// 	error: string | null
+// 	fetchServices: () => Promise<void>
+// }
 
 export interface SamplesStore {
 	samples: ISample[] | []

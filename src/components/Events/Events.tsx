@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { Section } from '@/components/Section/Section'
@@ -8,13 +8,34 @@ import EventCard from '@/components/EventCard/EventCard'
 
 import eventsSign from '@/assets/eventSign.png'
 
-import { useEventsStore } from '@/store/store'
+// import { useEventsStore } from '@/store/store'
 
 import styles from './Events.module.scss'
+import { IEvent } from '@/types/IEvent'
+
+const apiKey = process.env.NEXT_PUBLIC_API_KEY
 
 const Events = () => {
-	const { events, fetchEvents } = useEventsStore(state => state)
+	const [events, setEvents] = useState<IEvent[]>([])
+	const [loading, setLoading] = useState(false)
 
+	const fetchEvents = async () => {
+		try {
+			setLoading(true)
+			const response = await fetch(`${apiKey}/event`, {
+				method: 'GET',
+				next: { revalidate: 5000 },
+			})
+
+			const data = await response.json()
+			setEvents(data)
+		} catch (error) {
+			setLoading(false)
+			console.log(error)
+		} finally {
+			setLoading(false)
+		}
+	}
 	useEffect(() => {
 		fetchEvents()
 	}, [])
@@ -33,14 +54,18 @@ const Events = () => {
 					</div>
 				</div>
 				<div className={styles.eventsBlock}>
-					{events.map((e, i) => (
-						<EventCard
-							event={e}
-							key={e.id}
-							variant={i === 0 ? 'soonest' : 'later'}
-							style={{ gridArea: 'soonest' }}
-						/>
-					))}
+					{loading ? (
+						<div>Loading...</div>
+					) : (
+						events.map((e, i) => (
+							<EventCard
+								event={e}
+								key={e.id}
+								variant={i === 0 ? 'soonest' : 'later'}
+								style={{ gridArea: 'soonest' }}
+							/>
+						))
+					)}
 				</div>
 			</div>
 		</Section>

@@ -17,13 +17,10 @@ const Footer = () => {
 			<div className={styles.footer}>
 				<Image className={styles.logo} src={logoFooter} alt='logo' />
 				<div className={styles.socials}>
-					<Link href='https://t.me/misto_marketing' target='_blank'>
+					<Link href='https://t.me/' target='_blank'>
 						<TelegramIcon />
 					</Link>
-					<Link
-						href='https://www.instagram.com/misto_agency?igsh=cDU1cGVtMWozcWlv>'
-						target='_blank'
-					>
+					<Link href='https://www.instagram.com' target='_blank'>
 						<Instagram />
 					</Link>
 				</div>
@@ -40,13 +37,6 @@ const Footer = () => {
 					<Button variant='primary'>Замовити</Button>
 					<br />
 					<Button variant='primary'>Хочу у вашу тім</Button>
-				</div>
-				<div className={styles.legacy}>
-					<h6>Договір публічної оферти</h6>
-					<div>
-						<p>Дизайнери ____________</p>
-						<p>Розробники __________</p>
-					</div>
 				</div>
 			</div>
 		</div>
