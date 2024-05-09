@@ -16,6 +16,7 @@ import styles from './page.module.scss'
 type Props = {}
 
 const Team: React.FC<Props> = () => {
+
 	return (
 		<main>
 			<Menu />

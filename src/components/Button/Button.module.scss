@@ -4,6 +4,7 @@
 	border-radius: $border-radius;
 	text-align: center;
 	cursor: pointer;
+	transition: $transition;
 }
 
 .primaryBtn {
@@ -20,6 +21,16 @@
 	@media (min-width: 768px) {
 		padding: 0.625rem 0;
 		width: 11.875rem;
+	}
+}
+
+.primarySquareBtn {
+	@extend .primaryBtn;
+	border: $prim-border;
+	border-radius: $border-radius-square;
+
+	&:hover {
+		border-radius: $border-radius-square;
 	}
 }
 

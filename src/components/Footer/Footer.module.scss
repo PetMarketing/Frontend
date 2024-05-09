@@ -36,6 +36,7 @@
 		.withUs {
 			grid-area: withUs;
 		}
+<<<<<<< HEAD
 	}
 
 	h2 {
@@ -98,6 +99,74 @@
 				"withUs"
 				"legacy";
 
+=======
+
+		.legacy {
+			grid-area: legacy;
+		}
+	}
+
+	h2 {
+		margin-bottom: 0.9375rem;
+		color: $prim-color-green;
+	}
+
+	h5 {
+		color: $prim-color-green;
+		margin-bottom: 0.9375rem;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	button {
+		margin-bottom: 0.9375rem;
+	}
+
+	h6 {
+		margin-bottom: 1.25rem;
+	}
+
+	p {
+		font-size: $text-small;
+	}
+
+	@media (max-width: 1439px) {
+		.footer {
+			max-width: 43.375rem;
+			gap: 2rem;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas:
+				"logo logo"
+				"socials socials"
+				"contacts withUs"
+				"legacy legacy";
+		}
+
+		.logo,
+		.socials {
+			justify-self: center;
+		}
+
+		.withUs {
+			justify-self: right;
+		}
+	}
+
+	@media (max-width: 833px) {
+		.footer {
+			max-width: 20rem;
+			padding: 4rem 3rem;
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"logo"
+				"socials"
+				"contacts"
+				"withUs"
+				"legacy";
+
+>>>>>>> 5288d432185d6997f1bd4cd512b64ef4510edbf1
 			.withUs {
 				justify-self: left;
 			}
