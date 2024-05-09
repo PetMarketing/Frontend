@@ -13,8 +13,6 @@ import img from './img/houses.png';
 
 import styles from './BriefForm.module.scss';
 
-
-
 const initialValues = {
 	username: '',
 	position: '',
@@ -23,7 +21,6 @@ const initialValues = {
 	marketingInfo: '',
 	comment: '',
 }
-
 
 const validationSchema = Yup.object().shape({
 	username: Yup.string().required('Required'),
@@ -34,7 +31,6 @@ const validationSchema = Yup.object().shape({
 	comment: Yup.string().required('Required'),
 });
 
-
 export default function BriefForm() {
 	return (
 		<section className={styles.section}>
@@ -43,7 +39,7 @@ export default function BriefForm() {
 					<Form className={styles.form}>
 						<div className={getClsNames(styles.inputContainer, [styles.columns_2, styles.floatingLabel])}>
 							<Field name='username' id='username' placeholder='' />
-							<label htmlFor='username'>Ім'я</label>
+							<label htmlFor='username'>Ім&apos;я</label>
 							<Error name='username'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 

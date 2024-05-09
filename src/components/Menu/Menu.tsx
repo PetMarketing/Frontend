@@ -13,13 +13,9 @@ import styles from './Menu.module.scss'
 
 const menuItems = [
 	{ name: 'Послуги', route: '/' },
-	{ name: 'Кейси', route: '/case' },
 	{ name: 'Хто ми', route: '/' },
 	{ name: 'Команда', route: '/team' },
 	{ name: 'Бриф', route: '/brief' },
-	{ name: 'Ціни', route: '/' },
-	{ name: 'Івенти', route: '/event' },
-	{ name: 'Контакти', route: '/' },
 ]
 
 const Menu = () => {

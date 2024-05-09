@@ -1,28 +1,28 @@
 @import "src/styles/variables.scss";
 
 .header {
-  margin-top: $distance-big;
-  padding-bottom: $distance-normal;
+	margin-top: $distance-big;
+	padding-bottom: $distance-normal;
 
-  @media (max-width: 834px) {
-    padding-bottom: $distance-very-small;
-  }
+	@media (max-width: 833px) {
+		padding-bottom: $distance-very-small;
+	}
 
-  .navMenu {
-    margin-top: $distance-normal;
-    color: $prim-color-grey;
-    font-size: $text-medium;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: $distance-very-small;
+	.navMenu {
+		margin-top: $distance-normal;
+		color: $prim-color-grey;
+		font-size: $text-medium;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		gap: $distance-very-small;
 
-    a:hover {
-      text-decoration: underline;
-    }
+		a:hover {
+			text-decoration: underline;
+		}
 
-    @media (max-width: 834px) {
-      display: none;
-    }
-  }
+		@media (max-width: 833px) {
+			display: none;
+		}
+	}
 }
