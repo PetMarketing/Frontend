@@ -43,7 +43,7 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 						<h5>{event.date}</h5>
 						<h5>{event.location}</h5>
 					</div>
-					<h2>Котики у місті</h2>
+					<h2 className={styles.eventTitleName}>Котики у місті</h2>
 					<Button variant='primary' className={styles.button}>
 						Детальніше
 					</Button>

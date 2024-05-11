@@ -10,6 +10,10 @@
 		margin-bottom: $distance-small;
 		flex-wrap: wrap;
 	}
+
+	.eventTitleName {
+		width: 140px;
+	}
 }
 
 .newEvent {
@@ -63,8 +67,10 @@
 
 @media (max-width: 1439px) {
 	.event {
-		padding: 5px;
-
+		padding: 8px;
+		.eventTitleName {
+			width: 110px;
+		}
 		h5 {
 			font-size: $text-mob-normal;
 		}
@@ -97,7 +103,8 @@
 	}
 
 	.laterEvent {
-		width: 205px;
+		width: 100%;
+		padding: 15px;
 
 		h2 {
 			font-size: 20px !important;
@@ -109,6 +116,9 @@
 	.event {
 		width: 300px;
 		padding: $distance-small;
+		.eventTitleName {
+			width: auto;
+		}
 	}
 
 	.newEvent {
