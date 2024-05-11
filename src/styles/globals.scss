@@ -33,7 +33,7 @@ h2 {
 	font-weight: 900;
 	text-transform: uppercase;
 
-	@media (max-width: 1440px) {
+	@media (max-width: 1439px) {
 		font-size: $text-big;
 	}
 }
@@ -44,11 +44,11 @@ h3 {
 	line-height: 100%;
 	text-transform: uppercase;
 
-	@media (max-width: 1440px) {
+	@media (max-width: 1439px) {
 		font-size: $text-big;
 	}
 
-	@media (max-width: 836px) {
+	@media (max-width: 833px) {
 		font-size: $text-mob-normal;
 	}
 }
@@ -57,7 +57,7 @@ h4 {
 	font-size: $text-normal;
 	font-weight: 400;
 
-	@media (max-width: 836px) {
+	@media (max-width: 833px) {
 		font-size: $text-small;
 		font-weight: 600;
 		line-height: $lh-very-small;
@@ -69,7 +69,7 @@ h5 {
 	font-weight: 800;
 	text-transform: uppercase;
 
-	@media (max-width: 836px) {
+	@media (max-width: 833px) {
 		font-size: $text-mob-normal;
 	}
 }
@@ -78,7 +78,7 @@ h6 {
 	font-size: $text-medium;
 	font-weight: 600;
 
-	@media (max-width: 836px) {
+	@media (max-width: 833px) {
 		font-size: $text-small;
 	}
 }
