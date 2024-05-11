@@ -50,7 +50,7 @@ const Events = () => {
 						<h3>конференції</h3>
 						<h3>вечірки</h3>
 						<h3>вебінари</h3>
-						<h3>онлайн та офлай</h3>
+						<h3>онлайн та офлайн</h3>
 					</div>
 				</div>
 				<div className={styles.eventsBlock}>

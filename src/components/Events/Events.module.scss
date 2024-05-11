@@ -2,6 +2,7 @@
 
 .eventsWrapper {
 	background-color: $prim-color-green;
+	padding-top: 32px;
 
 	.events {
 		display: flex;
@@ -63,6 +64,7 @@
 		@media (max-width: 833px) {
 			flex-direction: column-reverse;
 			margin-top: 15px;
+			padding-top: 15px;
 
 			.imageBlock {
 				img {
