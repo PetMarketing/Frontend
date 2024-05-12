@@ -1,8 +1,14 @@
 @import "src/styles/variables.scss";
 
 .contentWrapper {
+	width: 100%;
+	max-width: 26.875rem;
 	margin-bottom: 51px;
-	padding-bottom: 7px;
+
+	@media only screen and (max-width: 1139px) {
+		max-width: unset;
+		margin-bottom: 0;
+	}
 
 	p {
 		font-weight: 600;
@@ -10,16 +16,18 @@
 		line-height: $lh-very-small;
 		height: 19px;
 
-		@media (width >= 834px) {
+		@media (width >=834px) {
 			font-size: $text-normal;
 		}
 	}
 }
 
 .text {
-	height: 38px;
+	@media only screen and (max-width: 1139px) {
+		margin-bottom: $distance-normal;
+	}
 
-	@media (width < 1440px) {
+	@media only screen and (max-width: 574px) {
 		margin-bottom: $distance-small;
 	}
 }
@@ -30,7 +38,7 @@
 	gap: $distance-very-small;
 	margin: $distance-small 0;
 
-	@media (width >= 834px) {
+	@media (width >=834px) {
 		margin: $distance-normal 0;
 		gap: $distance-small;
 	}
@@ -51,7 +59,7 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 
-		@media (width >= 834px) {
+		@media (width >=834px) {
 			width: 1.25rem;
 			height: 1.25rem;
 		}
@@ -65,7 +73,7 @@
 		padding-left: $distance-small;
 		height: 21px;
 
-		@media (width >= 834px) {
+		@media (width >=834px) {
 			font-size: $text-normal;
 			padding-left: $distance-normal;
 			line-height: $lh-very-normal;
@@ -79,27 +87,29 @@
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	overflow: hidden;
+	object-fit: cover;
 
-	@media (width >= 834px) {
+	@media (width >=834px) {
 		width: 100%;
 		height: 500px;
 	}
 
-	@media (width >= 780px) and (width < 834px) {
+	@media (width >=780px) and (width < 834px) {
 		width: auto;
 		position: absolute;
 		right: 70px;
 		top: 0;
 	}
 
-	@media (width >= 1140px) and (width < 1300px) {
+	@media (width >=1140px) and (width < 1300px) {
 		width: auto;
 
 		position: absolute;
 		right: 70px;
 		top: 0;
 	}
-	@media (width >= 1300px) and (width < 1440px) {
+
+	@media (width >=1300px) and (width < 1440px) {
 		min-width: 694px;
 		width: auto;
 
@@ -108,7 +118,7 @@
 		top: 0;
 	}
 
-	@media (width >= 1440px) {
+	@media (width >=1440px) {
 		position: absolute;
 		right: 70px;
 		top: 0;
