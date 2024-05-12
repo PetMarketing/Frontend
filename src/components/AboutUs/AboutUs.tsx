@@ -36,8 +36,8 @@ const AboutUsSection = () => {
 							className={styles.aboutItemImg}
 							src={item.image.imagePath}
 							alt={item.image.description}
-							width={300}
-							height={176}
+							width={634}
+							height={374}
 						/>
 					</li>
 				))}

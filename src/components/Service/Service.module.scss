@@ -6,9 +6,10 @@
 	background-color: $white;
 	border: $prim-border;
 	border-radius: $border-radius;
-	height: 16.75rem;
+	height: 100%;
 	padding: 2rem;
-	@media (width >= 92px) and (width < 1040px) {
+
+	@media (width >=992px) and (width < 1040px) {
 		height: 14.75rem;
 		padding: 1.2rem;
 	}
@@ -35,17 +36,17 @@
 		align-self: center;
 
 		@media (width < 992px) {
-			margin-top: 0.9375rem;
+			margin-top: 1.6rem;
 		}
 	}
 
 	@media (width < 992px) {
-		padding: 1.75rem;
 		width: 25.25rem;
 		height: fit-content;
 	}
 
-	@media (width < 834px) {
-		width: 18.75rem;
+	@media (width < 425px) {
+		width: 20rem;
+		padding: 1rem;
 	}
 }
