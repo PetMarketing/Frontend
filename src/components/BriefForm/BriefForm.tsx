@@ -14,20 +14,20 @@ import img from './img/houses.png';
 import styles from './BriefForm.module.scss';
 
 const initialValues = {
-	username: '',
+	name: '',
 	position: '',
-	company: '',
+	companyName: '',
 	contact: '',
-	marketingInfo: '',
+	whatStuffsToUseNow: '',
 	comment: '',
 }
 
 const validationSchema = Yup.object().shape({
-	username: Yup.string().required('Required'),
+	name: Yup.string().required('Required'),
 	position: Yup.string().required('Required'),
-	company: Yup.string().required('Required'),
+	companyName: Yup.string().required('Required'),
 	contact: Yup.string().required('Required'),
-	marketingInfo: Yup.string().required('Required'),
+	whatStuffsToUseNow: Yup.string().required('Required'),
 	comment: Yup.string().required('Required'),
 });
 
@@ -38,9 +38,9 @@ export default function BriefForm() {
 				<Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={values => console.log('values', values)}>
 					<Form className={styles.form}>
 						<div className={getClsNames(styles.inputContainer, [styles.columns_4, styles.columns_xl_6, styles.floatingLabel])}>
-							<Field name='username' id='username' placeholder='' />
-							<label htmlFor='username'>Ім&apos;я</label>
-							<Error name='username'>{error => <span className={styles.error}>{error}</span>}</Error>
+							<Field name='name' id='name' placeholder='' />
+							<label htmlFor='name'>Ім&apos;я</label>
+							<Error name='name'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
 						<div className={getClsNames(styles.inputContainer, [styles.columns_4, styles.columns_xl_6, styles.floatingLabel])}>
@@ -50,9 +50,9 @@ export default function BriefForm() {
 						</div>
 
 						<div className={getClsNames(styles.inputContainer, [styles.columns_4, styles.floatingLabel])}>
-							<Field name='company' id='company' placeholder='' />
-							<label htmlFor='company'>Назва компанії</label>
-							<Error name='company'>{error => <span className={styles.error}>{error}</span>}</Error>
+							<Field name='companyName' id='companyName' placeholder='' />
+							<label htmlFor='companyName'>Назва компанії</label>
+							<Error name='companyName'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
 						<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
@@ -62,21 +62,21 @@ export default function BriefForm() {
 						</div>
 
 						<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
-							<label htmlFor='marketingInfo'>Які маркетингові канали використовуєте зараз? Які бюджети на просування використовуєте? Чи задоволені результатом?</label>
-							<Field name='marketingInfo' id='marketingInfo' />
-							<Error name='marketingInfo'>{error => <span className={styles.error}>{error}</span>}</Error>
+							<label htmlFor='whatStuffsToUseNow'>Які маркетингові канали використовуєте зараз? Які бюджети на просування використовуєте? Чи задоволені результатом?</label>
+							<Field name='whatStuffsToUseNow' id='whatStuffsToUseNow' />
+							<Error name='whatStuffsToUseNow'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
 						<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
-							<label htmlFor='services'>Які послуги / запит наша агенція може закрити для вас?</label>
-							<Field as='select' name='services' id='services'>
+							<label htmlFor='marketingWishes'>Які послуги / запит наша агенція може закрити для вас?</label>
+							<Field as='select' name='marketingWishes' id='marketingWishes'>
 								<option value='target'>таргетована реклама в Instagram та Facebook</option>
 								<option value='google-ads'>реклама в Google</option>
 								<option value='consulting'>консалтинг</option>
 								<option value='strategy'>розробка стратегії</option>
 								<option value='other'>інше</option>
 							</Field>
-							<Error name='services'>{error => <span className={styles.error}>{error}</span>}</Error>
+							<Error name='marketingWishes'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
 						<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
