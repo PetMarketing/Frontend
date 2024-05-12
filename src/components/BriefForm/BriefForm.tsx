@@ -37,37 +37,37 @@ export default function BriefForm() {
 			<Container>
 				<Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={values => console.log('values', values)}>
 					<Form className={styles.form}>
-						<div className={getClsNames(styles.inputContainer, [styles.columns_2, styles.floatingLabel])}>
+						<div className={getClsNames(styles.inputContainer, [styles.columns_4, styles.columns_xl_6, styles.floatingLabel])}>
 							<Field name='username' id='username' placeholder='' />
 							<label htmlFor='username'>Ім&apos;я</label>
 							<Error name='username'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
-						<div className={getClsNames(styles.inputContainer, [styles.columns_2, styles.floatingLabel])}>
+						<div className={getClsNames(styles.inputContainer, [styles.columns_4, styles.columns_xl_6, styles.floatingLabel])}>
 							<Field name='position' id='position' placeholder='' />
 							<label htmlFor='position'>Посада</label>
 							<Error name='position'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
-						<div className={getClsNames(styles.inputContainer, [styles.columns_2, styles.floatingLabel])}>
+						<div className={getClsNames(styles.inputContainer, [styles.columns_4, styles.floatingLabel])}>
 							<Field name='company' id='company' placeholder='' />
 							<label htmlFor='company'>Назва компанії</label>
 							<Error name='company'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
-						<div className={getClsNames(styles.inputContainer, [styles.columns_4])}>
+						<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
 							<label htmlFor='contact'>Контакт для звʼязку (Телеграм / Пошта / Телефон)</label>
 							<Field name='contact' id='contact' />
 							<Error name='contact'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
-						<div className={getClsNames(styles.inputContainer, [styles.columns_4])}>
+						<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
 							<label htmlFor='marketingInfo'>Які маркетингові канали використовуєте зараз? Які бюджети на просування використовуєте? Чи задоволені результатом?</label>
 							<Field name='marketingInfo' id='marketingInfo' />
 							<Error name='marketingInfo'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
-						<div className={getClsNames(styles.inputContainer, [styles.columns_4])}>
+						<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
 							<label htmlFor='services'>Які послуги / запит наша агенція може закрити для вас?</label>
 							<Field as='select' name='services' id='services'>
 								<option value='target'>таргетована реклама в Instagram та Facebook</option>
@@ -79,7 +79,7 @@ export default function BriefForm() {
 							<Error name='services'>{error => <span className={styles.error}>{error}</span>}</Error>
 						</div>
 
-						<div className={getClsNames(styles.inputContainer, [styles.columns_4])}>
+						<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
 							<label htmlFor='comment'>Залиште коментар</label>
 							<Field name='comment' id='comment' />
 							<Error name='comment'>{error => <span className={styles.error}>{error}</span>}</Error>
