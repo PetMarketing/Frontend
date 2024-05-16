@@ -8,15 +8,16 @@ import * as Yup from 'yup';
 import { Container } from '../Container/Container';
 import Button from '../Button/Button';
 import Loader from '../Loader/Loader';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import { IBriefForm } from '@/types/IBriefForm';
 
 import { getClsNames } from '@/utils/helpers';
 
-import img from './img/houses.png';
+import formImg from './img/houses.png';
+import successImg from './img/monkey.png';
 
 import styles from './BriefForm.module.scss';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 export default function BriefForm() {
 	const initialValues = {
@@ -24,6 +25,7 @@ export default function BriefForm() {
 		position: '',
 		companyName: '',
 		contact: '',
+		webUrl: '',
 		whatStuffsToUseNow: '',
 		marketingWishes: '',
 		comment: '',
@@ -34,7 +36,9 @@ export default function BriefForm() {
 		position: Yup.string().required('Required'),
 		companyName: Yup.string().required('Required'),
 		contact: Yup.string().required('Required'),
+		webUrl: Yup.string().required('Required'),
 		whatStuffsToUseNow: Yup.string().required('Required'),
+		marketingWishes: Yup.string().required('Required'),
 		comment: Yup.string().required('Required'),
 	});
 
@@ -42,10 +46,11 @@ export default function BriefForm() {
 
 	const [isError, setIsError] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
 
 	const submitHandler = async (values: IBriefForm, actions: FormikHelpers<IBriefForm>) => {
-		setIsError(false); // Скидаємо попередню помилку перед новим запитом
-		setIsLoading(true); // Позначаємо, що почалася відправка запиту
+		setIsError(false); // Resetting the previous error before a new request
+		setIsLoading(true); // Indicate that the request has been started
 
 		try {
 			const res = await fetch(`${baseURL}/business-form`, {
@@ -57,19 +62,19 @@ export default function BriefForm() {
 			});
 
 			if (!res.ok) {
-				setIsError(true); // Встановлюємо помилку, якщо статус відповіді не є успішним
+				setIsError(true); // Set an error if the response status is not successful
 			} else {
-				const data = await res.json();
-				console.log(data); // обробка відповіді від сервера
+				setIsSuccess(true); // Set success state upon successful form submission
+
+				actions.resetForm();
 			}
 		} catch (error) {
 			console.error('Error:', error);
-			setIsError(true); // Встановлюємо помилку при виникненні помилки при виконанні запиту
+			setIsError(true); // Set an error when an error occurs when executing a request
 		} finally {
-			setIsLoading(false); // Позначаємо, що відправка завершена
+			setIsLoading(false); // Indicate that the shipment is complete
 
-			actions.setSubmitting(false); // позначаємо, що відправка завершена у Formik
-			actions.resetForm();
+			actions.setSubmitting(false); // Mark that the sending is completed in Formik
 		}
 	}
 
@@ -80,6 +85,18 @@ export default function BriefForm() {
 				{isLoading ? (
 					<div className={styles.loaderWrapper}>
 						<Loader className={styles.loader} />
+					</div>
+				) : isSuccess ? (
+					<div className={styles.successWrapper}>
+						<p className={styles.successText}>
+							Успішно<br />надіслано!
+						</p>
+
+						<Image src={successImg} width={722} height={379} alt='Monkey Chaos' className={styles.successImage} />
+
+						<p className={styles.successText}>
+							Скоро ми вам<br />напишемо:)
+						</p>
 					</div>
 				) : (
 					<>
@@ -110,6 +127,12 @@ export default function BriefForm() {
 								</div>
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
+									<label htmlFor='webUrl'>Посилання на сайт / соцмережі компанії</label>
+									<Field name='webUrl' id='webUrl' />
+									<Error name='webUrl'>{error => <span className={styles.error}>{error}</span>}</Error>
+								</div>
+
+								<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
 									<label htmlFor='whatStuffsToUseNow'>Які маркетингові канали використовуєте зараз? Які бюджети на просування використовуєте? Чи задоволені результатом?</label>
 									<Field name='whatStuffsToUseNow' id='whatStuffsToUseNow' />
 									<Error name='whatStuffsToUseNow'>{error => <span className={styles.error}>{error}</span>}</Error>
@@ -117,12 +140,13 @@ export default function BriefForm() {
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
 									<label htmlFor='marketingWishes'>Які послуги / запит наша агенція може закрити для вас?</label>
-									<Field as='select' name='marketingWishes' id='marketingWishes'>
-										<option value='target'>таргетована реклама в Instagram та Facebook</option>
-										<option value='google-ads'>реклама в Google</option>
-										<option value='consulting'>консалтинг</option>
-										<option value='strategy'>розробка стратегії</option>
-										<option value='other'>інше</option>
+									<Field as='select' name='marketingWishes' id='marketingWishes' placeholder='Оберіть опцію'>
+										<option>Choose the option</option>
+										<option value='таргетована реклама в Instagram та Facebook'>таргетована реклама в Instagram та Facebook</option>
+										<option value='реклама в Google'>реклама в Google</option>
+										<option value='консалтинг'>консалтинг</option>
+										<option value='розробка стратегії'>розробка стратегії</option>
+										<option value='інше'>інше</option>
 									</Field>
 									<Error name='marketingWishes'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
@@ -133,7 +157,7 @@ export default function BriefForm() {
 									<Error name='comment'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
 
-								<Image src={img} width={520} height={230} alt='houses' className={styles.image} />
+								<Image src={formImg} width={520} height={230} alt='houses' className={styles.image} />
 
 								<Button variant='primary' type='submit' className={styles.sendBtn}>
 									Надіслати

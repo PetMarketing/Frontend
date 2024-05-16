@@ -117,3 +117,46 @@
 .error {
   color: $tag-bg-color;
 }
+
+.successWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.successText {
+  color: $prim-color-blue;
+  font-size: $text-huge;
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  @media only screen and (max-width: 992px) {
+    font-size: $text-big;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: $text-medium;
+  }
+}
+
+.successImage {
+  width: 100%;
+  height: auto;
+  max-width: 722px;
+  margin: $distance-normal 0;
+  object-fit: contain;
+
+  @media only screen and (max-width: 992px) {
+    max-width: 600px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin: $distance-small 0;
+  }
+
+  @media only screen and (max-width: 425px) {
+    max-width: 300px;
+  }
+}
