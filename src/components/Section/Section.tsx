@@ -1,11 +1,11 @@
-import { Dela_Gothic_One } from 'next/font/google'
-
-import styles from './Section.module.scss'
-import { getClsNames } from '@/utils/helpers'
 import { Container } from '../Container/Container'
 import Logo from '../Logo/Logo'
 
-const dela = Dela_Gothic_One({ weight: ['400'], subsets: ['latin'] })
+import { getClsNames } from '@/utils/helpers'
+
+import { dela } from '@/styles/fonts/fonts'
+
+import styles from './Section.module.scss'
 
 type SectionProps = {
 	title?: string
