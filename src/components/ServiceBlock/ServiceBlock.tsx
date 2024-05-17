@@ -1,41 +1,22 @@
-'use client'
-
-import React, { useEffect, useState } from 'react'
-
 import { Section } from '@/components/Section/Section'
 import Service from '@/components/Service/Service'
+
+import { getServices } from '@/services/getServices';
 
 import { IGroupedServices, IService } from '@/types/IService'
 
 import styles from './ServiceBlock.module.scss'
 
-const apiKey = process.env.NEXT_PUBLIC_API_KEY
+const ServiceBlock = async () => {
+	const services: IService[] = await getServices();
 
-const ServiceBlock = () => {
-	const [services, setServices] = useState()
-	const [loading, setLoading] = useState(false)
-
-	const fetchServices = async () => {
-		try {
-			setLoading(true)
-			const response = await fetch(`${apiKey}/services`, {
-				method: 'GET',
-				next: { revalidate: 5000 },
-			})
-
-			const data = await response.json()
-			setServices(data)
-		} catch (error) {
-			setLoading(false)
-			console.log(error)
-		} finally {
-			setLoading(false)
-		}
+	if (!services.length) {
+		return (
+			<Section title="Послуги">
+				<p>Нічого не знайдено</p>
+			</Section>
+		);
 	}
-
-	useEffect(() => {
-		fetchServices()
-	}, [])
 
 	const groupServicesByCategory = (services: IService[]) => {
 		const groupedServices: IGroupedServices = {}
@@ -64,11 +45,7 @@ const ServiceBlock = () => {
 
 	return (
 		<Section title='Послуги'>
-			{loading ? (
-				<div>Loading...</div>
-			) : (
-				services && renderGroupedServices(groupServicesByCategory(services))
-			)}
+			{renderGroupedServices(groupServicesByCategory(services))}
 		</Section>
 	)
 }
