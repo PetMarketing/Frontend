@@ -4,12 +4,10 @@ import { Section } from '../Section/Section'
 
 import { getAboutUs } from '@/services/getAboutUs '
 
-import { IAboutUs } from '@/types/IAboutUs'
-
 import styles from './AboutUs.module.scss'
 
 const AboutUsSection = async () => {
-	const aboutUs: IAboutUs[] = await getAboutUs();
+	const aboutUs = await getAboutUs();
 
 	return (
 		<Section title='Хто ми'>
@@ -26,7 +24,7 @@ const AboutUsSection = async () => {
 				<p>Нічого не знайдено</p>
 			) : (
 				<ul className={styles.list}>
-					{aboutUs.map((item: IAboutUs) => (
+					{aboutUs.map((item) => (
 						<li className={styles.item} key={item.id}>
 							<div className={styles.itemTextWrapper}>
 								<h5 className={styles.itemCaption}>{item.title}</h5>
