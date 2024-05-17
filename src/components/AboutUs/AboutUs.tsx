@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { Section } from '../Section/Section'
 
-import { getAboutUs } from '@/services/getAboutUs '
+import { getAboutUs } from '@/services/fetchData';
 
 import styles from './AboutUs.module.scss'
 
