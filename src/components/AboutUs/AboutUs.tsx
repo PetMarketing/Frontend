@@ -1,43 +1,15 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { Section } from '../Section/Section'
 
-// import { useWhoWeAreStore } from '@/store/store'
-
-import styles from './AboutUs.module.scss'
+import { getAboutUs } from '@/services/getAboutUs '
 
 import { IAboutUs } from '@/types/IAboutUs'
 
-const apiKey = process.env.NEXT_PUBLIC_API_KEY
+import styles from './AboutUs.module.scss'
 
-const AboutUsSection = () => {
-	const [aboutUs, setAboutUs] = useState<IAboutUs[]>([])
-	const [loading, setLoading] = useState(false)
-
-	const fetchAboutUs = async () => {
-		try {
-			setLoading(true)
-			const response = await fetch(`${apiKey}/who-we-are`, {
-				method: 'GET',
-				next: { revalidate: 5000 },
-			})
-
-			const data = await response.json()
-			setAboutUs(data)
-		} catch (error) {
-			setLoading(false)
-			console.log(error)
-		} finally {
-			setLoading(false)
-		}
-	}
-
-	useEffect(() => {
-		fetchAboutUs()
-	}, [])
+const AboutUsSection = async () => {
+	const aboutUs: IAboutUs[] = await getAboutUs();
 
 	return (
 		<Section title='Хто ми'>
@@ -50,8 +22,8 @@ const AboutUsSection = () => {
 					То чому вам треба обрати нас серед усіх інших?
 				</p>
 			</div>
-			{loading ? (
-				<div>Loading...</div>
+			{!aboutUs.length ? (
+				<p>Нічого не знайдено</p>
 			) : (
 				<ul className={styles.list}>
 					{aboutUs.map((item: IAboutUs) => (
