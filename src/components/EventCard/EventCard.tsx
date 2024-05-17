@@ -1,12 +1,10 @@
-'use client'
-
-import React from 'react'
-import { Dela_Gothic_One } from 'next/font/google'
 import Button from '@/components/Button/Button'
 
 import { IEvent } from '@/types/IEvent'
 
 import Flower from '@/assets/svg/flower'
+
+import { dela } from '@/styles/fonts/fonts'
 
 import styles from './EventCard.module.scss'
 
@@ -15,8 +13,6 @@ interface Props {
 	variant: 'soonest' | 'later'
 	style?: React.CSSProperties
 }
-
-const dela = Dela_Gothic_One({ weight: ['400'], subsets: ['latin'] })
 
 const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 	return (

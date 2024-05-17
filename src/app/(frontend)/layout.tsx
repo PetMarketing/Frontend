@@ -1,16 +1,10 @@
 import type { Metadata } from 'next'
-import { Montserrat, Dela_Gothic_One } from 'next/font/google'
+
+import { montserrat } from '@/styles/fonts/fonts'
 
 import '@/styles/reset.scss'
 import '@/styles/variables.scss'
 import '@/styles/globals.scss'
-
-const montserrat = Montserrat({
-	weight: ['400', '500', '600', '800'],
-	subsets: ['latin'],
-})
-
-const dela = Dela_Gothic_One({ weight: ['400'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	title: 'Misto Agency',
