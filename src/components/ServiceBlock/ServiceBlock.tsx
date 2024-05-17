@@ -12,7 +12,7 @@ const ServiceBlock = async () => {
 
 	if (!services.length) {
 		return (
-			<Section title="Послуги">
+			<Section title='Послуги'>
 				<p>Нічого не знайдено</p>
 			</Section>
 		);

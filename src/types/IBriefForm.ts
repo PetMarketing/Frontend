@@ -3,6 +3,7 @@ export interface IBriefForm {
     position: string;
     companyName: string;
     contact: string;
+    webUrl: string,
     whatStuffsToUseNow: string;
     marketingWishes: string;
     comment: string;
