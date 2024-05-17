@@ -11,16 +11,11 @@ export async function fetchData<T>(endpoint: string): Promise<T[]> {
             },
         });
 
-        if (!response.ok) {
-            throw new Error('Unable to fetch data.');
-        }
+        if (!response.ok) throw new Error('Unable to fetch posts.');
 
         const data = await response.json();
 
-        if (!data.length) {
-            console.warn('No data found.');
-            return [];
-        }
+        if (!data.length) throw new Error('No services found.');
 
         return data;
     } catch (error) {
