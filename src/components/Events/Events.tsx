@@ -1,6 +1,3 @@
-'use client'
-
-import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { Section } from '@/components/Section/Section'
@@ -8,37 +5,11 @@ import EventCard from '@/components/EventCard/EventCard'
 
 import eventsSign from '@/assets/eventSign.png'
 
-// import { useEventsStore } from '@/store/store'
-
 import styles from './Events.module.scss'
-import { IEvent } from '@/types/IEvent'
+import { getEvents } from '@/services/getEvents'
 
-const apiKey = process.env.NEXT_PUBLIC_API_KEY
-
-const Events = () => {
-	const [events, setEvents] = useState<IEvent[]>([])
-	const [loading, setLoading] = useState(false)
-
-	const fetchEvents = async () => {
-		try {
-			setLoading(true)
-			const response = await fetch(`${apiKey}/event`, {
-				method: 'GET',
-				next: { revalidate: 5000 },
-			})
-
-			const data = await response.json()
-			setEvents(data)
-		} catch (error) {
-			setLoading(false)
-			console.log(error)
-		} finally {
-			setLoading(false)
-		}
-	}
-	useEffect(() => {
-		fetchEvents()
-	}, [])
+const Events = async () => {
+	const events = await getEvents();
 
 	return (
 		<Section title='Івенти' className={styles.eventsWrapper}>
@@ -54,8 +25,8 @@ const Events = () => {
 					</div>
 				</div>
 				<div className={styles.eventsBlock}>
-					{loading ? (
-						<div>Loading...</div>
+					{!events.length ? (
+						<p>Нічого не знайдено</p>
 					) : (
 						events.map((e, i) => (
 							<EventCard

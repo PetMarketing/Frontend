@@ -1,10 +1,10 @@
-import { IAboutUs } from '@/types/IAboutUs'
+import { IEvent } from '@/types/IEvent'
 
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
-export const getAboutUs = async (): Promise<IAboutUs[]> => {
+export const getEvents = async (): Promise<IEvent[]> => {
     try {
-        const response = await fetch(`${baseURL}/who-we-are`, {
+        const response = await fetch(`${baseURL}/event`, {
             next: {
                 revalidate: 86400 // один день в секундах
             }
