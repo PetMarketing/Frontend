@@ -1,14 +1,14 @@
 import { Section } from '@/components/Section/Section'
 import Service from '@/components/Service/Service'
 
-import { getServices } from '@/services/getServices';
+import { getServices } from '@/services/fetchData'
 
 import { IGroupedServices, IService } from '@/types/IService'
 
 import styles from './ServiceBlock.module.scss'
 
 const ServiceBlock = async () => {
-	const services: IService[] = await getServices();
+	const services = await getServices();
 
 	if (!services.length) {
 		return (

@@ -3,10 +3,11 @@ import Image from 'next/image'
 import { Section } from '@/components/Section/Section'
 import EventCard from '@/components/EventCard/EventCard'
 
+import { getEvents } from '@/services/fetchData'
+
 import eventsSign from '@/assets/eventSign.png'
 
 import styles from './Events.module.scss'
-import { getEvents } from '@/services/getEvents'
 
 const Events = async () => {
 	const events = await getEvents();
