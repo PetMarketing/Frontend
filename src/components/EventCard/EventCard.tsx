@@ -43,7 +43,7 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 						<h5>{event.location}</h5>
 					</div>
 					<h2 className={`${styles.eventTitleName} ${dela.className}`}>
-						Котики у місті
+						{event.name}
 					</h2>
 					<Button variant='primary' className={styles.button}>
 						Детальніше

@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@import 'src/styles/variables.scss';
 
 .button {
 	border-radius: $border-radius;
@@ -20,6 +20,9 @@
 
 	@media (min-width: 768px) {
 		padding: 0.625rem 0;
+		width: 100%;
+	}
+	@media (min-width: 1440px) {
 		width: 11.875rem;
 	}
 }
@@ -48,7 +51,7 @@
 		transform: translateY(-20%);
 
 		&:after {
-			content: "";
+			content: '';
 			position: absolute;
 			left: 0;
 			bottom: 0rem;
