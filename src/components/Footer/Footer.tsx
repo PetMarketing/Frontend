@@ -34,9 +34,13 @@ const Footer = () => {
 				</div>
 				<div className={styles.withUs}>
 					<h5>Давай з нами!</h5>
-					<Button variant='primary'>Замовити</Button>
+					<Link href='/brief' className={styles.primaryFooterLink}>
+						Замовити
+					</Link>
 					<br />
-					<Button variant='primary'>Хочу у вашу тім</Button>
+					<Link href='/team' className={styles.primaryFooterLink}>
+						Хочу у вашу тім
+					</Link>
 				</div>
 			</div>
 		</div>

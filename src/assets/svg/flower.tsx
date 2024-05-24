@@ -7,8 +7,8 @@ interface Props {
 const Flower: React.FC<Props> = ({ fill }) => {
 	return (
 		<svg
-			width='100%'
-			height='100%'
+			width='125'
+			height='130'
 			viewBox='0 0 125 130'
 			xmlns='http://www.w3.org/2000/svg'
 			filter='url(#filter)'
