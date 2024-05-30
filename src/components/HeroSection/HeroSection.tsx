@@ -9,23 +9,23 @@ import styles from './HeroSection.module.scss'
 
 const HeroSection = () => {
 	return (
-		<Section title='Привіт, містяни!' useH1>
+		<Section title='HELLO, City residents!' useH1>
 			<div className={styles.contentWrapper}>
-				<p>Ми — маркетингова агенція, якій не пофіг:</p>
+				<p>We're a marketing agency that truly cares:</p>
 				<ul className={styles.list}>
 					<li>
-						<p>на ваш бізнес та його процвітання</p>
+						<p>about your business and its prosperity</p>
 					</li>
 					<li>
-						<p>на окупність реклами</p>
+						<p>about the ROI of advertising</p>
 					</li>
 					<li>
-						<p>на те, як ви почуваєтеся в співпраці з нами</p>
+						<p>about how you feel working with us</p>
 					</li>
 				</ul>
 				<div className={styles.text}>
-					<p>Ми будуємо misto маркетингу,</p>
-					<p>де хочеться оселитися, а не проїхати повз.</p>
+					<p>We're building city marketing,</p>
+					<p>where you want to settle down, not just pass by.</p>
 				</div>
 				<Image
 					className={styles.heroImg}

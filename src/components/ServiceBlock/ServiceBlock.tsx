@@ -12,7 +12,7 @@ const ServiceBlock = async () => {
 
 	if (!services.length) {
 		return (
-			<Section title='Послуги'>
+			<Section title='Serviced'>
 				<p>Нічого не знайдено</p>
 			</Section>
 		);
@@ -44,7 +44,7 @@ const ServiceBlock = async () => {
 	}
 
 	return (
-		<Section title='Послуги'>
+		<Section title='Serviced'>
 			{renderGroupedServices(groupServicesByCategory(services))}
 		</Section>
 	)
