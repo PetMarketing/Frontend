@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { Section } from '../Section/Section'
+import NoResultsFound from '../NoResultsFound/NoResultsFound';
 
 import { getAboutUs } from '@/services/fetchData';
 
@@ -20,7 +21,7 @@ const AboutUsSection = async () => {
 				</p>
 			</div>
 			{!aboutUs.length ? (
-				<p>No results found</p>
+				<NoResultsFound />
 			) : (
 				<ul className={styles.list}>
 					{aboutUs.map((item) => (

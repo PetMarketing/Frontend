@@ -1,0 +1,24 @@
+@import "src/styles/variables.scss";
+
+.noResultsFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    color: $prim-color-blue;
+}
+
+.imageWrapper {
+    @media only screen and (max-width: 992px) {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    @media only screen and (max-width: 576px) {
+        max-width: 200px;
+    }
+}

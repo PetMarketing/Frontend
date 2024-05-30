@@ -1,5 +1,6 @@
 import { Section } from '@/components/Section/Section'
 import Service from '@/components/Service/Service'
+import NoResultsFound from '../NoResultsFound/NoResultsFound'
 
 import { getServices } from '@/services/fetchData'
 
@@ -13,7 +14,7 @@ const ServiceBlock = async () => {
 	if (!services.length) {
 		return (
 			<Section title='Serviced'>
-				<p>No results found</p>
+				<NoResultsFound />
 			</Section>
 		);
 	}

@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { Section } from '@/components/Section/Section'
 import EventCard from '@/components/EventCard/EventCard'
+import NoResultsFound from '../NoResultsFound/NoResultsFound'
 
 import { getEvents } from '@/services/fetchData'
 
@@ -27,7 +28,7 @@ const Events = async () => {
 				</div>
 				<div className={styles.eventsBlock}>
 					{!events.length ? (
-						<p>No results found</p>
+						<NoResultsFound />
 					) : (
 						events.map((e, i) => (
 							<EventCard

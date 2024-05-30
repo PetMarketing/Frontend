@@ -82,3 +82,9 @@ h6 {
 		font-size: $text-small;
 	}
 }
+
+img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
