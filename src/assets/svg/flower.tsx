@@ -12,6 +12,7 @@ const Flower: React.FC<Props> = ({ fill }) => {
 			viewBox='0 0 125 130'
 			xmlns='http://www.w3.org/2000/svg'
 			filter='url(#filter)'
+			preserveAspectRatio='xMidYMid slice'
 		>
 			<defs>
 				<pattern id={`image-${fill}`} x='0' y='0' width='100%' height='100%'>
@@ -21,7 +22,7 @@ const Flower: React.FC<Props> = ({ fill }) => {
 						width='117'
 						height='120'
 						xlinkHref={fill}
-						preserveAspectRatio='none'
+						preserveAspectRatio='xMidYMid slice'
 					/>
 				</pattern>
 				<filter id='filter'>

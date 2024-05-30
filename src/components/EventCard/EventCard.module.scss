@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@import 'src/styles/variables.scss';
 
 .event {
 	border-radius: $border-radius;
@@ -9,6 +9,7 @@
 		gap: $distance-normal;
 		margin-bottom: $distance-small;
 		flex-wrap: wrap;
+		// height: 26px;
 	}
 
 	.eventTitleName {
@@ -53,7 +54,10 @@
 	color: $prim-color-black;
 	background-color: $white;
 	width: 360px;
-	display: grid;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
 	border: 1px solid #2454ff;
 
 	h2 {
@@ -63,6 +67,23 @@
 	}
 
 	.button {
+		margin-top: auto;
+		align-self: end;
+		justify-self: end;
+	}
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #2454ff;
+
+	h2 {
+		color: $prim-color-blue;
+		font-size: $text-huge !important;
+		margin-bottom: $distance-normal !important;
+	}
+
+	.button {
+		margin-top: auto;
+		align-self: end;
 		justify-self: end;
 	}
 }
@@ -79,7 +100,7 @@
 	}
 
 	.newEvent {
-		width: 425px;
+		width: 455px;
 		padding: $distance-small;
 
 		h2 {
@@ -89,8 +110,8 @@
 		.speakers {
 			grid-template-columns: auto 1fr;
 			grid-template-areas:
-				"speaker speker"
-				"button button";
+				'speaker speker'
+				'button button';
 			font-size: 10px;
 
 			svg {
@@ -105,7 +126,6 @@
 	}
 
 	.laterEvent {
-		width: 100%;
 		padding: 15px;
 
 		h2 {
