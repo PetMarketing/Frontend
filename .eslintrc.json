@@ -2,14 +2,38 @@
 	"extends": "next/core-web-vitals",
 	"rules": {
 		"eol-last": "warn",
-		"quotes": ["error", "single", { "avoidEscape": true }],
-		"jsx-quotes": ["error", "prefer-single"],
+		"quotes": [
+			"error",
+			"single",
+			{
+				"avoidEscape": true
+			}
+		],
+		"jsx-quotes": [
+			"error",
+			"prefer-single"
+		],
 		"no-duplicate-imports": "warn",
-		"object-curly-spacing": ["error", "always"],
-		"array-bracket-spacing": ["error", "never"],
+		"object-curly-spacing": [
+			"error",
+			"always"
+		],
+		"array-bracket-spacing": [
+			"error",
+			"never"
+		],
 		"comma-spacing": "error",
-		"no-multiple-empty-lines": ["error", { "max": 1 }],
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1
+			}
+		],
 		"no-trailing-spaces": "warn",
-		"object-shorthand": ["error", "always"]
+		"object-shorthand": [
+			"error",
+			"always"
+		],
+		"react/no-unescaped-entities": 0
 	}
 }
