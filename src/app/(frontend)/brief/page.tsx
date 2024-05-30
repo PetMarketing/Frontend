@@ -17,13 +17,12 @@ type Props = {}
 const Brief: React.FC<Props> = () => {
 	return (
 		<main>
-			<Header page='Бриф'></Header>
+			<Header page='Brief'></Header>
 			<Menu />
 			<Section className={styles.section}>
-				<h1>Привіт, любий бізнесе!</h1>
+				<h1>Hello, dear business!</h1>
 				<h4>
-					Усі агенції схожі: працюють в стандартних рекламних кабінетах, роблять
-					подібні налаштування і точно не можуть вигадати велосипед.
+					All agencies are alike: they work in standard advertising offices, make similar setups, and definitely can't reinvent the wheel.
 				</h4>
 				<div className={styles.bannerBlock}>
 					<Image src={banner} alt='banner' className={styles.banner} />

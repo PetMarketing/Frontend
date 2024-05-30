@@ -20,19 +20,18 @@ const Team: React.FC<Props> = () => {
 	return (
 		<main>
 			<Menu />
-			<Header page='Команда'></Header>
+			<Header page='Team'></Header>
 			<Section className={styles.section}>
-				<h1>Це ми</h1>
+				<h1>It's us</h1>
 				<h4>
-					Усі агенції схожі: працюють в стандартних рекламних кабінетах, роблять
-					подібні налаштування і точно не можуть вигадати велосипед.
+					All agencies are alike: they work in standard advertising offices, make similar setups, and definitely can't reinvent the wheel.
 				</h4>
 				<div className={styles.smiles}>
 					<Image src={smiles} alt='smiles' />
 				</div>
 			</Section>
 			<MembersBlock />
-			<Section title='Хочу у вашу тім!'>
+			<Section title='Want to join our team!'>
 				<div className={styles.teamForm}>
 					<TeamForm />
 					<div className={styles.img}>

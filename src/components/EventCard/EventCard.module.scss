@@ -46,6 +46,7 @@
 		color: $prim-color-blue;
 		margin-left: auto;
 		margin-top: auto;
+		grid-column: -1;
 	}
 }
 
@@ -71,6 +72,7 @@
 		align-self: end;
 		justify-self: end;
 	}
+
 	display: flex;
 	flex-direction: column;
 	border: 1px solid #2454ff;
@@ -91,9 +93,11 @@
 @media (max-width: 1439px) {
 	.event {
 		padding: 8px;
+
 		.eventTitleName {
 			width: 110px;
 		}
+
 		h5 {
 			font-size: $text-mob-normal;
 		}
@@ -138,6 +142,7 @@
 	.event {
 		width: 300px;
 		padding: $distance-small;
+
 		.eventTitleName {
 			width: auto;
 		}

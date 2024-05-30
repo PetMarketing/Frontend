@@ -89,13 +89,13 @@ export default function BriefForm() {
 				) : isSuccess ? (
 					<div className={styles.successWrapper}>
 						<p className={styles.successText}>
-							Успішно<br />надіслано!
+							Successfully<br />sent!
 						</p>
 
 						<Image src={successImg} width={722} height={379} alt='Monkey Chaos' className={styles.successImage} />
 
 						<p className={styles.successText}>
-							Скоро ми вам<br />напишемо:)
+							Soon we will write<br />to you:)
 						</p>
 					</div>
 				) : (
@@ -104,55 +104,55 @@ export default function BriefForm() {
 							<Form className={styles.form}>
 								<div className={getClsNames(styles.inputContainer, [styles.columns_4, styles.columns_xl_6, styles.floatingLabel])}>
 									<Field name='name' id='name' placeholder='' />
-									<label htmlFor='name'>Ім&apos;я</label>
+									<label htmlFor='name'>Name</label>
 									<Error name='name'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_4, styles.columns_xl_6, styles.floatingLabel])}>
 									<Field name='position' id='position' placeholder='' />
-									<label htmlFor='position'>Посада</label>
+									<label htmlFor='position'>Position</label>
 									<Error name='position'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_4, styles.floatingLabel])}>
 									<Field name='companyName' id='companyName' placeholder='' />
-									<label htmlFor='companyName'>Назва компанії</label>
+									<label htmlFor='companyName'>Company</label>
 									<Error name='companyName'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
-									<label htmlFor='contact'>Контакт для звʼязку (Телеграм / Пошта / Телефон)</label>
+									<label htmlFor='contact'>Contact Information (Telegram / Email / Phone)</label>
 									<Field name='contact' id='contact' />
 									<Error name='contact'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
-									<label htmlFor='webUrl'>Посилання на сайт / соцмережі компанії</label>
+									<label htmlFor='webUrl'>Links to the company's website / social networks</label>
 									<Field name='webUrl' id='webUrl' />
 									<Error name='webUrl'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
-									<label htmlFor='whatStuffsToUseNow'>Які маркетингові канали використовуєте зараз? Які бюджети на просування використовуєте? Чи задоволені результатом?</label>
+									<label htmlFor='whatStuffsToUseNow'>What marketing channels are you currently using? What advertising budgets do you use? </label>
 									<Field name='whatStuffsToUseNow' id='whatStuffsToUseNow' />
 									<Error name='whatStuffsToUseNow'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
-									<label htmlFor='marketingWishes'>Які послуги / запит наша агенція може закрити для вас?</label>
+									<label htmlFor='marketingWishes'>What services / requests can our agency fulfill for you?</label>
 									<Field as='select' name='marketingWishes' id='marketingWishes' placeholder='Оберіть опцію'>
 										<option>Choose the option</option>
-										<option value='таргетована реклама в Instagram та Facebook'>таргетована реклама в Instagram та Facebook</option>
-										<option value='реклама в Google'>реклама в Google</option>
-										<option value='консалтинг'>консалтинг</option>
-										<option value='розробка стратегії'>розробка стратегії</option>
-										<option value='інше'>інше</option>
+										<option value='таргетована реклама в Instagram та Facebook'>targeted advertising on Instagram and Facebook</option>
+										<option value='реклама в Google'>Google advertising</option>
+										<option value='консалтинг'>consulting</option>
+										<option value='розробка стратегії'>development of strategy</option>
+										<option value='інше'>other</option>
 									</Field>
 									<Error name='marketingWishes'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
-									<label htmlFor='comment'>Залиште коментар</label>
+									<label htmlFor='comment'>Leave a comment</label>
 									<Field name='comment' id='comment' />
 									<Error name='comment'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
@@ -160,7 +160,7 @@ export default function BriefForm() {
 								<Image src={formImg} width={520} height={230} alt='houses' className={styles.image} />
 
 								<Button variant='primary' type='submit' className={styles.sendBtn}>
-									Надіслати
+									Send
 								</Button>
 							</Form>
 						</Formik>

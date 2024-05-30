@@ -25,21 +25,21 @@ const Footer = () => {
 					</Link>
 				</div>
 				<div className={styles.contacts}>
-					<h2>Контакти</h2>
-					<Link href='mailto:creative.misto@gmail.com'>
-						creative.misto@gmail.com
+					<h2>Contacts</h2>
+					<Link href='mailto:ourchat33@gmail.com'>
+						ourchat33@gmail.com
 					</Link>
 					<br />
 					<Link href='tel:+380958500287'>+380958500287</Link>
 				</div>
 				<div className={styles.withUs}>
-					<h5>Давай з нами!</h5>
+					<h5>Let's do it together!</h5>
 					<Link href='/brief' className={styles.primaryFooterLink}>
-						Замовити
+						Order
 					</Link>
 					<br />
 					<Link href='/team' className={styles.primaryFooterLink}>
-						Хочу у вашу тім
+						Join the Team
 					</Link>
 				</div>
 			</div>

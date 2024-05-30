@@ -13,7 +13,7 @@ const ServiceBlock = async () => {
 	if (!services.length) {
 		return (
 			<Section title='Serviced'>
-				<p>Нічого не знайдено</p>
+				<p>No results found</p>
 			</Section>
 		);
 	}

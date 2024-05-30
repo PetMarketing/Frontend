@@ -16,7 +16,7 @@ const Header: React.FC<Props> = ({ page }) => {
 		<Section className={styles.header}>
 			<Logo size='small' />
 			<div className={styles.navMenu}>
-				<Link href='/'>Головна</Link> <ArrowLeft /> <span>{page}</span>
+				<Link href='/'>Home</Link> <ArrowLeft /> <span>{page}</span>
 			</div>
 		</Section>
 	)

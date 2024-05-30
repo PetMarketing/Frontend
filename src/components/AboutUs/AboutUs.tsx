@@ -10,18 +10,17 @@ const AboutUsSection = async () => {
 	const aboutUs = await getAboutUs();
 
 	return (
-		<Section title='Хто ми'>
+		<Section title='Who we are'>
 			<div className={styles.introductory}>
 				<p>
-					Усі агенції схожі: працюють в стандартних рекламних кабінетах, роблять
-					подібні налаштування і точно не можуть вигадати велосипед.
+					All agencies are alike: they work in standard advertising offices, make similar setups, and certainly can't reinvent the wheel.
 				</p>
 				<p className={styles.boldText}>
-					То чому вам треба обрати нас серед усіх інших?
+					So why should you choose us among all the others?
 				</p>
 			</div>
 			{!aboutUs.length ? (
-				<p>Нічого не знайдено</p>
+				<p>No results found</p>
 			) : (
 				<ul className={styles.list}>
 					{aboutUs.map((item) => (

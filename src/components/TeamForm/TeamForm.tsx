@@ -58,18 +58,18 @@ const TeamForm = () => {
 
 		const errors: Partial<ITeamFormDataErrors> = {}
 		if (!formData.name.trim()) {
-			errors.name = 'Введіть імʼя'
+			errors.name = 'Enter Name'
 		}
 		if (!formData.position.trim()) {
-			errors.position = 'Введіть посаду'
+			errors.position = 'Enter Position'
 		}
 		if (!formData.email.trim()) {
-			errors.email = 'Введіть email address'
+			errors.email = 'Enter e-mail'
 		} else if (!validateEmail(formData.email)) {
-			errors.email = 'Невірний email address'
+			errors.email = 'Invalid email address'
 		}
 		if (!formData.description.trim()) {
-			errors.description = 'Введіть опис'
+			errors.description = 'Enter description'
 		}
 		if (formData.imagePath === null) {
 			errors.imagePath = 'No file'
@@ -122,7 +122,7 @@ const TeamForm = () => {
 				<div className={styles.welcomeBlock}>
 					<Image src={welcome} alt='welcome image' />
 					<h5 style={{ textTransform: 'uppercase' }}>
-						Дякуємо! <br /> Скоро напишемо вам!
+						Thank you! <br /> We will write to you soon!
 					</h5>
 				</div>
 			) : (
@@ -135,8 +135,8 @@ const TeamForm = () => {
 						<form className={styles.form} onSubmit={handleSubmit}>
 							{showErrorMessage && (
 								<p style={{ color: 'red' }}>
-									Нажаль, щось пішло не так:( <br />
-									Перевірте чи правильно заповнили форми
+									Sorry, something went wrong:( <br />
+									Check if you filled out the forms correctly
 								</p>
 							)}
 							<div className={styles.inputContainer} style={{ gridArea: 'name' }}>
@@ -156,7 +156,7 @@ const TeamForm = () => {
 										{validationErrors.name}
 									</label>
 								) : (
-									<label htmlFor='name'>Ім’я</label>
+									<label htmlFor='name'>Name</label>
 								)}
 							</div>
 							<div
@@ -181,7 +181,7 @@ const TeamForm = () => {
 										{validationErrors.position}
 									</label>
 								) : (
-									<label htmlFor='name'>Посада</label>
+									<label htmlFor='name'>Position</label>
 								)}
 							</div>
 							<div className={styles.inputContainer} style={{ gridArea: 'email' }}>
@@ -225,7 +225,7 @@ const TeamForm = () => {
 										{validationErrors.description}
 									</label>
 								) : (
-									<label htmlFor='name'>Короткий опис</label>
+									<label htmlFor='name'>Short description</label>
 								)}
 							</div>
 							{formData.imagePath === null ? (
@@ -238,11 +238,11 @@ const TeamForm = () => {
 											: undefined
 									}
 								>
-									Прикріпити резюме +
+									Attach your CV +
 								</label>
 							) : (
 								<label htmlFor='cv' className={styles.fileUpload}>
-									Прикріплено{' '}
+									Attached{' '}
 									<Image
 										src={clip}
 										alt='clip icon'
@@ -259,7 +259,7 @@ const TeamForm = () => {
 								style={{ display: 'none' }}
 							/>
 							<Button variant='primary' type='submit' className={styles.sendBtn}>
-								Надіслати
+								Send
 							</Button>
 						</form>
 					)}

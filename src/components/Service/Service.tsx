@@ -22,7 +22,7 @@ const Service: React.FC<Props> = ({ categoryName, services }) => {
 				))}
 			</ul>
 			<Button variant='primary' className={styles.button}>
-				<Link href='#'>Беру</Link>
+				<Link href='/brief'>Order</Link>
 			</Button>
 		</div>
 	)

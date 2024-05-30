@@ -13,21 +13,21 @@ const Events = async () => {
 	const events = await getEvents();
 
 	return (
-		<Section title='Івенти' className={styles.eventsWrapper}>
-			<h3>для маркетологів та підприємців</h3>
+		<Section title='Events' className={styles.eventsWrapper}>
+			<h3>For marketers and entrepreneurs </h3>
 			<div className={styles.events}>
 				<div className={styles.imageBlock}>
 					<Image src={eventsSign} alt='event sing' />
 					<div>
-						<h3>конференції</h3>
-						<h3>вечірки</h3>
-						<h3>вебінари</h3>
-						<h3>онлайн та офлайн</h3>
+						<h3>Conferences</h3>
+						<h3>Parties</h3>
+						<h3>Webinars</h3>
+						<h3>Online and offline</h3>
 					</div>
 				</div>
 				<div className={styles.eventsBlock}>
 					{!events.length ? (
-						<p>Нічого не знайдено</p>
+						<p>No results found</p>
 					) : (
 						events.map((e, i) => (
 							<EventCard

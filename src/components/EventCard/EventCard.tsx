@@ -32,7 +32,7 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 							</div>
 						))}
 						<Button variant='primary' className={styles.greenBtn}>
-							Детальніше
+							Read More
 						</Button>
 					</div>
 				</div>
@@ -46,7 +46,7 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 						{event.name}
 					</h2>
 					<Button variant='primary' className={styles.button}>
-						Детальніше
+						Read More
 					</Button>
 				</div>
 			)}

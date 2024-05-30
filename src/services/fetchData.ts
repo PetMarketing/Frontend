@@ -20,7 +20,7 @@ export async function fetchData<T>(endpoint: string): Promise<T[]> {
         return data;
     } catch (error) {
         console.error('Error:', error);
-        throw error;
+        return []; // Return an empty array in case of an error
     }
 }
 
