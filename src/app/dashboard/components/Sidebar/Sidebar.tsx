@@ -14,11 +14,11 @@ import LogoutIcon from '@/assets/svg/logout-icon';
 import styles from './Sidebar.module.scss';
 
 const menuItems = [
-    { href: '#!', Icon: DashboardIcon, name: "Dashboard" },
-    { href: '#!', Icon: InfoIcon, name: "About Us" },
-    { href: '#!', Icon: DashboardIcon, name: "Services" },
-    { href: '#!', Icon: EventIcon, name: "Events" },
-    { href: '#!', Icon: DashboardIcon, name: "Client requests" }
+    { href: '#!', Icon: DashboardIcon, name: 'Dashboard' },
+    { href: '#!', Icon: InfoIcon, name: 'About Us' },
+    { href: '#!', Icon: DashboardIcon, name: 'Services' },
+    { href: '#!', Icon: EventIcon, name: 'Events' },
+    { href: '#!', Icon: DashboardIcon, name: 'Client requests' }
 ]
 
 export default function Sidebar() {
