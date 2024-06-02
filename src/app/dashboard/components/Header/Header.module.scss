@@ -1,9 +1,35 @@
 @import "src/styles/variables.scss";
 
 .header {
-    padding: 15px;
+    padding: 13px 70px;
+}
+
+.userInfo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border: 1px solid;
+    justify-content: end;
+    gap: 20px;
+}
+
+.imageWrapper {
+    width: 50px;
+    border-radius: 100px;
+    overflow: hidden;
+    border: 1px solid $placeholder-color;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    color: #404040;
+    text-transform: capitalize;
+}
+
+.role {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    color: #565656;
+    text-transform: capitalize;
 }
