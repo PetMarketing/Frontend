@@ -3,16 +3,13 @@ import { Nunito_Sans } from 'next/font/google'
 
 import { getClsNames } from '@/utils/helpers'
 
+import { nunitoSans } from '@/styles/fonts/fonts'
+
 import styles from './layout.module.scss'
 
 import '@/styles/reset.scss'
 import '@/styles/variables.scss'
 import '@/styles/globals.scss'
-
-const nunitoSans = Nunito_Sans({
-	weight: ['400', '500', '600', '700', '800'],
-	subsets: ['latin'],
-})
 
 export const metadata: Metadata = {
 	title: 'Login',
