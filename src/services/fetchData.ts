@@ -7,7 +7,7 @@ export async function fetchData<T>(endpoint: string): Promise<T[]> {
     try {
         const response = await fetch(`${baseURL}/${endpoint}`, {
             next: {
-                revalidate: 86400,
+                revalidate: 3600,
             },
         });
 
