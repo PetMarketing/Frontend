@@ -1,0 +1,9 @@
+.footerIcon {
+	& path {
+		stroke: #d8ff69;
+	}
+
+	&:hover path {
+		stroke: white;
+	}
+}
