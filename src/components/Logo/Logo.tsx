@@ -14,7 +14,7 @@ const Logo: React.FC<Props> = ({ size }) => {
 	return (
 		<div className={size === 'large' ? styles.logoLarge : styles.logoSmall}>
 			<Link href='/'>
-				<Image src={logoIcon} alt='logo-icon' width={146} height={28} priority />
+				<Image src={logoIcon} alt='logo-icon' width={356} height={87} priority />
 			</Link>
 		</div>
 	)
