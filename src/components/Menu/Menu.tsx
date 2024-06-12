@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { Section } from '@/components/Section/Section'
 import Button from '@/components/Button/Button'
 
 import CloseIcon from '@/assets/svg/close-icon'
