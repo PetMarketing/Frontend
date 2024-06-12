@@ -26,11 +26,9 @@ const Footer = () => {
 				</div>
 				<div className={styles.contacts}>
 					<h2>Contacts</h2>
-					<Link href='mailto:ourchat33@gmail.com'>
-						ourchat33@gmail.com
-					</Link>
+					<Link href='mailto:ourchat33@gmail.com'>ourchat33@gmail.com</Link>
 					<br />
-					<Link href='tel:+380958500287'>+380958500287</Link>
+					<Link href='tel:+380636386977'>+380636386977</Link>
 				</div>
 				<div className={styles.withUs}>
 					<h5>Let's do it together!</h5>
