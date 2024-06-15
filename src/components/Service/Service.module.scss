@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@import 'src/styles/variables.scss';
 
 .service {
 	display: flex;
@@ -54,4 +54,9 @@
 		width: 20rem;
 		padding: 1rem;
 	}
+}
+
+.linkBtn {
+	margin-top: auto;
+	align-self: center;
 }

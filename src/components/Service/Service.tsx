@@ -1,11 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 
-import Button from '@/components/Button/Button'
-
 import { IService } from '@/types/IService'
 
 import styles from './Service.module.scss'
+import btnStyles from '../Button/Button.module.scss'
 
 type Props = {
 	categoryName: string
@@ -21,9 +20,9 @@ const Service: React.FC<Props> = ({ categoryName, services }) => {
 					<li key={index}>{service.title}</li>
 				))}
 			</ul>
-			<Button variant='primary' className={styles.button}>
-				<Link href='/brief'>Order</Link>
-			</Button>
+			<Link className={`${btnStyles.primaryBtn} ${styles.linkBtn}`} href='/brief'>
+				Order
+			</Link>
 		</div>
 	)
 }
