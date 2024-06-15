@@ -1,3 +1,5 @@
+import { IImage } from './IImage'
+
 export interface IEvent {
 	id: number
 	name: string
@@ -9,11 +11,5 @@ export interface IEvent {
 interface ISpeaker {
 	id: number
 	name: string
-	image: ISpeakerImage
-}
-
-interface ISpeakerImage {
-	id: number
-	description: string
-	imagePath: string
+	image: IImage
 }
