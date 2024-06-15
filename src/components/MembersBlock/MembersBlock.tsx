@@ -1,27 +1,62 @@
-'use client'
-
-import React, { useEffect } from 'react'
-
 import MemberCard from '@/components/MemberCard/MemberCard'
 import { Section } from '@/components/Section/Section'
+import NoResultsFound from '../NoResultsFound/NoResultsFound'
 
-import { useMembersStore } from '@/store/store'
+import { getMembers } from '@/services/fetchData'
+
+import { getClsNames } from '@/utils/helpers'
+
+import { IMember } from '@/types/IMember'
+
+import { dela } from '@/styles/fonts/fonts'
 
 import styles from './MembersBlock.module.scss'
 
-const MembersBlock = () => {
-	const { members, fetchMembers } = useMembersStore(state => state);
+const MembersBlock = async () => {
+	const members = await getMembers();
 
-	useEffect(() => {
-		fetchMembers();
-	}, [])
+	if (!members.length) {
+		return (
+			<Section title='Serviced'>
+				<NoResultsFound />
+			</Section>
+		);
+	}
+
+	interface IMemberGroupedByPosition {
+		[position: string]: IMember[];
+	}
+
+	const groupByPosition = (members: IMember[]): IMemberGroupedByPosition => {
+		return members.reduce((acc, member) => {
+			const { position } = member;
+			if (!acc[position]) {
+				acc[position] = [];
+			}
+			acc[position].push(member);
+			return acc;
+		}, {} as IMemberGroupedByPosition);
+	};
+
+	const groupedTeam = groupByPosition(members);
 
 	return (
 		<Section>
 			<div className={styles.team}>
-				{members.map(member => (
-					<MemberCard member={member} key={member.id} />
+
+				{Object.entries(groupedTeam).map(([position, members]) => (
+					<div className={styles.position} key={position}>
+						<h2 className={getClsNames(styles.title, [dela.className])}>{position}</h2>
+						<div className={styles.members}>
+							{members.map(member => (
+								<div className={styles.member} key={member.id} >
+									<MemberCard member={member} />
+								</div>
+							))}
+						</div>
+					</div>
 				))}
+
 			</div>
 		</Section>
 	)

@@ -1,20 +1,54 @@
 @import "src/styles/variables.scss";
 
 .team {
-	display: grid;
-	grid-template-columns: auto auto auto;
-	gap: $distance-normal;
+    .title {
+        font-size: $text-huge;
+
+        @media only screen and (max-width: 834px) {
+            font-size: $text-big;
+        }
+
+        @media only screen and (max-width: 425px) {
+            font-size: $text-large;
+        }
+    }
 }
 
-@media (max-width: 1439px) {
-	.team {
-		grid-template-columns: auto auto;
-	}
+.position {
+    &:not(:last-child) {
+        margin-bottom: 62px;
+
+        @media only screen and (max-width: 834px) {
+            margin-bottom: 40px;
+        }
+    }
 }
 
-@media (max-width: 833px) {
-	.team {
-		grid-template-columns: auto;
-		gap: $distance-very-small;
-	}
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 40px;
+    margin-top: 48px;
+
+    @media only screen and (max-width: 834px) {
+        margin-top: 20px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        gap: 20px;
+    }
+}
+
+.member {
+    width: 100%;
+    max-width: calc(33.333% - 34px);
+
+    @media only screen and (max-width: 1024px) {
+        max-width: calc(50% - 25px);
+    }
+
+    @media only screen and (max-width: 576px) {
+        max-width: 100%;
+    }
 }
