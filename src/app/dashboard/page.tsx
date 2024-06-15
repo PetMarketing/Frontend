@@ -1,8 +1,10 @@
-export default async function Dashboard() {
+import AboutUs from './components/AboutUs/AboutUs'
 
-    return (
-        <div>
-            <h3>Dashboard</h3>
-        </div>
-    )
+export default async function Dashboard() {
+	return (
+		<div>
+			{/* <h3>Dashboard</h3> */}
+			<AboutUs />
+		</div>
+	)
 }

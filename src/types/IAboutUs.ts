@@ -6,3 +6,10 @@ export interface IAboutUs {
 	description: string
 	image: IImage
 }
+
+export interface ICreateAboutUsBlock {
+	title: string
+	textBlock: string
+	photo: File | null
+	imageDescription: string
+}
