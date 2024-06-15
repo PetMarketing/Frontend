@@ -1,13 +1,14 @@
 import { IEvent } from '@/types/IEvent'
 import { IAboutUs } from '@/types/IAboutUs'
 import { IService } from '@/types/IService'
+import { IMember } from '@/types/IMember';
 
 export async function fetchData<T>(endpoint: string): Promise<T[]> {
     const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
     try {
         const response = await fetch(`${baseURL}/${endpoint}`, {
             next: {
-                revalidate: 3600,
+                revalidate: 1800,
             },
         });
 
@@ -34,4 +35,8 @@ export const getAboutUs = async (): Promise<IAboutUs[]> => {
 
 export const getServices = async (): Promise<IService[]> => {
     return await fetchData<IService>('services');
+};
+
+export const getMembers = async (): Promise<IMember[]> => {
+    return await fetchData<IMember>('member');
 };

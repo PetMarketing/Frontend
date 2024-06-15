@@ -1,76 +1,62 @@
 @import "src/styles/variables.scss";
 
 .card {
-	width: 25.625rem;
-	height: 7.625rem;
-	border-radius: 3.75rem;
-	border: $prim-border;
-	background-color: $white;
-	color: $prim-color-blue;
-	display: flex;
-	align-items: center;
-	overflow: hidden;
-	font-size: $text-mob-normal;
-	line-height: $lh-small;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $prim-color-blue;
+    border-radius: 20px;
+    color: $prim-color-blue;
+    background: #fff;
+    text-align: center;
+    height: 100%;
 
-	img {
-		margin: 0 0 0.0625rem 0.3125rem;
-	}
+    @media only screen and (max-width: 992px) {
+        padding: 30px;
+    }
 
-	div {
-		padding: 1.25rem;
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-
-		span {
-			font-weight: 400;
-			text-transform: uppercase;
-
-			span {
-				display: block;
-				font-weight: normal;
-			}
-		}
-
-		p {
-			margin-top: auto;
-			line-height: $lh-small;
-			text-transform: uppercase;
-			font-weight: 500;
-		}
-	}
-
-	.officialPosition {
-		margin: 0;
-		font-size: $text-small;
-		font-weight: 400;
-
-		@media (max-width: 1440px) {
-			font-size: $text-mob-normal;
-		}
-	}
+    @media only screen and (max-width: 425px) {
+        padding: 20px;
+    }
 }
 
-@media (max-width: 1439px) {
-	.card {
-		width: 331px;
-		height: 98px;
-		font-size: $text-small;
+.imageWrapper {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 24px;
+    border-radius: 100%;
+    overflow: hidden;
 
-		div {
-			padding: 0.75rem;
-		}
-	}
+    @media only screen and (max-width: 576px) {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 14px;
+    }
+
+    img {
+        height: 100%;
+    }
 }
 
-@media (max-width: 833px) {
-	.card {
-		width: 300px;
-		height: 86px;
+.position {
+    margin-bottom: 8px;
+    font-size: $text-large;
+    line-height: 1.1;
+    text-transform: uppercase;
 
-		div {
-			padding: 0.5rem;
-		}
-	}
+    @media only screen and (max-width: 992px) {
+        font-size: $text-normal;
+    }
+}
+
+.name {
+    font-size: $text-medium;
+    font-weight: 500;
+    line-height: 1;
+
+    @media only screen and (max-width: 992px) {
+        font-size: $text-mob-normal;
+    }
 }
