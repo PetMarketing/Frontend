@@ -1,0 +1,57 @@
+@import "src/styles/variables.scss";
+
+.section {
+    h2.title {
+        width: 100%;
+        max-width: 800px;
+        margin-bottom: 24px;
+    }
+
+    h3.title {
+        margin-bottom: 40px;
+    }
+}
+
+.title {
+    font-size: $text-huge;
+
+    @media only screen and (max-width: 834px) {
+        font-size: $text-big;
+    }
+
+    @media only screen and (max-width: 425px) {
+        font-size: $text-large;
+    }
+}
+
+.description {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 24px;
+}
+
+.info {
+    margin-bottom: 62px;
+    display: flex;
+    gap: 16px;
+}
+
+.speakersWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 120px;
+}
+
+.speaker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.speakerName {
+    margin-top: 24px;
+    color: $prim-color-black;
+    font-size: $text-normal;
+    font-weight: 600;
+    line-height: 1.1;
+}

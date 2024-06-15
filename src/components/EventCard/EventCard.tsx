@@ -1,4 +1,4 @@
-import Button from '@/components/Button/Button'
+import ButtonLink from '../ButtonLink/ButtonLink'
 
 import { IEvent } from '@/types/IEvent'
 
@@ -31,9 +31,9 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 								<div>{speaker.name}</div>
 							</div>
 						))}
-						<Button variant='primary' className={styles.greenBtn}>
+						<ButtonLink href={`/event/${event.id.toString()}`} variant='primary' className={styles.greenBtn}>
 							Read More
-						</Button>
+						</ButtonLink>
 					</div>
 				</div>
 			) : (
@@ -45,9 +45,9 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 					<h2 className={`${styles.eventTitleName} ${dela.className}`}>
 						{event.name}
 					</h2>
-					<Button variant='primary' className={styles.button}>
+					<ButtonLink href={`/event/${event.id.toString()}`} variant='primary' className={styles.button}>
 						Read More
-					</Button>
+					</ButtonLink>
 				</div>
 			)}
 		</>
