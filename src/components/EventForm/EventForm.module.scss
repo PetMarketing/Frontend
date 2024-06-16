@@ -1,0 +1,89 @@
+@import "src/styles/variables.scss";
+
+.eventForm {
+    .title {
+        font-size: $text-huge;
+
+        @media only screen and (max-width: 834px) {
+            font-size: $text-big;
+        }
+
+        @media only screen and (max-width: 425px) {
+            margin-bottom: 20px;
+            font-size: $text-large;
+        }
+    }
+}
+
+.form {
+    button {
+        display: block;
+        margin: 0 auto;
+        padding: 6px 70px;
+        width: fit-content;
+    }
+}
+
+.inputContainer {
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    &.floatingLabel {
+        label {
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            transition: $transition;
+            margin-bottom: 0;
+        }
+
+        input:focus+label,
+        input:not(:placeholder-shown)+label {
+            top: -15px;
+            left: 15px;
+            pointer-events: none;
+            background: $primary-bg-color;
+            font-size: $text-small;
+            padding: 0 5px;
+        }
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 500;
+        color: $placeholder-color;
+    }
+
+    input,
+    select {
+        border-radius: $border-radius-small;
+        border: $prim-border;
+        padding: 14px 10px;
+        font-size: $text-normal;
+        font-weight: 600;
+        outline: none;
+        width: 100%;
+
+        @media only screen and (max-width: 1280px) {
+            padding: 8px;
+        }
+    }
+}
+
+
+.sendBtn {}
+
+.error {
+    color: $tag-bg-color;
+}
+
+.successWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
