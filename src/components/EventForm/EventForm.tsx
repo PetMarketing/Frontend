@@ -20,7 +20,6 @@ interface IEventFormProps {
     eventId: string;
 }
 
-
 export default function EventForm({ eventId }: IEventFormProps) {
     const initialValues = {
         name: '',
