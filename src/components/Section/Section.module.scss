@@ -4,20 +4,35 @@
 	padding-bottom: $distance-big;
 
 	h1 {
-		font-size: $text-big;
-		width: 10rem;
-		margin-bottom: $distance-very-small;
+		font-size: $text-gigantic;
+		width: 50%;
 		line-height: 1;
 		text-transform: uppercase;
+		margin-bottom: $distance-normal;
 
-		@media (min-width: 834px) {
-			font-size: $text-gigantic;
-			width: 26.875rem;
-			margin-bottom: $distance-normal;
+		@media only screen and (max-width: 1280px) {
+			font-size: 55px;
 		}
 
-		@media (min-width: 1440px) {
+		@media only screen and (max-width: 1139px) {
+			font-size: 48px;
+		}
+
+		@media only screen and (max-width: 992px) {
 			font-size: $text-gigantic;
+		}
+
+		@media only screen and (max-width: 767px) {
+			font-size: 48px;
+			margin-bottom: $distance-very-small;
+		}
+
+		@media only screen and (max-width: 576px) {
+			font-size: $text-huge;
+		}
+
+		@media only screen and (max-width: 425px) {
+			font-size: $text-big;
 		}
 	}
 
