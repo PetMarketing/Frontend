@@ -45,7 +45,7 @@ const ServiceBlock = async () => {
 	}
 
 	return (
-		<Section title='Serviced'>
+		<Section title='Services'>
 			{renderGroupedServices(groupServicesByCategory(services))}
 		</Section>
 	)
