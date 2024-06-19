@@ -42,7 +42,7 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 						<h5>{event.date}</h5>
 						<h5>{event.location}</h5>
 					</div>
-					<h2 className={`${styles.eventTitleName} ${dela.className}`}>
+					<h2 className={dela.className}>
 						{event.name}
 					</h2>
 					<ButtonLink href={`/event/${event.id.toString()}`} variant='primary' className={styles.button}>

@@ -4,155 +4,138 @@
 	border-radius: $border-radius;
 	padding: $distance-normal;
 
+	@media only screen and (max-width: 992px) {
+		padding: 16px 24px;
+	}
+
 	.header {
 		display: flex;
 		gap: $distance-normal;
 		margin-bottom: $distance-small;
 		flex-wrap: wrap;
-		// height: 26px;
-	}
 
-	.eventTitleName {
-		width: 220px;
+		h5 {
+			@media only screen and (max-width: 992px) {
+				font-size: 13px;
+				line-height: 1;
+			}
+		}
 	}
 }
 
 .newEvent {
 	@extend .event;
+	width: 100%;
+	max-width: 100%;
 	color: $white;
 	background-color: $prim-color-blue;
 	width: 100%;
 	border: 1px solid #2454ff;
 
+	.header {
+		h5 {
+			@media only screen and (max-width: 992px) {
+				font-size: 15px;
+			}
+		}
+	}
+
 	.speakers {
 		display: grid;
 		grid-template-columns: auto auto 1fr;
 		gap: $distance-small;
+		font-size: 10px;
+
+		@media only screen and (max-width: 992px) {
+			grid-template-columns: auto 1fr;
+			grid-template-areas:
+				"speaker speker"
+				"button  .";
+		}
 
 		div {
-			width: fit-content;
 			text-align: center;
 		}
 	}
 
 	h2 {
 		color: $prim-color-green;
-		font-size: $text-huge !important;
-		margin-bottom: 0 !important;
+		font-size: $text-huge;
+		margin-bottom: 16px !important;
+
+		@media only screen and (max-width: 1366px) {
+			font-size: 30px;
+		}
+
+		@media only screen and (max-width: 1280px) {
+			font-size: 21px;
+		}
+
+		@media only screen and (max-width: 576px) {
+			font-size: 14px;
+		}
 	}
 
 	.greenBtn {
+		padding: 10px 32px;
 		background-color: $prim-color-green;
 		color: $prim-color-blue;
 		margin-left: auto;
 		margin-top: auto;
 		grid-column: -1;
+
+		padding: 10px 32px;
+		width: fit-content;
+
+		@media only screen and (max-width: 992px) {
+			grid-area: button;
+			margin-right: auto;
+		}
 	}
 }
 
 .laterEvent {
 	@extend .event;
+	width: 100%;
+	max-width: calc(50% - 16px);
 	color: $prim-color-black;
 	background-color: $white;
-	width: 360px;
-	width: 100%;
 
 	display: flex;
 	flex-direction: column;
 	border: 1px solid #2454ff;
 
+	@media only screen and (max-width: 992px) {
+		max-width: calc(50% - 8px);
+	}
+
+	@media only screen and (max-width: 833px) {
+		max-width: 100%;
+	}
+
 	h2 {
 		color: $prim-color-blue;
-		font-size: $text-huge !important;
-		margin-bottom: $distance-normal !important;
+		font-size: $text-huge;
+		margin-bottom: 16px !important;
+
+		@media only screen and (max-width: 1366px) {
+			font-size: 30px;
+		}
+
+		@media only screen and (max-width: 1280px) {
+			font-size: 19px;
+		}
+
+		@media only screen and (max-width: 576px) {
+			font-size: 14px;
+		}
 	}
 
 	.button {
 		margin-top: auto;
-		align-self: end;
-		justify-self: end;
-	}
+		align-self: start;
 
-	display: flex;
-	flex-direction: column;
-	border: 1px solid #2454ff;
-
-	h2 {
-		color: $prim-color-blue;
-		font-size: $text-huge !important;
-		margin-bottom: $distance-normal !important;
-	}
-
-	.button {
-		margin-top: auto;
-		align-self: end;
-		justify-self: end;
-	}
-}
-
-@media (max-width: 1439px) {
-	.event {
-		padding: 8px;
-
-		.eventTitleName {
-			width: 110px;
-		}
-
-		h5 {
-			font-size: $text-mob-normal;
-		}
-	}
-
-	.newEvent {
-		width: 455px;
-		padding: $distance-small;
-
-		h2 {
-			font-size: 22px !important;
-		}
-
-		.speakers {
-			grid-template-columns: auto 1fr;
-			grid-template-areas:
-				'speaker speker'
-				'button button';
-			font-size: 10px;
-
-			svg {
-				width: 79px;
-				height: 79px;
-			}
-		}
-
-		.greenBtn {
-			grid-area: button;
-		}
-	}
-
-	.laterEvent {
-		padding: 15px;
-
-		h2 {
-			font-size: 20px !important;
-		}
-	}
-}
-
-@media (max-width: 833px) {
-	.event {
-		width: 300px;
-		padding: $distance-small;
-
-		.eventTitleName {
-			width: auto;
-		}
-	}
-
-	.newEvent {
-		margin-top: $distance-small;
-
-		h2 {
-			margin-top: -20px;
-		}
+		padding: 10px 32px;
+		width: fit-content;
 	}
 }

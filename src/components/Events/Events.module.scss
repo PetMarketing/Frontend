@@ -7,10 +7,40 @@
 	.events {
 		display: flex;
 		align-items: center;
-		gap: 5rem;
-		margin-top: 100px;
+		justify-content: space-between;
+		gap: 100px;
+		margin-top: 90px;
+
+		@media only screen and (max-width: 1280px) {
+			gap: 50px;
+			margin-top: 55px;
+		}
+
+		@media only screen and (max-width: 833px) {
+			flex-direction: column-reverse;
+			gap: 24px;
+		}
+
+		@media only screen and (max-width: 576px) {
+			margin-top: 32px;
+		}
 
 		.imageBlock {
+			width: 100%;
+			max-width: calc(30% - 50px);
+
+			@media only screen and (max-width: 1280px) {
+				max-width: calc(40% - 25px);
+			}
+
+			@media only screen and (max-width: 992px) {
+				max-width: calc(32% - 25px);
+			}
+
+			@media only screen and (max-width: 833px) {
+				max-width: 100%;
+			}
+
 			div {
 				text-transform: uppercase;
 				color: #2454ff;
@@ -20,67 +50,33 @@
 			}
 
 			img {
-				margin-bottom: 3.125rem;
-				margin-right: 100px;
-
-				@media (max-width: 1439px) {
-					width: 16.125rem;
-					height: 33.625rem;
-				}
-
-				@media (max-width: 833px) {
-					width: 7.625rem;
-					height: 16.5rem;
+				@media only screen and (max-width: 833px) {
+					max-width: 300px;
+					margin: 0 auto;
 				}
 			}
 		}
 
 		.eventsBlock {
-			flex-grow: 1;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-areas: "soonest soonest";
-			gap: $distance-normal;
-		}
+			width: 100%;
+			max-width: calc(70% - 50px);
+			display: flex;
+			flex-wrap: wrap;
+			column-gap: 32px;
+			row-gap: 24px;
 
-		@media (max-width: 1439px) {
-			gap: 1rem;
-			margin-top: 62px;
-			justify-content: center;
-
-			.imageBlock {
-				img {
-					margin-left: 0;
-					width: 254px;
-				}
+			@media only screen and (max-width: 1280px) {
+				max-width: calc(60% - 25px);
 			}
 
-			.eventsBlock {
-				gap: $distance-small;
-				flex-grow: 0;
-			}
-		}
-
-		@media (max-width: 833px) {
-			flex-direction: column-reverse;
-			margin-top: 15px;
-			padding-top: 15px;
-
-			.imageBlock {
-				img {
-					height: 264px;
-					width: 122px;
-					margin: 0 auto $distance-small;
-				}
-
-				div {
-					width: 200px;
-				}
+			@media only screen and (max-width: 992px) {
+				max-width: calc(68% - 25px);
+				column-gap: 16px;
+				row-gap: 16px;
 			}
 
-			.eventsBlock {
-				grid-template-columns: 1fr;
-				grid-template-areas: "soonest";
+			@media only screen and (max-width: 833px) {
+				max-width: 100%;
 			}
 		}
 	}

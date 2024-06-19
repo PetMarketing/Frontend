@@ -6,8 +6,6 @@ import NoResultsFound from '../NoResultsFound/NoResultsFound'
 
 import { getEvents } from '@/services/fetchData'
 
-import eventsSign from '@/assets/eventSign.png'
-
 import styles from './Events.module.scss'
 
 const Events = async () => {
@@ -18,7 +16,7 @@ const Events = async () => {
 			<h3>For marketers and entrepreneurs </h3>
 			<div className={styles.events}>
 				<div className={styles.imageBlock}>
-					<Image src={eventsSign} alt='event sing' />
+					<Image src='/events-sign.png' width={422} height={725} alt='event sing' />
 					<div>
 						<h3>Conferences</h3>
 						<h3>Parties</h3>
