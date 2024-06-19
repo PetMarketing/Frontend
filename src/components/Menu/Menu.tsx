@@ -46,7 +46,7 @@ const Menu = () => {
 			{isMobile ? (
 				<div className={styles.mobileMenu}>
 					<button className={styles.mobileMenuBtn} onClick={onMenuClick}>
-						<div>Меню</div>
+						<div>Menu</div>
 					</button>
 					{showDropdown && (
 						<nav className={styles.mobileMenuDropdown}>
