@@ -133,7 +133,7 @@ export default function BriefForm() {
 								</div>
 
 								<div className={getClsNames(styles.inputContainer, [styles.columns_7])}>
-									<label htmlFor='whatStuffsToUseNow'>What marketing channels are you currently using? What advertising budgets do you use? </label>
+									<label htmlFor='whatStuffsToUseNow'>What marketing channels are you currently using? What advertising budgets do you use? Are you satisfied with the results?</label>
 									<Field name='whatStuffsToUseNow' id='whatStuffsToUseNow' />
 									<Error name='whatStuffsToUseNow'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>
@@ -142,11 +142,11 @@ export default function BriefForm() {
 									<label htmlFor='marketingWishes'>What services / requests can our agency fulfill for you?</label>
 									<Field as='select' name='marketingWishes' id='marketingWishes' placeholder='Оберіть опцію'>
 										<option>Choose the option</option>
-										<option value='таргетована реклама в Instagram та Facebook'>targeted advertising on Instagram and Facebook</option>
-										<option value='реклама в Google'>Google advertising</option>
-										<option value='консалтинг'>consulting</option>
-										<option value='розробка стратегії'>development of strategy</option>
-										<option value='інше'>other</option>
+										<option value='Targeted advertising on Instagram and Facebook'>Targeted advertising on Instagram and Facebook</option>
+										<option value='Advertising on Google'>Advertising on Google</option>
+										<option value='Consulting'>Consulting</option>
+										<option value='Strategy development'>Strategy development</option>
+										<option value='Other'>other</option>
 									</Field>
 									<Error name='marketingWishes'>{error => <span className={styles.error}>{error}</span>}</Error>
 								</div>

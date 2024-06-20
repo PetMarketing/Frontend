@@ -29,10 +29,10 @@ const HeroSection = () => {
 				</div>
 				<Image
 					className={styles.heroImg}
-					src={heroImg}
+					src='/hero-img.jpg'
 					alt='hero-img'
-					width={300}
-					height={274}
+					width={745}
+					height={632}
 					priority
 				/>
 			</div>
