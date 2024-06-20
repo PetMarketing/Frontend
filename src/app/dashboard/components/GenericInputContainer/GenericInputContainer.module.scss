@@ -1,0 +1,90 @@
+@import 'src/styles/variables.scss';
+
+.inputWrapper {
+	margin-bottom: 32px;
+
+	input {
+		border: 1px solid #d5d5d5;
+		width: 100%;
+		max-width: 730px;
+		border-radius: 4px;
+		font-size: 14px;
+		color: #202224;
+	}
+}
+
+.titleInput {
+	padding: 18px 16px;
+}
+
+.labelText {
+	color: #adadad;
+	margin-bottom: 10px;
+}
+
+.errorText,
+.successText {
+	padding-left: 10px;
+	color: red;
+	font-weight: 500;
+}
+
+.successText {
+	color: green;
+}
+
+.hiddenInput {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.addBtn,
+.btnEditingBlock {
+	background: #979797;
+	color: #292a2e;
+
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 132px;
+	text-align: center;
+	padding: 9px;
+	cursor: pointer;
+	transition: $transition;
+
+	&:hover {
+		color: #fff;
+		background: #292a2e;
+	}
+}
+
+.addBtn {
+	width: 129px;
+
+	color: #fff;
+	background: #292a2e;
+
+	&:hover {
+		border: 1px solid #292a2e;
+		color: #292a2e;
+		background: #fff;
+	}
+}
+
+.photoLabel {
+	display: block;
+}
+
+.editImage {
+	height: 49px;
+	width: 83px;
+	margin-top: 10px;
+}

@@ -1,8 +1,7 @@
-@import 'src/styles/variables.scss';
-
 .pageSection {
 	padding: 0 30px;
 }
+
 .title {
 	margin-top: 30px;
 	font-size: 32px;
@@ -13,73 +12,10 @@
 	margin: 32px 0;
 }
 
-.inputWrapper {
-	margin-bottom: 32px;
-
-	input {
-		border: 1px solid #d5d5d5;
-		width: 100%;
-		max-width: 730px;
-		border-radius: 4px;
-		font-size: 14px;
-		color: #202224;
-	}
-}
-
-.titleInput {
-	padding: 18px 16px;
-}
-.descriptionInput {
-	width: 100%;
-	max-width: 730px;
-	padding: 18px 16px 37px;
-}
-
-.labelText {
-	color: #adadad;
-	margin-bottom: 10px;
-}
-.photoLabel {
-	display: inline-block;
-}
-.hiddenInput {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	white-space: nowrap;
-	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-}
-.addBtn {
-	background: #292a2e;
-	border-radius: 6px;
-	font-size: 12px;
-	font-weight: bold;
-	color: #fff;
-	width: 129px;
-	text-align: center;
-	padding: 9px;
-	cursor: pointer;
-	transition: $transition;
-	&:hover {
-		border: 1px solid #292a2e;
-		color: #292a2e;
-		background: #fff;
-	}
-}
 .submitBtn {
 	width: 179px;
 	border-radius: 6px;
 	&:hover {
 		border-radius: 6px;
 	}
-}
-.errorText {
-	padding-left: 10px;
-	color: red;
-	font-weight: 500;
 }

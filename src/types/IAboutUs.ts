@@ -8,8 +8,8 @@ export interface IAboutUs {
 }
 
 export interface ICreateAboutUsBlock {
-	title: string
-	textBlock: string
-	photo: File | null
+	titleBlock: string
+	descriptionBlock: string
+	photo: string
 	imageDescription: string
 }
