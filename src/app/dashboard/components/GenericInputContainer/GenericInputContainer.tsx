@@ -14,7 +14,7 @@ const GenericInputContainer = ({
 	return (
 		<div className={styles.inputWrapper}>
 			{labelText !== '' && <p className={styles.labelText}>{labelText}</p>}
-
+			{/* ку */}
 			<input
 				type='text'
 				name={name}
