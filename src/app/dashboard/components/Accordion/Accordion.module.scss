@@ -24,6 +24,7 @@
 .gridHeaderItem {
 	font-weight: bold;
 }
+
 .gridHeaderItemHidden {
 	width: 1px;
 	height: 1px;
@@ -45,10 +46,10 @@
 	align-items: center;
 }
 
-button {
-	padding: 5px 10px;
-	cursor: pointer;
-}
+// button {
+// 	padding: 5px 10px;
+// 	cursor: pointer;
+// }
 
 .rowContent {
 	display: contents;
