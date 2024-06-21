@@ -1,0 +1,97 @@
+@import 'src/styles/variables.scss';
+
+.accordion {
+	margin-top: 24px;
+	margin-bottom: 105px;
+	border: 1px solid #ccc;
+	border-radius: 14px;
+	max-width: 1441px;
+}
+
+.accordionContent {
+	background: #fff;
+	border-radius: 14px;
+}
+
+.gridHeader {
+	background: #f1f1f1;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.gridHeaderItem {
+	font-weight: bold;
+}
+.gridHeaderItemHidden {
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.gridHeader,
+.gridRow {
+	display: grid;
+	grid-gap: 10px;
+	margin-bottom: 10px;
+
+	align-items: center;
+}
+
+button {
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.rowContent {
+	display: contents;
+}
+
+.gridRowItem {
+	padding: 5px 0;
+	margin: 5px;
+}
+
+.editContainer {
+	grid-column: 1 / -1;
+	margin-top: 10px;
+
+	padding: 10px;
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
+}
+
+.editContent {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.editingPhotoLabelWrapper {
+	display: flex;
+	align-items: flex-start;
+	gap: 30px;
+	height: 111px;
+	margin-bottom: 92px;
+}
+
+.editingInputWrapper {
+	width: 456px;
+	height: 72px;
+}
+
+.btnsEditingBlock {
+	position: absolute;
+	top: 35px;
+	right: 37px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
