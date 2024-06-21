@@ -1,13 +1,12 @@
-@ -0, 0 + 1, 79 @@
-	'use client'
+'use client'
 
-	import { ICreateAboutUsBlock } from '@/types/IAboutUs'
+import { ICreateAboutUsBlock } from '@/types/IAboutUs'
 import { useFormik } from 'formik'
 
 import btnStyles from '@/components/Button/Button.module.scss'
 import { validationSchema } from '@/utils/yupFormCreateBlock'
-import GenericInputContainer from '../../GenericInputContainer/GenericInputContainer'
-import ImageInput from '../../GenericInputContainer/ImageInputCreate'
+import GenericInputContainer from '../GenericInputContainer/GenericInputContainer'
+import ImageInput from '../GenericInputContainer/ImageInputCreate'
 
 import styles from '../AboutUs.module.scss'
 
