@@ -6,6 +6,12 @@
 	border: 1px solid #ccc;
 	border-radius: 14px;
 	max-width: 1441px;
+
+
+	button {
+		padding: 5px 10px;
+		cursor: pointer;
+	}
 }
 
 .accordionContent {
@@ -24,6 +30,7 @@
 .gridHeaderItem {
 	font-weight: bold;
 }
+
 .gridHeaderItemHidden {
 	width: 1px;
 	height: 1px;
@@ -43,11 +50,6 @@
 	margin-bottom: 10px;
 
 	align-items: center;
-}
-
-button {
-	padding: 5px 10px;
-	cursor: pointer;
 }
 
 .rowContent {

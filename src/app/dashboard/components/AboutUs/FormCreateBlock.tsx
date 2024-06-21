@@ -59,7 +59,7 @@ const FormCreateBlock = () => {
 		initialValues: {
 			title: '',
 			textBlock: '',
-			photo: null,
+			photo: '',
 			imageDescription: '',
 		},
 		validationSchema,

@@ -10,7 +10,7 @@ interface ISidebarMenuItemProps {
 
 export default function SidebarMenuItem({ href, Icon, name }: ISidebarMenuItemProps) {
 	return (
-		<Link href={href + name} className={styles.link}>
+		<Link href={href} className={styles.link}>
 			<div className={styles.icon}>
 				<Icon />
 			</div>
