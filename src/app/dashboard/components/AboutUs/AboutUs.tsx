@@ -1,9 +1,14 @@
 import Accordion from '../Accordion/Accordion'
-import styles from './AboutUs.module.scss'
 import FormCreateBlock from './FormCreateBlock/FormCreateBlock'
-import { blockData, blockListItems } from './TestData'
 
-const AboutUs = () => {
+import { getAboutUs } from '@/services/fetchData'
+// import { blockData, blockListItems } from './TestData'
+
+import styles from './AboutUs.module.scss'
+
+const AboutUs = async () => {
+	const aboutUs = await getAboutUs()
+
 	return (
 		<section className={styles.pageSection}>
 			<h1 className={styles.title}>About us</h1>
@@ -12,9 +17,9 @@ const AboutUs = () => {
 			<h2>Editing a block</h2>
 
 			<Accordion
-				columns={['ID', 'NAME', 'DATE', 'STATUS']}
-				blockListItems={blockListItems}
-				blockData={blockData}
+				columns={['id', 'title']}
+				blockListItems={aboutUs}
+				blockData={aboutUs}
 			/>
 		</section>
 	)
