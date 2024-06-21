@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en'>
-			<body className={nunitoSans.className}>
+			<body>
 				<Providers>
-					<div className={styles.wrapper}>
+					<div className={`${styles.wrapper} ${nunitoSans.className}`}>
 						<Sidebar />
 						<div className={styles.content}>
 							<Header />

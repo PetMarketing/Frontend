@@ -1,0 +1,53 @@
+@import "src/styles/variables.scss";
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: #ADADAD;
+    margin-bottom: 11px;
+}
+
+.input {
+    width: 100%;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1;
+    border: 1px solid #D5D5D5;
+    border-radius: 12px;
+    text-align: left;
+    background-color: #F5F6FA;
+
+    &::placeholder {
+        opacity: 1;
+        color: gray;
+    }
+
+    &.inputSuccess {
+        border: 1px solid $success-color;
+    }
+
+    &.inputError {
+        border: 1px solid $error-color;
+    }
+}
+
+.error {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    color: $error-color;
+}

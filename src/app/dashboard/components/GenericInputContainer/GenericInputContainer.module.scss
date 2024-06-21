@@ -61,7 +61,7 @@
 	transition: $transition;
 
 	&:hover {
-		color: #fff;
+		color: $white;
 		background: #292a2e;
 	}
 }
@@ -69,13 +69,13 @@
 .addBtn {
 	width: 129px;
 
-	color: #fff;
+	color: $white;
 	background: #292a2e;
 
 	&:hover {
 		border: 1px solid #292a2e;
 		color: #292a2e;
-		background: #fff;
+		background: $white;
 	}
 }
 
