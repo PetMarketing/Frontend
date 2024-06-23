@@ -20,7 +20,7 @@ interface IProps {
 interface IFormData {
     title: string,
     description: string,
-    imageId: number | null,
+    imageId: number,
 }
 
 export default function NewAboutUsBlockForm({ session }: IProps) {

@@ -21,7 +21,7 @@ interface IFormData {
     name: string,
     department: string,
     position: string,
-    imageId: number | null,
+    imageId: number,
 }
 
 export default function NewTeamMemberForm({ session }: IProps) {

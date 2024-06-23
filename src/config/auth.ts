@@ -39,7 +39,7 @@ export const authConfig: AuthOptions = {
     session: { strategy: 'jwt' },
     callbacks: {
         async jwt({ token, user, trigger, session }) {
-            if (trigger === "update") {
+            if (trigger === 'update') {
 
                 return { ...token, ...session.user };
             }
