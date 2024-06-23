@@ -2,8 +2,13 @@
     display: flex;
     min-height: 100vh;
     overflow-x: hidden;
+    background-color: #F5F6FA;
 }
 
 .content {
     flex: 1 1 auto;
+}
+
+.contentInner {
+    padding: 30px;
 }

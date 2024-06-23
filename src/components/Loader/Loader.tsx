@@ -35,7 +35,7 @@ const Loader: React.FC<Props> = ({ className }) => {
 					</clipPath>
 					<linearGradient id='smiley-grad' x1='0' y1='0' x2='0' y2='1'>
 						<stop offset='0%' stopColor='#000' />
-						<stop offset='100%' stopColor='#fff' />
+						<stop offset='100%' stopColor='$white' />
 					</linearGradient>
 					<mask id='smiley-mask'>
 						<rect x='0' y='0' width='128' height='128' />

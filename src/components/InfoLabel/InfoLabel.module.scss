@@ -12,11 +12,11 @@
     border-radius: 8px;
 
     &.blue {
-        color: #fff;
+        color: $white;
         background: $prim-color-blue;
     }
 
     &.white {
-        background: #fff;
+        background: $white;
     }
 }
