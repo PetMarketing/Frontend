@@ -38,16 +38,20 @@ export const authConfig: AuthOptions = {
     ],
     session: { strategy: 'jwt' },
     callbacks: {
-        async jwt({ token, user }) {
-            if (user) return { ...token, ...user };
+        async jwt({ token, user, trigger, session }) {
+            if (trigger === "update") {
 
-            return token;
+                return { ...token, ...session.user };
+            }
+            return { ...token, ...user };
         },
         async session({ token, session }) {
             session.user = token.user;
             session.token = token.token;
             session.tokenExpires = token.tokenExpires;
             session.refreshToken = token.refreshToken;
+
+            console.log('session: ', session);
 
             return session;
         },

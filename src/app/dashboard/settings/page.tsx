@@ -21,10 +21,10 @@ interface IUpdateAdminProfileForm {
 export default function SettingsPage() {
 	const [isError, setIsError] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
-	const [isSuccess, setIsSuccess] = useState(true);
+	const [isSuccess, setIsSuccess] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 
-	const { data: session, status } = useSession();
+	const { data: session, status, update } = useSession();
 
 	if (status === 'loading') {
 		return (
@@ -78,6 +78,8 @@ export default function SettingsPage() {
 			} else {
 				setIsSuccess(true); // Set success state upon successful form submission
 
+				await update({ ...session, user: data });
+
 				actions.resetForm();
 			}
 		} catch (error) {
@@ -121,7 +123,7 @@ export default function SettingsPage() {
 
 										{
 											isSuccess ? (
-												<Button className={styles.button} text='Changes saved' type='submit' variant='black' />
+												<Button className={styles.button} text='Changes saved' variant='black' />
 											) : (
 												<Button className={styles.button} text='Save' type='submit' />
 											)
