@@ -2,20 +2,35 @@
 
 .button {
     display: inline-block;
-    padding: 16px 32px;
+    padding: 14px 30px;
     color: $white;
     font-size: 18px;
     line-height: 1;
     transition: $transition;
+    border: 1px solid;
     border-radius: 12px;
     outline: none;
     text-align: center;
+
+    &:hover {
+        background-color: $white;
+    }
 }
 
 .primary {
+    border-color: $prim-color-blue;
     background: $prim-color-blue;
+
+    &:hover {
+        color: $prim-color-blue;
+    }
 }
 
 .black {
+    border-color: #292A2E;
     background: #292A2E;
+
+    &:hover {
+        color: #292A2E;
+    }
 }

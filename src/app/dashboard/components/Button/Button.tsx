@@ -17,7 +17,7 @@ export default function Button({
 	onClick,
 	variant = 'primary',
 	className = '',
-	disabled = false
+	disabled = false,
 }: IButtonProps) {
 	return (
 		<button

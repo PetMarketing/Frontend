@@ -51,8 +51,6 @@ export const authConfig: AuthOptions = {
             session.tokenExpires = token.tokenExpires;
             session.refreshToken = token.refreshToken;
 
-            console.log('session: ', session);
-
             return session;
         },
     },
