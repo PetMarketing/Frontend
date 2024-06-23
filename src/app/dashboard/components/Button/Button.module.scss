@@ -9,5 +9,13 @@
     transition: $transition;
     border-radius: 12px;
     outline: none;
+    text-align: center;
+}
+
+.primary {
     background: $prim-color-blue;
+}
+
+.black {
+    background: #292A2E;
 }

@@ -6,6 +6,7 @@ interface IButtonProps {
 	text: string;
 	onClick?: () => void;
 	type?: 'submit' | 'button';
+	variant?: 'primary' | 'black'
 	className?: string;
 	disabled?: boolean;
 }
@@ -14,6 +15,7 @@ export default function Button({
 	type = 'button',
 	text,
 	onClick,
+	variant = 'primary',
 	className = '',
 	disabled = false
 }: IButtonProps) {
@@ -21,7 +23,7 @@ export default function Button({
 		<button
 			type={type}
 			disabled={disabled}
-			className={`${styles.button} ${className}`}
+			className={`${styles.button} ${styles[variant]} ${className}`}
 			onClick={onClick}
 		>
 			{text}

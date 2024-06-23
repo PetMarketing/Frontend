@@ -14,10 +14,12 @@ import SettingsIcon from '@/assets/svg/settings-icon';
 import RequestsIcon from '@/assets/svg/requests-icon';
 
 import styles from './SidebarMenu.module.scss';
+import TeamIcon from '@/assets/svg/team-icon';
 
 const menuItems = [
     { href: '/dashboard', Icon: DashboardIcon, name: 'Dashboard' },
     { href: '/dashboard/about-us', Icon: InfoIcon, name: 'About Us' },
+    { href: '/dashboard/team', Icon: TeamIcon, name: 'Team' },
     { href: '/dashboard/services', Icon: ServiceIcon, name: 'Services' },
     { href: '/dashboard/events', Icon: EventIcon, name: 'Events' },
     { href: '/dashboard/requests', Icon: RequestsIcon, name: 'Client requests' }

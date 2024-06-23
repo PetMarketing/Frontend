@@ -21,7 +21,7 @@ interface IUpdateAdminProfileForm {
 export default function SettingsPage() {
 	const [isError, setIsError] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
-	const [isSuccess, setIsSuccess] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(true);
 	const [errorMessage, setErrorMessage] = useState('');
 
 	const { data: session, status } = useSession();
@@ -119,7 +119,13 @@ export default function SettingsPage() {
 
 										<FormikInput className={styles.input} type='email' name='email' id='email' label='Email' />
 
-										<Button className={styles.button} text='Save' type='submit' />
+										{
+											isSuccess ? (
+												<Button className={styles.button} text='Changes saved' type='submit' variant='black' />
+											) : (
+												<Button className={styles.button} text='Save' type='submit' />
+											)
+										}
 									</Form>
 								</Formik>
 
