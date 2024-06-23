@@ -11,37 +11,34 @@ import Button from '../Button/Button';
 
 import { ISession } from '@/types/ISession';
 
-import styles from './NewTeamMemberForm.module.scss'
+import styles from './NewAboutUsBlockForm.module.scss'
 
 interface IProps {
     session: ISession | null;
 }
 
 interface IFormData {
-    name: string,
-    department: string,
-    position: string,
+    title: string,
+    description: string,
     imageId: number | null,
 }
 
-export default function NewTeamMemberForm({ session }: IProps) {
+export default function NewAboutUsBlockForm({ session }: IProps) {
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
 
     const initialValues = {
-        name: '',
-        department: '',
-        position: '',
+        title: '',
+        description: '',
         imageId: 1,
         // image: null,
     }
 
     const validationSchema = Yup.object().shape({
-        name: Yup.string().required('Required'),
-        department: Yup.string().required('Required'),
-        position: Yup.string().required('Required'),
+        title: Yup.string().required('Required'),
+        description: Yup.string().required('Required'),
         // image: Yup.mixed().required('Image is required'),
     });
 
@@ -60,7 +57,7 @@ export default function NewTeamMemberForm({ session }: IProps) {
                 setErrorMessage('Token Expired');
             }
 
-            const res = await fetch(`${baseURL}/member/1`, {
+            const res = await fetch(`${baseURL}/who-we-are`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -102,11 +99,9 @@ export default function NewTeamMemberForm({ session }: IProps) {
             <>
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values, actions) => submitHandler(values, actions)}>
                     <Form className={styles.form}>
-                        <FormikInput className={styles.input} type='text' name='name' id='name' label='User Name' />
+                        <FormikInput className={styles.input} type='text' name='title' id='title' label='Title' />
 
-                        <FormikInput className={styles.input} type='text' name='department' id='department' label='Department' />
-
-                        <FormikInput className={styles.input} type='text' name='position' id='position' label='Position' />
+                        <FormikInput className={styles.input} type='text' name='description' id='description' label='Description' />
 
                         <FormikInput className={styles.input} type='file' name='image' id='image' label='Image' accept='image/jpeg,image/jpg' />
 
