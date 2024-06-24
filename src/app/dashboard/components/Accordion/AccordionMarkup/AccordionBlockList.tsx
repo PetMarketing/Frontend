@@ -29,14 +29,16 @@ const AccordionBlockList: React.FC<IAccordionBlockListProps> = ({
 						))}
 
 						<div className={styles.gridRowItem}>
-							<button onClick={() => toggleAccordion(row.ID)}>Редагувати</button>
+							<button onClick={() => toggleAccordion(row.id)}>
+								Редагувати {row.id}
+							</button>
 						</div>
 						<div className={styles.gridRowItem}>
-							<button onClick={() => deleteItem(row.ID)}>Видалити</button>
+							<button onClick={() => deleteItem(row.id)}>Видалити</button>
 						</div>
 					</div>
 
-					{currentBlock === row.ID && (
+					{currentBlock === row.id && (
 						<div className={styles.editContainer}>
 							{blockData.map(({ id, title, description, image }) =>
 								id === currentBlock ? (
