@@ -5,6 +5,9 @@ import { IAccordionBlockListProps } from '@/types/IAccordionProps'
 import FormEditingBlock from './FormEditingBlock'
 
 import styles from '../Accordion.module.scss'
+import Image from 'next/image'
+
+import deleteIcon from '@/assets/images/cencel-delete.svg'
 
 const AccordionBlockList: React.FC<IAccordionBlockListProps> = ({
 	columns,
@@ -17,10 +20,16 @@ const AccordionBlockList: React.FC<IAccordionBlockListProps> = ({
 	return (
 		<div>
 			{blockListItems.map((row, rowIndex) => (
-				<div key={rowIndex}>
+				<div key={rowIndex} className={styles.gridRowContainer}>
 					<div
 						className={styles.gridRow}
-						style={{ gridTemplateColumns: `repeat(${columns.length + 2}, 1fr)` }}
+						style={{
+							backgroundColor:
+								currentBlock === row.id
+									? 'rgba(216, 255, 105, 0.52)'
+									: 'transparent',
+							gridTemplateColumns: `repeat(${columns.length + 2}, 1fr)`,
+						}}
 					>
 						{columns.map((col, colIndex) => (
 							<div key={colIndex} className={styles.gridRowItem}>
@@ -29,12 +38,17 @@ const AccordionBlockList: React.FC<IAccordionBlockListProps> = ({
 						))}
 
 						<div className={styles.gridRowItem}>
-							<button onClick={() => toggleAccordion(row.id)}>
-								Редагувати {row.id}
+							<button
+								className={styles.editBtn}
+								onClick={() => toggleAccordion(row.id)}
+							>
+								Редагувати
 							</button>
 						</div>
 						<div className={styles.gridRowItem}>
-							<button onClick={() => deleteItem(row.id)}>Видалити</button>
+							<button onClick={() => deleteItem(row.id)}>
+								<Image src={deleteIcon} alt='delete' width={24} />
+							</button>
 						</div>
 					</div>
 
