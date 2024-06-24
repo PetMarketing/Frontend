@@ -60,3 +60,31 @@
         font-size: $text-mob-normal;
     }
 }
+
+.socials {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    .link {
+        display: block;
+
+        &:hover {
+            svg {
+                transform: scale(1.1);
+            }
+        }
+
+        svg {
+            width: 35px;
+            height: 35px;
+            transition: $transition;
+
+            @media only screen and (max-width: 767px) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}

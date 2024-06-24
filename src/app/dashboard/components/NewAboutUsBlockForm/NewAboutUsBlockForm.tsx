@@ -105,7 +105,7 @@ export default function NewAboutUsBlockForm({ session }: IProps) {
 
                         <FormikInput className={styles.input} type='file' name='image' id='image' label='Image' accept='image/jpeg,image/jpg' />
 
-                        <Button className={styles.button} text='Add a team member' type='submit' />
+                        <Button className={styles.button} text='Add new block' type='submit' />
                     </Form>
                 </Formik>
 
