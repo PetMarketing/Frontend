@@ -7,7 +7,6 @@ import { getAboutUs } from '@/services/fetchData'
 
 import { authConfig } from '@/config/auth';
 
-
 import styles from './page.module.scss'
 
 export default async function AboutUsPage() {
