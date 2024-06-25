@@ -22,13 +22,13 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 					<div className={styles.header}>
 						<h5>{event.date}</h5>
 						<h5>{event.location}</h5>
-						<h2 className={dela.className}>{event.name}</h2>
+						<h2 className={`${dela.className} ${styles.title}`}>{event.name}</h2>
 					</div>
 					<div className={styles.speakers}>
 						{event.speakers.map(speaker => (
 							<div key={speaker.id}>
 								<Flower fill={speaker.image.imagePath} />
-								<div>{speaker.name}</div>
+								<div className={styles.speakerName}>{speaker.name}</div>
 							</div>
 						))}
 						<ButtonLink href={`/event/${event.id.toString()}`} variant='primary' className={styles.greenBtn}>
@@ -39,10 +39,10 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 			) : (
 				<div className={styles.laterEvent}>
 					<div className={styles.header}>
-						<h5>{event.date}</h5>
-						<h5>{event.location}</h5>
+						<h5 className={styles.infoTitle}>{event.date}</h5>
+						<h5 className={styles.infoTitle}>{event.location}</h5>
 					</div>
-					<h2 className={dela.className}>
+					<h2 className={`${dela.className} ${styles.title}`}>
 						{event.name}
 					</h2>
 					<ButtonLink href={`/event/${event.id.toString()}`} variant='primary' className={styles.button}>

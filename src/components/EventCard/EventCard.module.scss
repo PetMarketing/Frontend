@@ -14,7 +14,7 @@
 		margin-bottom: $distance-small;
 		flex-wrap: wrap;
 
-		h5 {
+		.infoTitle {
 			@media only screen and (max-width: 992px) {
 				font-size: 13px;
 				line-height: 1;
@@ -33,7 +33,7 @@
 	border: 1px solid #2454ff;
 
 	.header {
-		h5 {
+		.infoTitle {
 			@media only screen and (max-width: 992px) {
 				font-size: 15px;
 			}
@@ -53,12 +53,12 @@
 				"button  .";
 		}
 
-		div {
+		.speakerName {
 			text-align: center;
 		}
 	}
 
-	h2 {
+	.title {
 		color: $prim-color-green;
 		font-size: $text-huge;
 		margin-bottom: 16px !important;
@@ -113,7 +113,7 @@
 		max-width: 100%;
 	}
 
-	h2 {
+	.title {
 		color: $prim-color-blue;
 		font-size: $text-huge;
 		margin-bottom: 16px !important;

@@ -7,6 +7,14 @@
   }
 }
 
+.page {
+  .button {
+    width: 100%;
+    max-width: 274px;
+    margin: 0 auto;
+  }
+}
+
 .title {
   font-size: 32px;
   font-weight: 700;
@@ -67,11 +75,6 @@
 
 .input {
   flex: 1 1 calc(50% - 30px);
-}
-
-.button {
-  margin: 0 auto;
-  padding: 16px 96px;
 }
 
 .loaderWrapper {

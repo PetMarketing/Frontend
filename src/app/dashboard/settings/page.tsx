@@ -24,7 +24,7 @@ export default function SettingsPage() {
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 
-	const { data: session, status } = useSession();
+	const { data: session, status, update } = useSession();
 
 	if (status === 'loading') {
 		return (
@@ -78,6 +78,8 @@ export default function SettingsPage() {
 			} else {
 				setIsSuccess(true); // Set success state upon successful form submission
 
+				await update({ ...session, user: data });
+
 				actions.resetForm();
 			}
 		} catch (error) {
@@ -119,7 +121,13 @@ export default function SettingsPage() {
 
 										<FormikInput className={styles.input} type='email' name='email' id='email' label='Email' />
 
-										<Button className={styles.button} text='Save' type='submit' />
+										{
+											isSuccess ? (
+												<Button className={styles.button} text='Changes saved' variant='black' />
+											) : (
+												<Button className={styles.button} text='Save' type='submit' />
+											)
+										}
 									</Form>
 								</Formik>
 
