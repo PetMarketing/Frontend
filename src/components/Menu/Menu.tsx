@@ -11,7 +11,7 @@ import CloseIcon from '@/assets/svg/close-icon'
 import styles from './Menu.module.scss'
 
 const menuItems = [
-	{ name: 'About Us', route: '/' },
+	{ name: 'Home', route: '/' },
 	{ name: 'Team', route: '/team' },
 	{ name: 'Brief', route: '/brief' },
 ]

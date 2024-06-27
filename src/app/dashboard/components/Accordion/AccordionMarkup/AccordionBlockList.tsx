@@ -42,7 +42,7 @@ const AccordionBlockList: React.FC<IAccordionBlockListProps> = ({
 								className={styles.editBtn}
 								onClick={() => toggleAccordion(row.id)}
 							>
-								Редагувати
+								Edit
 							</button>
 						</div>
 						<div className={styles.gridRowItem}>

@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@import 'src/styles/variables.scss';
 
 .teamForm {
 	flex-grow: 1;
@@ -20,11 +20,11 @@
 .form {
 	display: grid;
 	grid-template-areas:
-		"name position"
-		"email email"
-		"description description"
-		".. cv"
-		"sendBtn sendBtn";
+		'name position'
+		'email email'
+		'description description'
+		'.. cv'
+		'sendBtn sendBtn';
 	gap: $distance-normal;
 
 	.inputContainer {
@@ -41,7 +41,7 @@
 			border-radius: $border-radius-small;
 			border: $prim-border;
 			padding: 14px 10px;
-			font-size: $text-normal;
+			font-size: $text-medium;
 			font-weight: 600;
 			outline: none;
 			width: 100%;
@@ -87,12 +87,12 @@
 
 	.form {
 		grid-template-areas:
-			"name"
-			"position"
-			"email"
-			"description"
-			"cv"
-			"sendBtn";
+			'name'
+			'position'
+			'email'
+			'description'
+			'cv'
+			'sendBtn';
 		gap: $distance-small;
 
 		.inputContainer {

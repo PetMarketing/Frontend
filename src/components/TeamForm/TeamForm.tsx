@@ -1,12 +1,12 @@
 'use client'
 
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 
 import Loader from '@/components/Loader/Loader'
 import Button from '@/components/Button/Button'
 
-import { ITeamFormData, ITeamFormDataErrors } from '@/types/IFormData'
+import { ITeamFormData } from '@/types/IFormData'
 
 import clip from '@/assets/clip.png'
 import welcome from '@/assets/welcome.png'
@@ -38,14 +38,11 @@ const TeamForm = () => {
 					method: 'POST',
 					body: JSON.stringify(values),
 				})
-
-				setLoading(false)
 			} catch (error) {
-				console.log('error:', error)
-				setLoading(false)
 				setShowSentConfirm(true)
 			} finally {
 				formik.resetForm()
+				setLoading(false)
 			}
 		},
 	})
