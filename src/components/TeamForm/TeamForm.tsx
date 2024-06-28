@@ -1,21 +1,20 @@
 'use client'
 
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import React, { useState } from 'react'
+import { useFormik } from 'formik'
 import Image from 'next/image'
 
 import Loader from '@/components/Loader/Loader'
 import Button from '@/components/Button/Button'
 
-import { ITeamFormData, ITeamFormDataErrors } from '@/types/IFormData'
+import { ITeamFormData } from '@/types/IFormData'
 
 import clip from '@/assets/clip.png'
 import welcome from '@/assets/welcome.png'
 
 import styles from './TeamForm.module.scss'
-import { useFormik } from 'formik'
 import { validationSchema } from '@/utils/yupTeamForm'
-
-const apiKey = process.env.NEXT_PUBLIC_API_KEY
+import { submitTeamForm } from '@/utils/submitTeamForm'
 
 const TeamForm = () => {
 	const [showSentConfirm, setShowSentConfirm] = useState<boolean>(false)
@@ -31,24 +30,15 @@ const TeamForm = () => {
 		},
 		validationSchema,
 		onSubmit: async values => {
-			try {
-				setLoading(true)
-				console.log(values)
-				await fetch(`${apiKey}/team-form`, {
-					method: 'POST',
-					body: JSON.stringify(values),
-				})
-
-				setLoading(false)
-			} catch (error) {
-				console.log('error:', error)
-				setLoading(false)
-				setShowSentConfirm(true)
-			} finally {
-				formik.resetForm()
-			}
+			await submitTeamForm(values, setLoading, setShowSentConfirm)
 		},
 	})
+
+	const isImagePathNull = formik.values.imagePath === null
+	const errorStyle =
+		formik.touched.imagePath && formik.errors.imagePath
+			? { border: '1px solid red', color: 'red' }
+			: undefined
 
 	return (
 		<div className={styles.teamForm}>
@@ -172,34 +162,38 @@ const TeamForm = () => {
 									)}
 								</div>
 
-								{formik.values.imagePath === null ? (
-									<label
-										htmlFor='cv'
-										className={styles.fileUpload}
-										style={
-											formik.touched.imagePath && formik.errors.imagePath
-												? { border: '1px solid red', color: 'red' }
-												: undefined
-										}
-									>
-										Attach your CV +
-									</label>
-								) : (
-									<label htmlFor='cv' className={styles.fileUpload}>
-										Attached{' '}
-										<Image
-											src={clip}
-											alt='clip icon'
-											style={{ marginLeft: '5px' }}
-										/>
-									</label>
-								)}
+								<label
+									htmlFor='cv'
+									className={styles.fileUpload}
+									style={isImagePathNull ? errorStyle : undefined}
+								>
+									{isImagePathNull ? (
+										'Attach your CV +'
+									) : (
+										<>
+											Attached
+											<Image
+												src={clip}
+												alt='clip icon'
+												style={{ marginLeft: '5px' }}
+											/>
+										</>
+									)}
+								</label>
 								<input
 									type='file'
 									id='cv'
 									name='imagePath'
 									accept='.pdf'
-									onChange={formik.handleChange}
+									onChange={event => {
+										if (
+											event.currentTarget.files &&
+											event.currentTarget.files.length > 0
+										) {
+											const file = event.currentTarget.files[0]
+											formik.setFieldValue('imagePath', file)
+										}
+									}}
 									onBlur={formik.handleBlur}
 									style={{ display: 'none' }}
 								/>
