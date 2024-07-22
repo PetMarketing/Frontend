@@ -57,12 +57,12 @@ const AccordionBlockList: React.FC<IAccordionBlockListProps> = ({
 							{blockData.map(({ id, title, description, image }) =>
 								id === currentBlock ? (
 									<div key={id} className={styles.editContent}>
-										<FormEditingBlock
+										{/* <FormEditingBlock
 											id={id}
 											title={title}
 											description={description}
 											image={image}
-										/>
+										/> */}
 									</div>
 								) : null,
 							)}

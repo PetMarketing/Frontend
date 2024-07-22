@@ -15,7 +15,6 @@ interface Props {
 }
 
 const EventCard: React.FC<Props> = ({ event, variant, style }) => {
-	console.log('event: ', event);
 	return (
 		<>
 			{variant === 'soonest' ? (
