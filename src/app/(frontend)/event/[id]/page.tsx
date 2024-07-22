@@ -67,8 +67,8 @@ export default async function EventPage({ params: { id } }: Props) {
 							<div className={styles.speakersWrapper}>
 								{event.speakers.map(speaker => (
 									<div className={styles.speaker} key={speaker.id}>
-										<Flower fill={speaker.image.imagePath} />
-										<div className={styles.speakerName}>{speaker.name}</div>
+										<Flower fill={speaker.imagePath} />
+										<div className={styles.speakerName}>{speaker.imageAlt}</div>
 									</div>
 								))}
 							</div>

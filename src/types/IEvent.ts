@@ -11,5 +11,6 @@ export interface IEvent {
 interface ISpeaker {
 	id: number
 	name: string
-	image: IImage
+	imagePath: string
+	imageAlt: string
 }

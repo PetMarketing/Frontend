@@ -23,7 +23,7 @@ const MemberCard: React.FC<Props> = ({ member }) => {
 	return (
 		<div className={styles.card}>
 			<div className={styles.imageWrapper}>
-				<Image src={member.image.imagePath} width={119} height={122} alt={member.image.description} />
+				<Image src={member.imagePath} width={119} height={122} alt={member.imageAlt} />
 			</div>
 			<div className={getClsNames(styles.position, [dela.className])}>{member.position}</div>
 			<p className={styles.name}>{member.name}</p>

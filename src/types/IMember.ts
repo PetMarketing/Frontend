@@ -6,6 +6,7 @@ export interface IMember {
 	name: string
 	department: string
 	position: string
-	image: IImage
+	imagePath: string
+	imageAlt: string
 	social?: ISocial
 }

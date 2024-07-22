@@ -13,7 +13,7 @@ import { dela } from '@/styles/fonts/fonts'
 import styles from './MembersBlock.module.scss'
 
 const MembersBlock = async () => {
-	const members = await getMembers()
+	const members = await getMembers();
 
 	if (!members.length) {
 		return (

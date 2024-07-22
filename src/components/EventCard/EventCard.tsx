@@ -15,6 +15,7 @@ interface Props {
 }
 
 const EventCard: React.FC<Props> = ({ event, variant, style }) => {
+	console.log('event: ', event);
 	return (
 		<>
 			{variant === 'soonest' ? (
@@ -27,8 +28,8 @@ const EventCard: React.FC<Props> = ({ event, variant, style }) => {
 					<div className={styles.speakers}>
 						{event.speakers.map(speaker => (
 							<div key={speaker.id}>
-								<Flower fill={speaker.image.imagePath} />
-								<div className={styles.speakerName}>{speaker.name}</div>
+								<Flower fill={speaker.imagePath} />
+								<div className={styles.speakerName}>{speaker.imageAlt}</div>
 							</div>
 						))}
 						<ButtonLink href={`/event/${event.id.toString()}`} variant='primary' className={styles.greenBtn}>

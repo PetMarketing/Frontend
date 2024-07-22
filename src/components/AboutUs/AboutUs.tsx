@@ -33,8 +33,8 @@ const AboutUsSection = async () => {
 							</div>
 							<Image
 								className={styles.aboutItemImg}
-								src={item.image.imagePath}
-								alt={item.image.description}
+								src={item.imagePath}
+								alt={item.imageAlt}
 								width={634}
 								height={374}
 							/>

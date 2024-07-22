@@ -10,6 +10,7 @@ import styles from './Events.module.scss'
 
 const Events = async () => {
 	const events = await getEvents();
+	console.log('events: ', events);
 
 	return (
 		<Section title='Events' className={styles.eventsWrapper}>
