@@ -6,7 +6,7 @@ interface IButtonProps {
 	text: string;
 	onClick?: () => void;
 	type?: 'submit' | 'button';
-	variant?: 'primary' | 'black'
+	variant?: 'primary' | 'black' | 'edit'
 	className?: string;
 	disabled?: boolean;
 }

@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 
+import Accordion from '../components/accordion';
 import NewAboutUsBlockForm from '../components/NewAboutUsBlockForm/NewAboutUsBlockForm';
-import Accordion from '../components/Accordion/Accordion';
 
 import { getAboutUs } from '@/services/fetchData'
 
@@ -23,11 +23,7 @@ export default async function AboutUsPage() {
 				<NewAboutUsBlockForm session={session} />
 			</div>
 
-			<Accordion
-				columns={['id', 'title']}
-				blockListItems={aboutUs}
-				blockData={aboutUs}
-			/>
+			<Accordion columns={['id', 'title']} data={aboutUs} />
 		</div>
 	)
 }

@@ -1,0 +1,41 @@
+@import 'src/styles/variables.scss';
+
+.accordion {
+    margin: 50px 0 100px 0;
+    border: 1px solid #E0E0E0;
+    border-radius: 14px;
+
+    table {
+        width: 100%;
+    }
+
+    thead {
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 1.35;
+        color: #202224;
+        opacity: 0.9;
+    }
+
+    tr {
+        border-bottom: 1px solid #E0E0E0;
+    }
+
+    th {
+        padding: 15px 30px;
+        // border: 1px solid;
+    }
+
+    td {
+        padding: 15px 30px;
+        // border: 1px solid;
+    }
+
+    .headerItemHidden {
+        width: 100px;
+        color: transparent;
+        pointer-events: none;
+        user-select: none;
+    }
+}

@@ -34,3 +34,16 @@
         color: #292A2E;
     }
 }
+
+.edit {
+    padding: 9px 30px;
+    background: #4880ff;
+    border-color: #4880ff;
+    font-size: $text-small;
+    font-weight: 700;
+    border-radius: 6px;
+
+    &:hover {
+        color: #4880ff;
+    }
+}

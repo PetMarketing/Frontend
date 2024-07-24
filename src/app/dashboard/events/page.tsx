@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 
+import Accordion from '../components/accordion';
 import NewEventForm from '../components/NewEventForm/NewEventForm'
-import Accordion from '../components/Accordion/Accordion'
 
 import { getEvents } from '@/services/fetchData';
 
@@ -23,11 +23,7 @@ export default async function EventsPage() {
 				<NewEventForm session={session} />
 			</div>
 
-			<Accordion
-				columns={['id', 'name', 'location', 'date']}
-				blockListItems={events}
-				blockData={events}
-			/>
+			<Accordion columns={['id', 'name', 'location', 'date']} data={events} />
 		</div>
 	)
 }
