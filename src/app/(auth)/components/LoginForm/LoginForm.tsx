@@ -10,6 +10,7 @@ import styles from './LoginForm.module.scss';
 
 import Loader from '@/components/Loader/Loader';
 import Button from '@/components/Button/Button';
+import ErrorMessage from '@/components/ErrorMessage/ErrorMessage';
 
 import { login } from '@/services/auth/auth.service';
 
@@ -38,8 +39,25 @@ export default function LoginForm() {
         setIsLoading(true); // Indicate that the request has been started
         setErrorMessage(''); // Reset the previous error message
 
-        const res = await login(values);
-        console.log('res: ', res);
+        try {
+            const res = await login(values);
+
+            if (res.error) {
+                setIsError(true); // Set an error if the response status is not successful
+                setErrorMessage(res.message); // Set the error message from the response
+            } else {
+                alert('SUCCESS'); // Alert success if the request is successful
+                // Redirect or any other actions on success can be added here
+            }
+        } catch (error) {
+            setIsError(true);
+            setErrorMessage('Something went wrong. Please try again later.');
+        } finally {
+            actions.setSubmitting(false); // Mark that the sending is completed in Formik
+            actions.resetForm();
+
+            setIsLoading(false); // Indicate that the request has ended
+        }
     }
 
     return (
@@ -69,9 +87,7 @@ export default function LoginForm() {
 
             <Loader className={styles.loader} />
 
-            {isError && (
-                <div className={styles.error}>{errorMessage}</div>
-            )}
+            {isError && <ErrorMessage err={errorMessage} />}
 
             <Link href={'/'} className={styles.homeLink}>Go to Home</Link>
         </div >
