@@ -14,9 +14,6 @@ import ErrorMessage from '@/components/ErrorMessage/ErrorMessage';
 
 import { login } from '@/services/auth/auth.service';
 
-import { ILogin } from '@/types/ILogin';
-
-
 export default function LoginForm() {
     const router = useRouter();
 
@@ -42,12 +39,9 @@ export default function LoginForm() {
         try {
             const res = await login(values);
 
-            if (res.error) {
+            if (res && res.error) {
                 setIsError(true); // Set an error if the response status is not successful
                 setErrorMessage(res.message); // Set the error message from the response
-            } else {
-                alert('SUCCESS'); // Alert success if the request is successful
-                // Redirect or any other actions on success can be added here
             }
         } catch (error) {
             setIsError(true);
