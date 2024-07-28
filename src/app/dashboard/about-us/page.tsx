@@ -1,16 +1,13 @@
-import { getServerSession } from 'next-auth';
+
 
 import Accordion from '../components/accordion';
 import NewAboutUsBlockForm from '../components/NewAboutUsBlockForm/NewAboutUsBlockForm';
 
 import { getAboutUs } from '@/services/fetchData'
 
-import { authConfig } from '@/config/auth';
-
 import styles from './page.module.scss'
 
 export default async function AboutUsPage() {
-	const session = await getServerSession(authConfig);
 	const aboutUs = await getAboutUs()
 
 	return (
@@ -20,7 +17,7 @@ export default async function AboutUsPage() {
 			<h3 className={styles.title}>Add new block</h3>
 
 			<div className={styles.addNewBlock}>
-				<NewAboutUsBlockForm session={session} />
+				<NewAboutUsBlockForm />
 			</div>
 
 			<Accordion columns={['id', 'title']} data={aboutUs} form={<NewAboutUsBlockForm />} />

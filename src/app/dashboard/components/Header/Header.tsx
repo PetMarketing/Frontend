@@ -1,11 +1,9 @@
 import Image from 'next/image';
-import { getServerSession } from 'next-auth'
 
-import { authConfig } from '@/config/auth'
 import styles from './Header.module.scss';
 
 export default async function Header() {
-	const session = await getServerSession(authConfig);
+	const session = undefined;
 
 	return (
 		<header className={styles.header}>

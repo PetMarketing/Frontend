@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image'
-import { useSession } from 'next-auth/react';
 import { Formik, Form, Field, ErrorMessage as Error, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 
@@ -24,19 +23,9 @@ export default function SettingsPage() {
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 
-	const { data: session, status, update } = useSession();
-
-	if (status === 'loading') {
-		return (
-			<div className={styles.pageLoaderWrapper}>
-				<Loader className={styles.loader} />
-			</div>
-		);
-	}
-
 	const initialValues = {
-		name: session?.user.name || '',
-		email: session?.user.email || '',
+		name: '',
+		email: '',
 	}
 
 	const validationSchema = Yup.object().shape({

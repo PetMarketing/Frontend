@@ -1,5 +1,72 @@
 @import "src/styles/variables.scss";
 
+.wrapper {
+    width: 100%;
+    max-width: 630px;
+    margin: auto;
+    padding: 90px 58px;
+    background: $white;
+    border-radius: 24px;
+    position: relative;
+
+    @media only screen and (max-width: 1400px) {
+        padding: 60px 45px;
+    }
+
+    @media only screen and (max-width: 576px) {
+        padding: 25px 15px;
+    }
+}
+
+.title {
+    margin-bottom: 15px;
+    font-size: $text-huge;
+    font-weight: 700;
+    line-height: normal;
+    color: #202224;
+    text-align: center;
+    text-transform: unset;
+
+    @media only screen and (max-width: 576px) {
+        margin-bottom: 10px;
+        font-size: $text-big;
+    }
+}
+
+.subtitle {
+    margin-bottom: 35px;
+    font-size: $text-medium;
+    font-weight: 600;
+    font-style: normal;
+    color: #202224;
+    text-align: center;
+
+    @media only screen and (max-width: 576px) {
+        font-size: $text-normal;
+    }
+}
+
+.homeLink {
+    display: block;
+    margin-top: 18px;
+    font-size: $text-medium;
+    font-weight: 600;
+    line-height: normal;
+    color: #a6a6a6;
+    text-align: center;
+    opacity: .65;
+    transition: $transition;
+
+    @media only screen and (max-width: 576px) {
+        font-size: $text-normal;
+    }
+
+    &:hover {
+        opacity: 1;
+        color: $prim-color-blue;
+    }
+}
+
 .form {
     .inputContainer {
         margin-bottom: 40px;
@@ -64,5 +131,29 @@
         margin-top: 5px;
         display: inline-block;
         color: red;
+    }
+}
+
+.loading {
+    &>*:not(.loader) {
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    .loader {
+        display: block;
+    }
+}
+
+.loader {
+    font-size: 18px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media only screen and (max-width: 767px) {
+        font-size: 10px;
     }
 }
