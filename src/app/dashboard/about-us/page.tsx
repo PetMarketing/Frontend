@@ -23,7 +23,7 @@ export default async function AboutUsPage() {
 				<NewAboutUsBlockForm session={session} />
 			</div>
 
-			<Accordion columns={['id', 'title']} data={aboutUs} />
+			<Accordion columns={['id', 'title']} data={aboutUs} form={<NewAboutUsBlockForm />} />
 		</div>
 	)
 }

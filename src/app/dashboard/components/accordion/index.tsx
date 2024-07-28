@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import Image from 'next/image';
 
 import Button from '../Button/Button';
@@ -9,7 +9,13 @@ import deleteIcon from '@/assets/images/cencel-delete.svg'
 
 import styles from './styles.module.scss';
 
-export default function Accordion({ columns, data }) {
+interface IProps {
+    columns: string[];
+    data: { [key: string]: any }[];
+    form: ReactNode;
+}
+
+export default function Accordion({ columns, data, form }: IProps) {
     const [currentItem, setCurrentItem] = useState('');
 
     const toggleCurrentItem = (id: string) => {
@@ -31,7 +37,7 @@ export default function Accordion({ columns, data }) {
                 <tbody>
                     {data.map((row, rowIndex) => (
                         <React.Fragment key={rowIndex}>
-                            <tr key={rowIndex} className={'active'}>
+                            <tr key={rowIndex} className={currentItem === row.id ? styles.active : ''}>
                                 {columns.map((col, colIndex) => (
                                     <td key={colIndex}>{row[col]}</td>
                                 ))}
@@ -46,7 +52,7 @@ export default function Accordion({ columns, data }) {
                             </tr>
                             {currentItem === row.id && (
                                 <tr>
-                                    <td colSpan={columns.length + 2}>TEST</td>
+                                    <td colSpan={columns.length + 2}>{form}</td>
                                 </tr>
                             )}
                         </React.Fragment>

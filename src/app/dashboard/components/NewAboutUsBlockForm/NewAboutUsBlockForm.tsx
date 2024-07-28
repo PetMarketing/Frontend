@@ -14,7 +14,7 @@ import { ISession } from '@/types/ISession';
 import styles from './NewAboutUsBlockForm.module.scss'
 
 interface IProps {
-    session: ISession | null;
+    session?: ISession | null;
 }
 
 interface IFormData {

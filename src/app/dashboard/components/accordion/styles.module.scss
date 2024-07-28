@@ -18,8 +18,10 @@
         opacity: 0.9;
     }
 
-    tr {
-        border-bottom: 1px solid #E0E0E0;
+    tbody {
+        tr {
+            border-top: 1px solid #E0E0E0;
+        }
     }
 
     th {
@@ -38,4 +40,8 @@
         pointer-events: none;
         user-select: none;
     }
+}
+
+.active {
+    background: rgba(216, 255, 105, .5);
 }

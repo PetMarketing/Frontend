@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 
 import styles from './FormikInput.module.scss';
 
-interface IFormikInputProps {
+interface IProps {
     id: string;
     type: string;
     name: string;
@@ -15,7 +15,7 @@ interface IFormikInputProps {
     accept?: string;
 }
 
-export default function FormikInput(props: IFormikInputProps) {
+export default function FormikInput(props: IProps) {
     const [field, meta] = useField(props);
     const isFileInput = props.type === 'file';
     const inputRef = useRef<HTMLInputElement>(null);
