@@ -9,11 +9,11 @@ import styles from './SidebarLogout.module.scss';
 
 export default function SidebarLogout() {
     return (
-        <Link href='#!' className={styles.link} onClick={() => logout()}>
+        <button className={styles.link} onClick={() => logout()}>
             <div className={styles.icon}>
                 <LogoutIcon />
             </div>
             Logout
-        </Link>
+        </button>
     )
 }

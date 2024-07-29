@@ -54,5 +54,5 @@ export const logout = async () => {
 
     session.destroy()
 
-    redirect("/");
+    redirect('/');
 }
