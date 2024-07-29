@@ -3,7 +3,6 @@ import NewTeamMemberForm from '../components/NewTeamMemberForm/NewTeamMemberForm
 
 import { getMembers } from '@/services/fetchData';
 
-
 import styles from './page.module.scss'
 
 export default async function TeamPage() {
@@ -19,7 +18,7 @@ export default async function TeamPage() {
 				<NewTeamMemberForm />
 			</div>
 
-			<Accordion columns={['id', 'name', 'department']} data={members} />
+			{/* <Accordion columns={['id', 'name', 'department']} data={members} /> */}
 		</div>
 	)
 }

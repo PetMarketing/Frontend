@@ -1,10 +1,10 @@
 'use server'
 
-import { cookies } from "next/headers"
-import { redirect } from "next/navigation";
-import { getIronSession } from "iron-session";
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation';
+import { getIronSession } from 'iron-session';
 
-import { defaultSession, sessionOptions } from "@/config/auth";
+import { defaultSession, sessionOptions } from '@/config/auth';
 
 const baseURL = process.env.NEXT_PUBLIC_API_KEY
 

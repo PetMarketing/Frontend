@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
 
 import LoginForm from '../components/LoginForm/LoginForm';
 

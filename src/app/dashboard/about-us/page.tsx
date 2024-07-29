@@ -1,5 +1,3 @@
-
-
 import Accordion from '../components/accordion';
 import NewAboutUsBlockForm from '../components/NewAboutUsBlockForm/NewAboutUsBlockForm';
 

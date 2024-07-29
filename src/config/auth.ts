@@ -1,4 +1,4 @@
-import { SessionOptions } from "iron-session";
+import { SessionOptions } from 'iron-session';
 
 export const defaultSession: ISession = {
     user: {
@@ -8,9 +8,9 @@ export const defaultSession: ISession = {
 
 export const sessionOptions: SessionOptions = {
     password: process.env.AUTH_SECRET!,
-    cookieName: "alex-session",
+    cookieName: 'alex-session',
     cookieOptions: {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production"
+        secure: process.env.NODE_ENV === 'production'
     }
 }
