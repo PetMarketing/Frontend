@@ -21,9 +21,21 @@ export default function LoginForm() {
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
 
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    useEffect(() => {
+        const form = document.getElementById('login-form');
+
+        if (form) {
+            setEmail(form.email.value);
+            setPassword(form.password.value);
+        }
+    }, []);
+
     const initialValues = {
-        email: '',
-        password: '',
+        email,
+        password,
     }
 
     const validationSchema = Yup.object().shape({
@@ -60,39 +72,23 @@ export default function LoginForm() {
             <p className={styles.subtitle}>Please enter your email and password to continue</p>
 
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values, actions) => submitHandler(values, actions)}>
-                {({ setFieldValue }) => {
-                    useEffect(() => {
-                        const form = document.getElementById('login-form');
+                <Form className={styles.form} id="login-form">
+                    <div className={styles.inputContainer}>
+                        <label htmlFor='email'>Email address:</label>
+                        <Field name='email' id='email' placeholder='' autoComplete='off' />
+                        <Error name='email'>{error => <span className={styles.error}>{error}</span>}</Error>
+                    </div>
 
-                        if (form) {
-                            const email = form.email.value;
-                            const password = form.password.value;
+                    <div className={styles.inputContainer}>
+                        <label htmlFor='password'>Password: <a href='#' className={styles.resetPasswordLink}>Forget Password?</a></label>
+                        <Field name='password' id='password' type='password' placeholder='' autoComplete='off' />
+                        <Error name='password'>{error => <span className={styles.error}>{error}</span>}</Error>
+                    </div>
 
-                            if (email) setFieldValue('email', email);
-                            if (password) setFieldValue('password', password);
-                        }
-                    }, [setFieldValue]);
-
-                    return (
-                        <Form className={styles.form} id="login-form">
-                            <div className={styles.inputContainer}>
-                                <label htmlFor='email'>Email address:</label>
-                                <Field name='email' id='email' placeholder='' autoComplete='off' />
-                                <Error name='email'>{error => <span className={styles.error}>{error}</span>}</Error>
-                            </div>
-
-                            <div className={styles.inputContainer}>
-                                <label htmlFor='password'>Password: <a href='#' className={styles.resetPasswordLink}>Forget Password?</a></label>
-                                <Field name='password' id='password' type='password' placeholder='' autoComplete='off' />
-                                <Error name='password'>{error => <span className={styles.error}>{error}</span>}</Error>
-                            </div>
-
-                            <Button variant='primarySquare' type='submit' className={styles.sendBtn}>
-                                Send
-                            </Button>
-                        </Form>
-                    );
-                }}
+                    <Button variant='primarySquare' type='submit' className={styles.sendBtn}>
+                        Send
+                    </Button>
+                </Form>
             </Formik >
 
             <Loader className={styles.loader} />
