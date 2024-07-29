@@ -48,3 +48,11 @@ export const login = async (credentials: ILogin) => {
 
     redirect('/dashboard');
 }
+
+export const logout = async () => {
+    const session = await getSession();
+
+    session.destroy()
+
+    redirect("/");
+}
