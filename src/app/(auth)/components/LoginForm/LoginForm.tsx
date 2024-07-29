@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Formik, Form, Field, ErrorMessage as Error, FormikHelpers } from 'formik';
@@ -60,23 +60,39 @@ export default function LoginForm() {
             <p className={styles.subtitle}>Please enter your email and password to continue</p>
 
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values, actions) => submitHandler(values, actions)}>
-                <Form className={styles.form}>
-                    <div className={styles.inputContainer}>
-                        <label htmlFor='email'>Email address:</label>
-                        <Field name='email' id='email' placeholder='' autoComplete='off' />
-                        <Error name='email'>{error => <span className={styles.error}>{error}</span>}</Error>
-                    </div>
+                {({ setFieldValue }) => {
+                    useEffect(() => {
+                        const form = document.getElementById('login-form');
 
-                    <div className={styles.inputContainer}>
-                        <label htmlFor='password'>Password: <a href='#' className={styles.resetPasswordLink}>Forget Password?</a></label>
-                        <Field name='password' id='password' type='password' placeholder='' autoComplete='off' />
-                        <Error name='password'>{error => <span className={styles.error}>{error}</span>}</Error>
-                    </div>
+                        if (form) {
+                            const email = form.email.value;
+                            const password = form.password.value;
 
-                    <Button variant='primarySquare' type='submit' className={styles.sendBtn}>
-                        Send
-                    </Button>
-                </Form>
+                            if (email) setFieldValue('email', email);
+                            if (password) setFieldValue('password', password);
+                        }
+                    }, [setFieldValue]);
+
+                    return (
+                        <Form className={styles.form} id="login-form">
+                            <div className={styles.inputContainer}>
+                                <label htmlFor='email'>Email address:</label>
+                                <Field name='email' id='email' placeholder='' autoComplete='off' />
+                                <Error name='email'>{error => <span className={styles.error}>{error}</span>}</Error>
+                            </div>
+
+                            <div className={styles.inputContainer}>
+                                <label htmlFor='password'>Password: <a href='#' className={styles.resetPasswordLink}>Forget Password?</a></label>
+                                <Field name='password' id='password' type='password' placeholder='' autoComplete='off' />
+                                <Error name='password'>{error => <span className={styles.error}>{error}</span>}</Error>
+                            </div>
+
+                            <Button variant='primarySquare' type='submit' className={styles.sendBtn}>
+                                Send
+                            </Button>
+                        </Form>
+                    );
+                }}
             </Formik >
 
             <Loader className={styles.loader} />
