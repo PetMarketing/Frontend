@@ -72,7 +72,7 @@ export default function LoginForm() {
             <p className={styles.subtitle}>Please enter your email and password to continue</p>
 
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values, actions) => submitHandler(values, actions)}>
-                <Form className={styles.form} id="login-form">
+                <Form className={styles.form} id='login-form'>
                     <div className={styles.inputContainer}>
                         <label htmlFor='email'>Email address:</label>
                         <Field name='email' id='email' placeholder='' autoComplete='off' />
