@@ -99,6 +99,30 @@
             @media only screen and (max-width: 576px) {
                 font-size: $text-normal;
             }
+
+            &:-webkit-autofill {
+                -webkit-box-shadow: 0 0 0 30px #F1F4F9 inset !important;
+                -webkit-text-fill-color: #000 !important;
+                border: 1px solid #d8d8d8;
+            }
+
+            &:-moz-autofill {
+                box-shadow: 0 0 0 30px #F1F4F9 inset !important;
+                -moz-text-fill-color: #000 !important;
+                border: 1px solid #d8d8d8;
+            }
+
+            &:-ms-autofill {
+                box-shadow: 0 0 0 30px #F1F4F9 inset !important;
+                -ms-text-fill-color: #000 !important;
+                border: 1px solid #d8d8d8;
+            }
+
+            &::autofill {
+                box-shadow: 0 0 0 30px #F1F4F9 inset !important;
+                -webkit-text-fill-color: #000 !important;
+                border: 1px solid #d8d8d8;
+            }
         }
     }
 
