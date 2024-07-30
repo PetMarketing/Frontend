@@ -25,11 +25,14 @@ export default function LoginForm() {
     const [password, setPassword] = useState('');
 
     useEffect(() => {
-        const form = document.getElementById('login-form');
+        const form = document.getElementById('login-form') as HTMLFormElement | null;
 
         if (form) {
-            setEmail(form.email.value);
-            setPassword(form.password.value);
+            const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement | null;
+            const passwordInput = form.querySelector('input[name="password"]') as HTMLInputElement | null;
+
+            if (emailInput) setEmail(emailInput.value);
+            if (passwordInput) setPassword(passwordInput.value);
         }
     }, []);
 
