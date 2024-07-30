@@ -18,7 +18,7 @@ export default async function EventsPage() {
 				<NewEventForm />
 			</div>
 
-			<Accordion columns={['id', 'name', 'location', 'date']} data={events} />
+			{/* <Accordion columns={['id', 'name', 'location', 'date']} data={events} /> */}
 		</div>
 	)
 }

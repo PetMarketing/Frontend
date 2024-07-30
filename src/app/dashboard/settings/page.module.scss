@@ -1,19 +1,6 @@
 @import "src/styles/variables.scss";
 
-.pageLoaderWrapper {
-  .loader {
-    height: 100vh;
-    font-size: 10px;
-  }
-}
-
-.page {
-  .button {
-    width: 100%;
-    max-width: 274px;
-    margin: 0 auto;
-  }
-}
+.page {}
 
 .title {
   font-size: 32px;
@@ -29,56 +16,4 @@
   border: .3px solid #B9B9B9;
   border-radius: 14px;
   background-color: $white;
-}
-
-.formWrapper {
-  width: 100%;
-  max-width: 780px;
-  margin: 0 auto;
-}
-
-.editImage {
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-  align-items: center;
-}
-
-.imageWrapper {
-  width: 80px;
-  border-radius: 100px;
-  overflow: hidden;
-  border: 1px solid $placeholder-color;
-}
-
-.editImageBtn {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.1;
-  color: #4379ee;
-  transition: $transition;
-
-  &:hover {
-    color: $prim-color-blue;
-  }
-}
-
-.editInfo {
-  margin-top: 40px;
-}
-
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
-}
-
-.input {
-  flex: 1 1 calc(50% - 30px);
-}
-
-.loaderWrapper {
-  .loader {
-    font-size: 10px;
-  }
 }

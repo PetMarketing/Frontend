@@ -1,0 +1,47 @@
+.wrapper {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.input {
+    margin-bottom: 0;
+    flex: 1 1 calc(50% - 30px);
+}
+
+.button {
+    width: 100%;
+    max-width: 274px;
+    margin: 0 auto;
+}
+
+.loading {
+    &>*:not(.loader) {
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    .loader {
+        display: block;
+    }
+}
+
+.loader {
+    font-size: 14px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media only screen and (max-width: 767px) {
+        font-size: 10px;
+    }
+}

@@ -23,7 +23,7 @@ export default async function ServicesPage() {
 				AddNewBlock
 			</div>
 
-			<Accordion columns={['id', 'title', 'category']} data={formattedServices} />
+			{/* <Accordion columns={['id', 'title', 'category']} data={formattedServices} /> */}
 		</div>
 	)
 }

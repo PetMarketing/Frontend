@@ -19,3 +19,8 @@ interface ILogin {
     email: string;
     password: string;
 }
+
+interface IUserUpdate {
+    name: string;
+    email: string;
+}
