@@ -12,12 +12,12 @@ import Button from '../components/Button/Button';
 
 import styles from './page.module.scss'
 
-interface IUpdateAdminProfileForm {
+interface IFormProps {
 	name: string;
 	email: string;
 }
 
-export default function SettingsPage() {
+export default async function SettingsPage() {
 	const [isError, setIsError] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
@@ -35,52 +35,12 @@ export default function SettingsPage() {
 
 	const baseURL = process.env.NEXT_PUBLIC_BASE_URL
 
-	const submitHandler = async (values: IUpdateAdminProfileForm, actions: FormikHelpers<IUpdateAdminProfileForm>) => {
+	const submitHandler = async (values: IFormProps, actions: FormikHelpers<IFormProps>) => {
 		setIsError(false); // Resetting the previous error before a new request
 		setIsLoading(true); // Indicate that the request has been started
 		setErrorMessage(''); // Reset the previous error message	
 
-		try {
-			const tokenExpires = session?.tokenExpires || 0; // Get the token expiration timestamp
-
-			// Check if the token is expired
-			if (Date.now() >= tokenExpires) {
-				setErrorMessage('Token Expired');
-			}
-
-			const res = await fetch(`${baseURL}/admin/me`, {
-				method: 'PATCH',
-				headers: {
-					'Content-Type': 'application/json',
-					'Authorization': `Bearer ${session?.token}`, // Add a token to the headers
-				},
-				body: JSON.stringify(values),
-			});
-
-			const data = await res.json();
-
-			if (!res.ok) {
-				const errorMessage = data?.message || 'Unknown Error';
-
-				setIsError(true); // Set an error if the response status is not successful
-				setErrorMessage(errorMessage);
-			} else {
-				setIsSuccess(true); // Set success state upon successful form submission
-
-				await update({ ...session, user: data });
-
-				actions.resetForm();
-			}
-		} catch (error) {
-			console.error('Error:', error);
-
-			setIsError(true); // Set an error when an error occurs when executing a request
-			setErrorMessage('Something went wrong. Please, contact us or try again later');
-		} finally {
-			setIsLoading(false); // Indicate that the shipment is complete
-
-			actions.setSubmitting(false); // Mark that the sending is completed in Formik
-		}
+		console.log(values);
 	}
 
 	return (
