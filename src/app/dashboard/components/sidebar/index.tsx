@@ -13,17 +13,22 @@ import styles from './styles.module.scss';
 export default function Sidebar() {
     const isMobile = useIsMobile(1024);
 
+    const toggleSidebar = useSidebar((state) => state.toggleSidebar)
     const isSidebarVisible = useSidebar((state) => state.isSidebarVisible);
 
     return (
-        <aside className={`${styles.sidebar} ${isSidebarVisible ? styles.visible : ''}`}>
-            <div className={styles.logo}>
-                <Logo size='small' />
+        <>
+            <aside className={`${styles.sidebar} ${isSidebarVisible ? styles.visible : ''}`}>
+                <div className={styles.logo}>
+                    <Logo size='small' />
 
-                {isMobile && <SidebarCloseButton />}
-            </div>
+                    {isMobile && <SidebarCloseButton />}
+                </div>
 
-            <SidebarMenu />
-        </aside>
+                <SidebarMenu />
+            </aside>
+
+            {isMobile && <div className={`${styles.backdrop} ${isSidebarVisible ? styles.visible : ''}`} onClick={toggleSidebar}></div>}
+        </>
     )
 }

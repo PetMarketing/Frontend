@@ -23,12 +23,12 @@
     @media only screen and (max-width: $media-md) {
         max-width: 85vw;
     }
-}
 
-.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateZ(0);
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateZ(0);
+    }
 }
 
 .logo {
@@ -43,5 +43,24 @@
         @media only screen and (max-width: $media-lg) {
             max-width: 250px;
         }
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .6);
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+    cursor: pointer;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
     }
 }
