@@ -42,7 +42,7 @@ export default async function EventPage({ params: { id } }: Props) {
 	}
 
 	return (
-		<main>
+		<>
 			<Header page={event.name}></Header>
 			<Menu />
 			<Section className={styles.section}>
@@ -88,6 +88,6 @@ export default async function EventPage({ params: { id } }: Props) {
 			</Section>
 			<Events />
 			<Footer />
-		</main >
+		</ >
 	)
 }
