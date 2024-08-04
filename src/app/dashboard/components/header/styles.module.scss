@@ -13,21 +13,6 @@
     }
 }
 
-.burger {
-    display: none;
-    transition: $transition;
-
-    @media only screen and (max-width: $media-lg) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &:hover {
-        color: $prim-color-blue;
-    }
-}
-
 .userInfo {
     display: flex;
     align-items: center;

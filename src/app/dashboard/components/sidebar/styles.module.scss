@@ -19,14 +19,29 @@
         transform: translate3d(-100%, 0, 0);
         transition: all .25s ease-in-out;
     }
+
+    @media only screen and (max-width: $media-md) {
+        max-width: 85vw;
+    }
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateZ(0);
 }
 
 .logo {
+    position: relative;
     margin-bottom: 40px;
     padding: 0 26px;
 
     >div {
         width: 100%;
         height: auto;
+
+        @media only screen and (max-width: $media-lg) {
+            max-width: 250px;
+        }
     }
 }

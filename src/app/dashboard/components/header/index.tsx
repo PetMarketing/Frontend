@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-import BurgerIcon from '@/assets/svg/burger-icon';
+import BurgerMenu from './ui/burger-menu';
 
 import { getSession } from '@/services/auth/auth.service';
 
-import styles from './Header.module.scss';
+import styles from './styles.module.scss';
 
 export default async function Header() {
 	const session = await getSession();
@@ -13,9 +13,8 @@ export default async function Header() {
 
 	return (
 		<header className={styles.header}>
-			<button className={styles.burger}>
-				<BurgerIcon />
-			</button>
+			<BurgerMenu />
+
 			<div className={styles.userInfo}>
 				<div className={styles.imageWrapper}>
 					<Image src={avatarSrc} width={80} height={80} alt='avatar' className={styles.image} />

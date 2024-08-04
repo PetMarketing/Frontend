@@ -1,0 +1,17 @@
+@import 'src/styles/variables.scss';
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -20px;
+    right: -45px;
+    cursor: pointer;
+    padding: 0;
+
+
+    &:hover {
+        color: $prim-color-blue;
+    }
+}
