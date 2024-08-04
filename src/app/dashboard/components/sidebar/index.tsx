@@ -6,6 +6,8 @@ import SidebarMenu from './ui/sidebar-menu';
 import SidebarCloseButton from './ui/sidebar-close-button';
 
 import { useIsMobile } from '@/hooks/useIsMobile';
+import { useScrollControl } from '@/hooks/useScrollControl';
+
 import { useSidebar } from '@/store/sidebar.store';
 
 import styles from './styles.module.scss';
@@ -15,6 +17,8 @@ export default function Sidebar() {
 
     const toggleSidebar = useSidebar((state) => state.toggleSidebar)
     const isSidebarVisible = useSidebar((state) => state.isSidebarVisible);
+
+    useScrollControl();
 
     return (
         <>
