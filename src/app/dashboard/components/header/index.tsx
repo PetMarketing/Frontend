@@ -1,8 +1,10 @@
 import Image from 'next/image';
 
+import BurgerMenu from './ui/burger-menu';
+
 import { getSession } from '@/services/auth/auth.service';
 
-import styles from './Header.module.scss';
+import styles from './styles.module.scss';
 
 export default async function Header() {
 	const session = await getSession();
@@ -11,6 +13,8 @@ export default async function Header() {
 
 	return (
 		<header className={styles.header}>
+			<BurgerMenu />
+
 			<div className={styles.userInfo}>
 				<div className={styles.imageWrapper}>
 					<Image src={avatarSrc} width={80} height={80} alt='avatar' className={styles.image} />

@@ -1,8 +1,14 @@
+@import 'src/styles/variables.scss';
+
 .wrapper {
     display: flex;
     min-height: 100vh;
     overflow-x: hidden;
     background-color: #F5F6FA;
+
+    @media only screen and (max-width: $media-lg) {
+        display: block;
+    }
 }
 
 .content {
@@ -11,4 +17,8 @@
 
 .contentInner {
     padding: 30px;
+
+    @media only screen and (max-width: $media-lg) {
+        padding-top: 110px;
+    }
 }

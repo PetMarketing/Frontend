@@ -16,7 +16,7 @@ type Props = {}
 
 const Brief: React.FC<Props> = () => {
 	return (
-		<main>
+		<>
 			<Header page='Brief'></Header>
 			<Menu />
 			<Section className={styles.section}>
@@ -32,7 +32,7 @@ const Brief: React.FC<Props> = () => {
 			<BriefForm />
 			<Events />
 			<Footer />
-		</main>
+		</>
 	)
 }
 

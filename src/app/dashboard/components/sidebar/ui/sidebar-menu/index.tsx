@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
-import SidebarLogout from '../SidebarLogout/SidebarLogout';
-import SidebarMenuItem from '../SidebarMenuItem/SidebarMenuItem';
+import SidebarMenuItem from '../sidebar-menu-item';
+import SidebarLogout from '../sidebar-logout';
 
 import DashboardIcon from '@/assets/svg/dashboard-icon';
 import ServiceIcon from '@/assets/svg/service-icon';
@@ -12,9 +12,9 @@ import InfoIcon from '@/assets/svg/info-icon';
 import EventIcon from '@/assets/svg/event-icon';
 import SettingsIcon from '@/assets/svg/settings-icon';
 import RequestsIcon from '@/assets/svg/requests-icon';
-
-import styles from './SidebarMenu.module.scss';
 import TeamIcon from '@/assets/svg/team-icon';
+
+import styles from './styles.module.scss';
 
 const menuItems = [
     { href: '/dashboard', Icon: DashboardIcon, name: 'Dashboard' },

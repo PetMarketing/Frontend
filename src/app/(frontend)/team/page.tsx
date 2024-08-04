@@ -18,7 +18,7 @@ type Props = {}
 const Team: React.FC<Props> = () => {
 
 	return (
-		<main>
+		<>
 			<Menu />
 			<Header page='Team'></Header>
 			<Section className={styles.section}>
@@ -41,7 +41,7 @@ const Team: React.FC<Props> = () => {
 			</Section>
 			<Events />
 			<Footer />
-		</main>
+		</>
 	)
 }
 

@@ -9,14 +9,14 @@ type HomeProps = {}
 
 const Home: React.FC<HomeProps> = () => {
 	return (
-		<main>
+		<>
 			<Menu />
 			<HeroSection />
 			<SamplesBlock />
 			<AboutUs />
 			<Events />
 			<Footer />
-		</main>
+		</>
 	)
 }
 

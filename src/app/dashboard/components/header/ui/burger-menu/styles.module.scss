@@ -1,0 +1,12 @@
+@import "src/styles/variables.scss";
+
+.burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $transition;
+
+    &:hover {
+        color: $prim-color-blue;
+    }
+}
