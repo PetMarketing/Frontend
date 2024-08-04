@@ -6,6 +6,12 @@
     border-bottom: 2px solid #E0E0E0;
 
     @media only screen and (max-width: $media-lg) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
