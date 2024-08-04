@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
  * @returns boolean indicating if the device is mobile.
  */
 export function useIsMobile(breakpoint = 767): boolean {
-    const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= breakpoint);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -14,6 +14,7 @@ export function useIsMobile(breakpoint = 767): boolean {
         };
 
         handleResize(); // Initialize the state
+
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
