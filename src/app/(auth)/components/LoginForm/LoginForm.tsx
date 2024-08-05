@@ -12,11 +12,9 @@ import Loader from '@/components/Loader/Loader';
 import Button from '@/components/Button/Button';
 import ErrorMessage from '@/components/ErrorMessage/ErrorMessage';
 
-import { login } from '@/services/auth/auth.service';
+import { createSession } from '@/services/auth/auth.service';
 
 export default function LoginForm() {
-    const router = useRouter();
-
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -51,16 +49,34 @@ export default function LoginForm() {
         setIsLoading(true); // Indicate that the request has been started
         setErrorMessage(''); // Reset the previous error message
 
-        try {
-            const res = await login(values);
+        const baseURL = process.env.NEXT_PUBLIC_API_KEY
 
-            if (res && res.error) {
-                setIsError(true); // Set an error if the response status is not successful
-                setErrorMessage(res.message); // Set the error message from the response
+        try {
+            const res = await fetch(`${baseURL}/admin/login`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(values),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                setIsError(true);
+                setErrorMessage(data.message || 'Something went wrong. Please try again later.');
+                return;
             }
+
+            // Processing a successful login
+            createSession(data);
+
         } catch (error) {
             setIsError(true);
             setErrorMessage('Something went wrong. Please try again later.');
+
+            console.error('error: ', error);
         } finally {
             actions.setSubmitting(false); // Mark that the sending is completed in Formik
             actions.resetForm();

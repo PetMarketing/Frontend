@@ -6,8 +6,6 @@ import { getIronSession } from 'iron-session';
 
 import { defaultSession, sessionOptions } from '@/config/auth';
 
-const baseURL = process.env.NEXT_PUBLIC_API_KEY
-
 export const getSession = async () => {
     const session = await getIronSession<ISession>(cookies(), sessionOptions);
 
@@ -22,34 +20,17 @@ export const getSession = async () => {
     return session;
 }
 
-export const login = async (credentials: ILogin) => {
+export const createSession = async (data: ISession) => {
     const session = await getSession();
-
-    const res = await fetch(`${baseURL}/admin/login`, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(credentials),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-        return data;
-    }
 
     session.token = data.token;
     session.tokenExpires = data.tokenExpires;
     session.user = data.user;
 
     await session.save();
-
-    redirect('/dashboard');
 }
 
-export const logout = async () => {
+export const removeSession = async () => {
     const session = await getSession();
 
     session.destroy()
