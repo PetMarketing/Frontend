@@ -8,7 +8,9 @@ export async function fetchWithAuth<T>(endpoint: string, data?: unknown, method:
     const token = session.token;
     const tokenExpires = session.tokenExpires || 0;
 
-    if (Date.now() >= tokenExpires) {
+    const currentUnixTimestamp = Math.floor(Date.now() / 1000);
+
+    if (currentUnixTimestamp  >= tokenExpires) {
         throw new Error('Token has expired');
     }
 

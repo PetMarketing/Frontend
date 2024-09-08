@@ -17,3 +17,15 @@ export const userUpdate = async (data: IUserUpdate) => {
 
     revalidatePath('dashboard/settings');
 }
+
+export const userAvatarUpdate = async (data: FormData) => {
+    const session = await getSession();
+
+    const res = await fetchWithAuth('admin/editPhoto', data, 'POST');
+
+    session.user = res;
+
+    await session.save();
+
+    revalidatePath('dashboard/settings');
+}

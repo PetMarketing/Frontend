@@ -24,3 +24,8 @@ interface IUserUpdate {
     name: string;
     email: string;
 }
+
+interface IUserAvatarUpdate {
+    imagePath: string,
+    imageAlt: string,
+}
