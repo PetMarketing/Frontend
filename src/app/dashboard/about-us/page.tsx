@@ -1,5 +1,5 @@
 import Accordion from '../components/accordion';
-import NewAboutUsBlockForm from '../components/NewAboutUsBlockForm/NewAboutUsBlockForm';
+import AboutUsForm from '@/app/dashboard/components/about-us-form'
 
 import { getAboutUs } from '@/services/fetchData'
 
@@ -15,10 +15,10 @@ export default async function AboutUsPage() {
 			<h3 className={styles.title}>Add new block</h3>
 
 			<div className={styles.addNewBlock}>
-				<NewAboutUsBlockForm />
+				<AboutUsForm />
 			</div>
 
-			<Accordion columns={['id', 'title']} data={aboutUs} form={<NewAboutUsBlockForm />} />
+			<Accordion columns={['id', 'title']} data={aboutUs} form={<AboutUsForm />} />
 		</div>
 	)
 }

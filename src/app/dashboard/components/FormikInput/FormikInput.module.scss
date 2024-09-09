@@ -12,7 +12,7 @@
     font-weight: 600;
     line-height: 1;
     color: #ADADAD;
-    margin-bottom: 11px;
+    margin-bottom: 12px;
 }
 
 .input {
@@ -31,12 +31,7 @@
     }
 
     &.fileInput {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        opacity: 0;
-        pointer-events: none;
+       display: none;
     }
 
     &.inputSuccess {
@@ -59,4 +54,25 @@
     font-weight: 600;
     line-height: 1;
     color: $error-color;
+}
+
+.imageWrapper {
+    width: 400px;
+    height: auto;
+    margin-bottom: 32px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid $placeholder-color;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
 }
