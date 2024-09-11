@@ -7,6 +7,8 @@ import * as Yup from 'yup'
 
 import ErrorMessage from '@/components/ErrorMessage/ErrorMessage'
 
+import { userAvatarUpdate } from '@/services/user/user.service'
+
 import styles from './styles.module.scss'
 
 interface IProps {
@@ -53,14 +55,14 @@ export default function UserAvatarForm({ user }: IProps) {
 		setIsLoading(true) // Indicate that the request has been started
 		setErrorMessage('') // Reset the previous error message
 
-		const formData = new FormData()
-
-		formData.append('imageAlt', values.imageAlt)
-		formData.append('imagePath', values.imagePath)
-
 		try {
-			console.log(formData)
-			// await userAvatarUpdate(formData);
+			const formData = new FormData()
+
+			formData.append('imageAlt', values.imageAlt)
+			formData.append('imagePath', values.imagePath)
+
+			await userAvatarUpdate(formData)
+
 			setIsSuccess(true)
 		} catch (error) {
 			setIsError(true)
