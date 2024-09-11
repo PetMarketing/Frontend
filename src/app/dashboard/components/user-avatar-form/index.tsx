@@ -1,112 +1,124 @@
 'use client'
 
-import { useState, useRef, ChangeEvent } from 'react'
+import { ChangeEvent, useRef, useState } from 'react'
 import Image from 'next/image'
-import { Formik, Form, FormikHelpers } from 'formik';
-import * as Yup from 'yup';
+import { Form, Formik, FormikHelpers } from 'formik'
+import * as Yup from 'yup'
 
-import ErrorMessage from '@/components/ErrorMessage/ErrorMessage';
+import ErrorMessage from '@/components/ErrorMessage/ErrorMessage'
 
-import { userAvatarUpdate } from '@/services/user/user.service'
-
-import styles from './styles.module.scss';
+import styles from './styles.module.scss'
 
 interface IProps {
-    user: IUser;
+	user: IUser
 }
 
 export default function UserAvatarForm({ user }: IProps) {
-    const [isError, setIsError] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
-    const [avatarSrc, setAvatarSrc] = useState(user.imagePath ? user.imagePath : '/default-avatar.svg');
+	const [isError, setIsError] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
+	const [isSuccess, setIsSuccess] = useState(false)
+	const [errorMessage, setErrorMessage] = useState('')
+	const [avatarSrc, setAvatarSrc] = useState(
+		user.imagePath ? user.imagePath : '/default-avatar.svg',
+	)
 
-    const avatarAlt = user.imageAlt ? user.imageAlt : 'admin avatar';
+	const avatarAlt = user.imageAlt ? user.imageAlt : 'admin avatar'
 
-    const fileInputRef = useRef<HTMLInputElement>(null);
+	const fileInputRef = useRef<HTMLInputElement>(null)
 
-    const handleAvatarChange = (event: ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files && event.target.files.length > 0) {
-            const file = event.target.files[0];
+	const handleAvatarChange = (event: ChangeEvent<HTMLInputElement>) => {
+		if (event.target.files && event.target.files.length > 0) {
+			const file = event.target.files[0]
 
-            const imageUrl = URL.createObjectURL(file);
+			const imageUrl = URL.createObjectURL(file)
 
-            setAvatarSrc(imageUrl); // Оновлюємо стейт для попереднього перегляду
-        }
-    }
+			setAvatarSrc(imageUrl) // Оновлюємо стейт для попереднього перегляду
+		}
+	}
 
-    const initialValues = {
-        imageAlt: 'admin avatar',
-        imagePath: '',
-    }
+	const initialValues = {
+		imageAlt: 'admin avatar',
+		imagePath: '',
+	}
 
-    const validationSchema = Yup.object().shape({
-        imageAlt: Yup.string().required('Required'),
-    });
+	const validationSchema = Yup.object().shape({
+		imageAlt: Yup.string().required('Required'),
+	})
 
-    const submitHandler = async (values: IUserAvatarUpdate, actions: FormikHelpers<IUserAvatarUpdate>) => {
-        setIsError(false); // Resetting the previous error before a new request
-        setIsLoading(true); // Indicate that the request has been started
-        setErrorMessage(''); // Reset the previous error message
+	const submitHandler = async (
+		values: IUserAvatarUpdate,
+		actions: FormikHelpers<IUserAvatarUpdate>,
+	) => {
+		setIsError(false) // Resetting the previous error before a new request
+		setIsLoading(true) // Indicate that the request has been started
+		setErrorMessage('') // Reset the previous error message
 
-        const formData = new FormData();
+		const formData = new FormData()
 
-        formData.append('imageAlt', values.imageAlt);
-        formData.append('imagePath', values.imagePath);
+		formData.append('imageAlt', values.imageAlt)
+		formData.append('imagePath', values.imagePath)
 
-        try {
-            await userAvatarUpdate(formData);
-            setIsSuccess(true);
-        } catch (error) {
-            setIsError(true);
-            setErrorMessage((error as Error).message || 'An error occurred');
-        } finally {
-            setIsLoading(false);
-            actions.setSubmitting(false);
-        }
-    }
+		try {
+			console.log(formData)
+			// await userAvatarUpdate(formData);
+			setIsSuccess(true)
+		} catch (error) {
+			setIsError(true)
+			setErrorMessage((error as Error).message || 'An error occurred')
+		} finally {
+			setIsLoading(false)
+			actions.setSubmitting(false)
+		}
+	}
 
 	return (
-      <div className={`${styles.wrapper} ${isLoading ? styles.loading : ''}`}>
-          <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={(values, actions) => submitHandler(values, actions)}>
+		<div className={`${styles.wrapper} ${isLoading ? styles.loading : ''}`}>
+			<Formik
+				initialValues={initialValues}
+				validationSchema={validationSchema}
+				onSubmit={(values, actions) => submitHandler(values, actions)}
+			>
+				{({ setFieldValue, submitForm }) => (
+					<Form className={styles.form}>
+						<div className={styles.imageWrapper}>
+							<Image
+								src={avatarSrc}
+								width={80}
+								height={80}
+								alt={avatarAlt}
+								className={styles.image}
+							/>
+						</div>
 
-              {({ setFieldValue, submitForm }) => (
-                 <Form className={styles.form}>
-                     <div className={styles.imageWrapper}>
-                         <Image src={avatarSrc} width={80} height={80} alt={avatarAlt} className={styles.image} />
-                     </div>
+						<input
+							type='file'
+							accept='image/*'
+							ref={fileInputRef}
+							className={styles.fileInput}
+							onChange={event => {
+								handleAvatarChange(event)
 
-                     <input
-                        type='file'
-                        accept='image/*'
-                        ref={fileInputRef}
-                        className={styles.fileInput}
-                        onChange={(event) => {
-                            handleAvatarChange(event);
+								const file = event.target.files ? event.target.files[0] : null
 
-                            const file = event.target.files ? event.target.files[0] : null;
+								if (file) {
+									setFieldValue('imagePath', file) // Оновлюємо значення поля imagePath у Formik
+									submitForm()
+								}
+							}}
+						/>
 
-                            if (file) {
-                                setFieldValue('imagePath', file); // Оновлюємо значення поля imagePath у Formik
-                                submitForm();
-                            }
-                        }}
-                     />
+						<button
+							type='button'
+							className={styles.button}
+							onClick={() => fileInputRef.current?.click()}
+						>
+							Edit Photo
+						</button>
+					</Form>
+				)}
+			</Formik>
 
-                     <button
-                        type='button'
-                        className={styles.button}
-                        onClick={() => fileInputRef.current?.click()}
-                     >
-                         Edit Photo
-                     </button>
-                 </Form>
-              )}
-
-          </Formik>
-
-          {isError && <ErrorMessage err={errorMessage} />}
-      </div>
-   )
+			{isError && <ErrorMessage err={errorMessage} />}
+		</div>
+	)
 }
