@@ -87,3 +87,28 @@
     align-items: center;
     text-align: center;
 }
+
+.successText {
+    color: $prim-color-blue;
+    font-size: $text-big;
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: 576px) {
+        font-size: $text-medium;
+    }
+}
+
+.successImage {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin: $distance-normal 0;
+    object-fit: contain;
+    border-radius: 25px;
+
+    @media only screen and (max-width: 768px) {
+        margin: $distance-small 0;
+    }
+}
