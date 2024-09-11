@@ -32,7 +32,9 @@ export default function EventForm({ eventId }: IEventFormProps) {
 	}
 
 	const validationSchema = Yup.object().shape({
-		name: Yup.string().required('Name is required'),
+		name: Yup.string()
+			.required('Name is required')
+			.min(2, 'Name must be longer than or equal to 2 characters'),
 		email: Yup.string().required('Email is required').email('Invalid email format'),
 		phone: Yup.string()
 			.required('Phone is required')
